@@ -1,0 +1,8 @@
+[submodule "plugins/gulp-movilizer-report-html"]
+	path = plugins/gulp-movilizer-report-html
+	url = https://github.com/Movilizer/gulp-movilizer-report-html.git
+	branch = master
+[submodule "plugins/gulp-movilizer-report-pdf"]
+	path = plugins/gulp-movilizer-report-pdf
+	url = https://github.com/Movilizer/gulp-movilizer-report-pdf.git
+	branch = master

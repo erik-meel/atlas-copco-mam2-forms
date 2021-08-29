@@ -1,0 +1,80 @@
+export var textLiterals = {
+  'VISIT_REPORT': 'Bezoekrapport',
+  'COMMISSION_REPORT': 'Bezoekrapport', //TODO: translate
+  'LMRA_REPORT': 'Bezoekrapport', //TODO: translate
+  'SMARTBOX_REPORT': 'Bezoekrapport', //TODO: translate
+  'SPM_REPORT': 'Bezoekrapport', //TODO: translate
+  'TIME_CONFIRMATION_REPORT': 'NL - Time Confirmation Report',
+  'CUSTOMER_DETAILS': 'Klantgegevens',
+  'CONTACT': 'Contactpersoon',
+  'REPORT_DATE': 'Datum rapport',
+  'EQUIPMENT': 'Installatie',
+  'RUNNING_HOURS': 'Draaiuren (totaal)',
+  'HOURS': 'Uren',
+  'SERIAL_NUMBER': 'Seriennummer',
+  'LOAD_HOURS': 'Draaiuren (belast)',
+  'VISIT_DATE': 'Bezoekdatum',
+  'ORDER_NUMBER': 'Ordernumber',
+  'CONTRACT_NUMBER': 'Contractnumber',
+  'PO_NUMBER': 'PO number',
+  'WORK_COMMENTS': 'Bevindingen',
+  'NEXT_VISIT': 'Volgende Bezoek',
+  'NEXT_RECOMMENDED_SERVICE_1': 'Het eerst volgende bezoek zal rond “',
+  'NEXT_RECOMMENDED_SERVICE_2': '” Plaatsvinden',
+  'FOLLOWING_WORK_IS': 'Onderstaand de door mij aanbevolen werkzaamheden, één van onze medewerkers zal contact met u opnemen.',
+  'ESTIMATED_WORK_HOUR': 'Ingeschatte werkduur',
+  'TIME_CONFIRMATION': 'Geleverde prestaties',
+  'DATE': 'Datum',
+  'SERVICE_ENGINEER': 'Service engineer',
+  'ACTIVITY_TYPE': 'Type activiteit',
+  'HOUR_KM': 'Aantal',
+  'MATERIAL_CONFIRMATION': 'Verbuikte materialen',
+  'PART_NUMBER': 'Artikel nr.',
+  'PART_DESCRIPTION': 'Omschrijving',
+  'QUANTITY_UNIT': 'Aantal',
+  'WORK_DONE': 'Uitgevoed werk',
+  'OPERATIONS': 'Controlepunten',
+  'COMMENTS': 'Opmerkingen',
+  'MEASUREMENT_POINTS': 'Meetpunten',
+  'COUNTER': 'Omschrijving',
+  'READING_AFTER_SERVICE': 'Gemeten waardes',
+  'BEFORE_SERVICE': 'Gemeten waardes voor service',
+  'FROM_LAST_VISIT_ON': 'Gemeten waardes op datum',
+  'AUTHORISATION_TO_CARRY': 'Bevestiging toestemming voor uitgevoerde werkzaamheden.',
+  'NOTES': 'NB',
+  'CUSTOMER_WILL_AGREE': 'U bevestigd hierbij akkoord voor de uitvoering van de opdracht en zal, indien nog niet verstrekt, een PO nummer verstrekken voor de geleverde diensten. Deze PO zal binnen 1 werkweek verstrekt worden.',
+  'CUSTOMER_CONFIRMATION': 'Akkoord klant',
+  'SERVICE_ENGINEER_CONFIRMATION': 'Akkoord service engineer',
+  'ENTER_YOUR_NAME': 'Vul uw naam in', //TODO: translate
+  'PLEASE_ENTER_YOUR': 'Gelieve uw naam hier in te vullen', //TODO: translate
+  'SIGNED_BY': 'Getekend door',
+  'AT': 'op',
+  'BEING_DULY_AUTHORISED': '(Gemachtigd voor ondertekening)',
+
+  'SAFETY_FIRST': 'Safety First', //TODO: translate
+  'QUESTION': 'Question', //TODO: translate
+  'CHECKED': 'Checked', //TODO: translate
+
+  'COMPANY_GROUP_NAME': 'Atlas Copco Compressors Nederland',
+  'COMPANY_LEGAL_NAME': '', //TODO: get legal name
+  'VISITORS_ADDRESS': 'Visitors\' address',
+  'TELEPHONE': 'Tel',
+  'COMPANY_TELEPHONE': '+31 (0)78 6230 230',
+  'FOOTER_ADDITIONAL_INFO_1': 'Deutsche Bank 26.51.37.527',
+  'COMPANY_ADDRESS_1': 'Merwedeweg 7',
+  'VISITOR_ADDRESS_1': 'Merwedeweg 7',
+  'FAX': 'Fax',
+  'COMPANY_FAX': '+31 (0)78 6230 242',
+  'FOOTER_ADDITIONAL_INFO_2': 'BTW nr.\tNL.00.6958.369.B01',
+  'COMPANY_ADDRESS_2': '3336 LG Zwijndrecht',
+  'VISITOR_ADDRESS_2': '3336 LG Zwijndrecht',
+  'COMPANY_URL': 'www.atlascopco.nl',
+  'FOOTER_ADDITIONAL_INFO_3': 'Handelsreg.\t23051060 Dordrecht',
+  'WORKER_DETAIL': 'NL - Worker Detail',
+  'WORK_CENTER': 'NL - Work Center',
+  'SEARCH_OPTIONS': 'NL - Search Options',
+  'DATE_FROM': 'NL -From',
+  'DATE_TO': 'NL - To',
+  'TOTAL': 'Total',
+  'WEEK': 'Week'
+};

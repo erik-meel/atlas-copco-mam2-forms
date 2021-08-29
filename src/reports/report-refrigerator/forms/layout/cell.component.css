@@ -1,0 +1,15 @@
+.ho-cell {
+    /*
+        IMPORTANT: Flying saucer does NOT support border-box so percentages cell will fail to be the desired size
+    */
+    display: inline-block;
+    position: relative;
+    float: left;
+
+    min-height: 1px;
+
+    padding-right: 6px;
+    padding-left: 6px;
+
+    page-break-inside: avoid;
+}

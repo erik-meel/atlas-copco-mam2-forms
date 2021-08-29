@@ -1,0 +1,31 @@
+{
+  "name": "gulp-movilizer-report-html",
+  "description": "Runs a Movilizer report and returns the HTML that is sent to the cloud.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https¡://github.com/Movilizer/gulp-movilizer-report-html.git"
+  },
+  "author": "Jesús de Mula Cano <jesus.demula@movilizer.com> (http://movilizer.com/)",
+  "license": "LicenseRef-LICENSE",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "eventemitter2": "^0.4.9",
+    "phantomjs-prebuilt": "^2.1.7",
+    "through2": "^0.6.5",
+    "rimraf": "^2.5.2",
+    "semver": "^5.1.0",
+    "lodash": "~4.3.0",
+    "which": "~1.2.1",
+    "temporary": "^0.0.8"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

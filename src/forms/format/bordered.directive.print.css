@@ -1,0 +1,23 @@
+/* THIS IS A COMPILATION OF THE COMPONENT STYLES THAT USE THIS DIRECTIVE. Directives can't have styles. */
+@media print {
+    .ho-bordered {
+        border: solid black 0.25mm;
+        margin: -0.25mm;
+    }
+
+    .ho-section-header.ho-bordered,
+    .ho-row.ho-bordered {
+        margin: -0.25mm -1.75mm;
+    }
+
+    .ho-cell.ho-bordered {
+        border-top: none;
+        border-bottom: none;
+        margin: 0 0 0 -0.25mm;
+    }
+
+    .ho-cell.ho-bordered:last-child {
+        border-right: hidden;
+    }
+}
+

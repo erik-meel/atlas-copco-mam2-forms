@@ -1,0 +1,16 @@
+.ho-body {
+    width: 720px;
+    min-width: 720px;
+    max-width: 720px;
+}
+
+.ho-body:before,
+.ho-body:after {
+    display: table;
+    content: " ";
+}
+
+.ho-body:after {
+    clear: both;
+}
+

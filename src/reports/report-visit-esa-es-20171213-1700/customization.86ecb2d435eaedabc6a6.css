@@ -1,0 +1,354 @@
+/* Flying saucer does NOT support to have @page inside @media print */
+@page {
+    size: A4; /* 210mm x 297mm */
+    margin: 55mm 14mm 25mm;
+
+    @top-center {
+        content: flow(header); /* Prince */
+        /*content: element(header); !* Flyingsaucer*!*/
+    }
+
+    @bottom-center {
+        content: flow(footer); /* Prince */
+        /*content: element(footer); !* Flyingsaucer*!*/
+    }
+}
+
+@media print {
+    /* app.component.print.css */
+    .table-ac th, .table-ac td {
+        padding-left: 0.75mm;
+        padding-right: 0.75mm;
+        /*padding-top: 0;*/
+        /*padding-bottom: 0;*/
+    }
+
+    .table-ac th {
+        border-bottom: groove black 0.25mm;
+    }
+
+    .signature-comment {
+        font-size: 2.5mm;
+    }
+
+    /* ------------------------------------------------------------------------------------- STANDARD */
+    /*
+        IMPORTANT: This is here in the same @media print since Flying saurcer can't process multiple @media prints and
+        stitch them together.
+    */
+    /* CUSTOMIZATION */
+    #ho-header, .ho-header, header {
+        padding-top: 5mm !important; /* MODIFICATION! */
+        height: 55mm !important; /* MODIFICATION! */
+        min-height: 55mm !important; /* MODIFICATION! */
+        max-height: 55mm !important; /* MODIFICATION! */
+    }
+    #logo {
+        height: 12.75mm !important;
+        margin-top: 4.5mm !important;
+        /*margin-bottom: 4mm !important;*/
+    }
+    #ho-footer, .ho-footer, footer {
+        padding-top: 5mm; /* MODIFICATION! */
+    }
+
+    /* bordered.component.print.css */
+    .ho-bordered {
+        border: solid black 0.25mm;
+        margin: -0.25mm;
+    }
+    .ho-section-header.ho-bordered,
+    .ho-row.ho-bordered {
+        margin: -0.25mm -1.75mm;
+    }
+    .ho-cell.ho-bordered {
+        border-top: none;
+        border-bottom: none;
+        margin: 0 0 0 -0.25mm;
+    }
+    .ho-cell.ho-bordered:last-child {
+        border-right: hidden;
+    }
+
+    /* cell.component.print.css */
+    .ho-cell {
+        padding-right: 1.5mm;
+        padding-left: 1.5mm;
+    }
+    .ho-cell.bordered {
+        border-right-width: 0.25mm;
+        border-left-width: 0.25mm;
+        margin-left: -0.25mm;
+    }
+    .ho-cell.bordered:last-child {
+        border-right: hidden;
+    }
+
+    /* row.component.print.css */
+    .ho-row {
+        margin-right: -1.5mm;
+        margin-left: -1.5mm;
+    }
+
+    /* section-header.component.print.css */
+    .ho-section-header {
+        margin-right: -1.5mm;
+        margin-left: -1.5mm;
+
+        padding: 0.5mm 1.5mm;
+
+        border-bottom-width: 0.25mm;
+        margin-bottom: 0.25mm;
+    }
+
+    /* body.component.print.css */
+    .ho-body {
+        width: 100%; /* It's not 180mm because prince is not calculating sizes right*/
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* header.component.print.css */
+    #ho-header {
+        /*background-color: red !important;*/
+        position: running(header); /* Flyingsaucer*/
+        prince-flow: static(header, start); /* Prince */
+        margin-top: 0;
+
+        height: 40mm;
+        min-height: 40mm;
+        max-height: 40mm;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* footer.component.print.css */
+    #ho-footer {
+        /*background-color: greenyellow !important;*/
+        position: running(footer); /* Flyingsaucer*/
+        prince-flow: static(footer, start); /* Prince */
+        margin-bottom: 0;
+
+        height: 25mm;
+        min-height: 25mm;
+        max-height: 25mm;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* form.component.print.css */
+    html {
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-size: 2.5mm;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 9mm;
+    }
+    h2 {
+        font-size: 7.5mm;
+    }
+    h3 {
+        font-size: 6mm;
+    }
+    .ho-page-number {
+        font-size: 3.5mm;
+    }
+    .ho-section-header {
+        font-size: 4mm;
+    }
+    .ho-footer {
+        font-size: 2.5mm;
+    }
+    .ho-form {
+        -fs-page-sequence: start;
+
+        /* Page margins */
+        padding: 0 !important; /* This was to emulate page margins */
+
+        /* Page size */
+        margin: 0 !important;
+        width: 100%; /* 210mm x4 -> 840px */
+        /*height: 1188px; !* 297mm x4 1188px *!*/
+        min-width: 0;
+        min-height: 0;
+        max-width: none;
+
+        display: block;
+
+        /* SHADOW */
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .container {
+        padding-left: 1.5mm;
+        padding-right: 1.5mm;
+    }
+    .container.bordered {
+        border-width: 0.25mm;
+        margin: -0.25mm;
+    }
+}
+#logo {
+  margin-left: -6 !important; /* Take container padding out -6 */
+  margin-bottom: 10px !important;
+  max-height: 52px;
+  min-height: 52px;
+  height: 52px;
+  width: auto;
+}
+
+#header-title {
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: right;
+  margin-right: -6px; /* Take container padding out */
+}
+
+#quality-logo {
+  max-height: 52px !important; /* Never bigger than the Atlas Copco logo */
+  min-height: 52px !important;
+  height: 52px !important;
+  width: auto;
+  margin-top: 10px !important;
+  margin-left: -6px; /* Take container padding out */
+}
+
+.ho-form {
+  /* Page margins */
+  /* Defined in form guidelines: 10mm 10mm 12mm 46mm -> 4x for pixels */
+  padding: 200px 40px 130px 184px !important; /* This has to emulate page margins 200px 40px 130px 184px*/
+
+}
+
+#ho-header, .ho-header, header {
+  margin-left: -144px;
+  padding-top: 40px !important; /* MODIFICATION! */
+  height: 195px !important; /* MODIFICATION! */
+  min-height: 195px !important; /* MODIFICATION! */
+  max-height: 195px !important; /* MODIFICATION! */
+  overflow: visible !important; /* MODIFICATION! */
+  width: 760px; /* MODIFICATION! */
+  min-width: 760px; /* MODIFICATION! */
+  max-width: 760px; /* MODIFICATION! */
+}
+
+.ho-body {
+  padding-top: 20px;
+  width: 616px; /* MODIFICATION! */
+  min-width: 616px; /* MODIFICATION! */
+  max-width: 616px; /* MODIFICATION! */
+}
+
+#ho-footer, .ho-footer, footer {
+  margin-left: -144px;
+  padding-top: 0; /* MODIFICATION! */
+  margin-bottom: 48px; /* MODIFICATION! */
+  height: 62px !important; /* MODIFICATION! */
+  min-height: 62px !important; /* MODIFICATION! */
+  max-height: 62px !important; /* MODIFICATION! */
+  width: 760px; /* MODIFICATION! */
+  min-width: 760px; /* MODIFICATION! */
+  max-width: 760px; /* MODIFICATION! */
+}
+
+/*
+  Atlas copco fonts
+  -----------------
+  IMPORTANT!! PT in the guidelines are photoshop points!! no browser pt
+
+  Header title - 16pt (bold) -> 5.64mm -> 23px
+  Body - Times New Roman 12pt -> 4.23mm -> 17px (ignore for forms) --> change in emails for Times New Roman 8pt
+  Footer title - 9pt (bold) -> 3.175mm -> 13px
+  Footer content - 8pt -> 2.82mm -> 11px
+
+*/
+
+html {
+  font-size: 8px /* This set the 'em' measure for the whole document */
+}
+
+body, table {
+  font-family: "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+#ho-header, .ho-header, header {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.ho-body {
+  font-family: "Times New Roman", serif;
+  font-size: 11px;
+}
+
+.ho-page-number {
+  font-size: 11px;
+}
+
+.ho-section-header {
+  font-size: 13px;
+}
+
+.ho-footer {
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+}
+
+.header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+.ho-section-header {
+  margin-bottom: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.header-left-margin-hack {
+  margin-left: 137px !important;
+}
+
+.footer-title-section {
+  border-bottom: solid black 1px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.footer-content-section {
+  font-size: 8px;
+}
+
+
+
+/*# sourceMappingURL=customization.86ecb2d435eaedabc6a6.css.map*/

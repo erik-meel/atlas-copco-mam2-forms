@@ -1,0 +1,15 @@
+#ho-header, .ho-header, header {
+    position: absolute;
+    top: 0;
+
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
+    width: 720px;
+    min-width: 720px;
+    max-width: 720px;
+
+    /* Hide any content that goes beyond the cell */
+    word-wrap: break-word;
+    overflow: hidden;
+}

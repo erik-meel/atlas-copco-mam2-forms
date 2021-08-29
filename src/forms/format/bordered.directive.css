@@ -1,0 +1,21 @@
+/* THIS IS A COMPILATION OF THE COMPONENT STYLES THAT USE THIS DIRECTIVE. Directives can't have styles. */
+.ho-bordered {
+    border: solid black 1px;
+    margin: -1px;
+}
+
+.ho-section-header.ho-bordered,
+.ho-row.ho-bordered {
+    margin: -1px -7px;
+}
+
+.ho-cell.ho-bordered {
+    border-top: none;
+    border-bottom: none;
+    margin: 0 0 0 -1px;
+}
+
+/* Remember that in the browser the content of the cell is wrapped with <ho-cell> so it's always the :last-child */
+ho-cell:last-child > .ho-cell.ho-bordered {
+    border-right: hidden;
+}

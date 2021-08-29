@@ -1,0 +1,370 @@
+<ho-form>
+  <!-- HEADER -->
+  <ho-header>
+    <ho-row>
+      <ho-cell ho-width="40%">
+        <img id="logo" src="../shared/atlas-copco-logo.svg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="60%" ho-text-align="right">
+        <div id="header-title">Kontrollblatt</div>
+        <div ho-page-number ho-text-align="right">für Erdgastankstellen mit DM – ¼ jährliche Inspektion</div>
+      </ho-cell>
+    </ho-row>
+    <ho-row ho-bordered ho-class="header header-left-margin-hack">
+      <ho-cell ho-width="100%"><b>{{text('CUSTOMER_DETAILS')}}</b></ho-cell>
+    </ho-row>
+    <ho-row ho-bordered ho-class="header header-left-margin-hack">
+      <ho-cell ho-width="100%">
+        <table class="table-ac">
+          <thead>
+            <th>{{text('AR_TABLE_CHECK')}}</th>
+            <th>{{text('')}}</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td width="50%" style="align:right">Kunde:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Komm.-Nr.:<input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">Strasse:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Anl.-Nr. GFD:<input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">PLZ / Ort:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Anl.-Nr. GFCH:<input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">Standort der Anlage:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Zapfsäule: <input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">Strasse:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Abreisskupplung:<input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">PLZ / Ort:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Füllkupplung:<input type="text" style="width:50px;"/></td>
+            </tr>
+            <tr>
+              <td width="50%"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td width="50%" style="align:right">Servicetechniker:<input type="text" style="width:50px;"/></td>
+              <td width="50%" style="align:right">Datum:<input type="text" style="width:50px;"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <!-- END: HEADER -->
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+<!-- BODY -->
+  <ho-body>
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>Kompressoren</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="100%">
+            <table class="table-ac">
+              <tbody>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%" style="text-align:Center"><b>A</b></td>
+                <td width="30%" style="text-align:Center"><b>B</b></td>
+                <td width="30%" style="text-align:Center"><b>C</b></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Kompressortyp</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Serien Nr. des Verdichters (inkl Präfix CHD oder CRP):</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Revisions S/N (inkl Präfix CHD oder CRP):</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Betriebsstunden der Anlage:</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Starts:</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Servicelaufstunden Verdichterkopf:</td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Schmieren Joche(nach Bedarf):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Schmieren Kurbelzapfen(nach Bedarf):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Schmieren Kurbelwellenlager(nach Bedarf):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Kontrolle aller Schläuche auf Beschädigung und gegebenenfalls ersetzen:</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Sicherheitsventile auf Dichtheit prüfen (gesetzliche Vorschriften betr. Austausch / Neuprüfung beachten):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /><input type="text" style="width:50px;"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /><input type="text" style="width:50px;"/></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Funktionskontrolle  EV 01, 90, 91, 11, 12 (sofern vorhanden):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Reinigen des Kühlers (z.B. vom Laub):</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"  style="text-align:right">Probelauf:</td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+                <td width="30%"  style="text-align:Center"><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%"></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ><b>Stufendrücke Kompressor</b></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Saugdruck</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">1. Stufe</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">2. Stufe</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">3. Stufe</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">4. Stufe</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">5. Stufe</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/>bar g</td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" ><b>Anlagenteile und Zapfsäule</b></td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%"></td>
+                <td width="30%"></td>
+                <td width="30%" >Bemerkungen</td>
+                <td width="30%" ></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Uhrzeit der SEKA kontrollieren</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Überprüfen des  HD - Multifunktionsblock</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Dichtheitskontrolle der gesamten Anlage</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Funktionskontrolle der Not-Aus</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Sichtkontrolle Abreisskupplung, Füllschlauch, -kupplung</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Funktionskontrolle Betankung / Kontrolle Temp.komp.</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Füllkupplungen schmieren (nach Herstellervorschrift)</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+              <tr>
+                <td width="10%" style="text-align:right">Kontrolle E-Raum (Verschmutzung, Luftzufuhr, Sichtkontrolle Elektrokomponente)</td>
+                <td width="30%" style="text-align:Center"><input type="checkbox"/></td>
+                <td width="30%" style="text-align:Center"><input type="text" style="width:50px"/></td>
+                <td width="30%" style="text-align:Center"></td>
+              </tr>
+            </tbody>
+          </table>
+        </ho-cell>
+          </ho-row>
+          </ho-cell>
+            </ho-row>
+
+    <div class="spacer" *ngIf="!INPUT.getVar('HIDE_SECTION').has('WORK_COMMENTS')"></div>
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>Bemerkungen</b></ho-section-header>
+
+        <div class="spacer"></div>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="100%">
+            <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
+            <!--<img class="signature-image"-->
+                 <!--[attr.src]="INPUT.getVar('CUST_CONFIRMATION').tag('SIGN_DATA')"-->
+                 <!--alt="signature-customer">-->
+            <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
+            <div class="signature-comment">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text('AT')}} {{ customerSignatureDate }}
+            </div>
+            <div class="signature-comment">{{text('BEING_DULY_AUTHORISED')}}</div>
+          </ho-cell>
+
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-body>
+  <!-- END: BODY -->
+  <!-- FOOTER -->
+  <ho-footer>
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">-->
+
+      </ho-cell>
+      <ho-cell ho-width="616px">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{text('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row class="footer-content-section">
+          <ho-cell ho-width="25%">{{text('COMPANY_LEGAL_NAME') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('VISITORS_ADDRESS')}}</ho-cell>
+          <ho-cell ho-width="25%">{{text('TELEPHONE')}}{{ text('FOOTER_CENTER_LINE1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+        </ho-row>
+        <ho-row class="footer-content-section">
+          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FAX')}}{{ text('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+        </ho-row>
+        <ho-row class="footer-content-section">
+          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <!-- END: FOOTER -->
+</ho-form>
+<p style="visibility: hidden;"> {{text('LANGUAGE')}}</p>

@@ -1,0 +1,393 @@
+<!-- systemId="14680003" systemPassword="gcTViIsEYAzfn5ljLQP3wV1EJzBCFn" -->
+<!-- <MovilizerRequest systemId="${#AtlasCopco#systemId}" systemPassword="${#AtlasCopco#password}" requestTrackingKey="" -->
+<MovilizerRequest systemId="51840015" systemPassword="1337" requestTrackingKey=""
+                  useAutoAcknowledge="true" xmlns="http://movilitas.com/movilizer/v12" numResponses="0"
+                  responseQueue="html5-d" synchronousResponse="true">
+
+  <moveletDelete moveletKey="com.movilizer.html5.dev.atlascopco.forms.visit"
+                 moveletKeyExtension="dev" ignoreExtensionKey="false"/>
+
+  <moveletSet>
+    <movelet moveletKey="com.movilizer.html5.dev.atlascopco.forms.visit" moveletVersion="1" visible="true"
+             moveletKeyExtension="dev" moveletType="MULTI" responseQueue="html5-d" initialQuestionKey="#1">
+      <question type="32" key="#1" title="HMTL5 dev movelet" backNavigationAllowed="false">
+        <answer key="#1_1" nextQuestionKey="#2">
+          <text>webapp://atlas_copco_forms_visit/index.html</text>
+        </answer>
+        <onEnterAssignment>
+          $global:FORM_INPUT = {
+
+            "CUST_NAME": "Glass Partners (PTY) LTD";
+            "CUST_ADDRESS_1": "Remstang street";
+            "CUST_ADDRESS_2": "Stormill";
+            "CUST_ID": "123456789012";
+            "CUST_CONTACT": "KOBUS";
+            "REPORT_DATE": "2016/03/24 10:05:10 AM";
+
+            "HIDE_SECTION":{
+              "AUTHORISATION": "not_relevant";
+            };
+
+            "EQUI_ID": "GA45VSDFF A 13";
+            "EQUI_SERIAL_NUMBER": "API486502";
+            "EQUI_RUNNING_HOURS": "200";
+            "EQUI_LOAD_HOURS": "30";
+            "EQUI_ACC_VOLUME": "90";
+            "VISIT_DATE": "2016/03/24";
+            "ORDER_NUMBER": "664686";
+            "CONTRACT_NUMBER": "302305";
+            "PO_NUMBER": "COMMISSION";
+
+            "REP_NAME": "Henrik Olsson";
+            "REP_DIVISION": "Atlas Copco Compressors Canada";
+            "REP_ADDRESS_1": "30 Montrose";
+            "REP_ADDRESS_2": "Dollard-des-Ormeaux";
+            "REP_ADDRESS_3": "Québec; Canada H9B 3J9";
+            "REP_PHONE": "514.421.8543";
+            "REP_EMAIL": "henrik.olsson@ca.atlascopco.com";
+
+            "SB_SERIAL_NUMBER": "SB23153725r3";
+            "SB_IMEA_NUMBER": "dg352412980";
+            "SB_INSTALL_DATE": "2015/04/28";
+
+            "REC_REPAIRS_ENTRIES": {
+              "0": {
+                "DESC": "Clean drive";
+                "EST_HOURS": "3 H";
+              };
+              "1": {
+                "DESC": "Change percolator";
+                "EST_HOURS": "1 H";
+              }
+            };
+
+            "SPM_ID": "ZR250VSD-FF-8.6-50";
+            "SPM_TEXT": "The SPM measurement of a compressor is an event of special significance. Proper SPM measurement is the first step in building up the machine history of your GA compressor. The machine history is essential for proper follow-up.";
+            "SPM_IMG": "";
+
+            "SAFETY_CHECK_LIST_ENTRIES": {
+              "0": {
+                "DONE": "true";
+                "DESC": "Do I know the safety instructions risk assessment for the task &amp; do I adhere to them?";
+                "COMMENT": "";
+              };
+              "1": {
+                "DONE": "true";
+                "DESC": "Do I know the content of work permit (if required as per company or customer rules) &amp; do I adhere to the conditions?";
+                "COMMENT": "";
+              };
+              "2": {
+                "DONE": "true";
+                "DESC": "Do I consider the planned working method is safe to perform?";
+                "COMMENT": "";
+              };
+            };
+
+            "CO_PROC_ID": "ZR250VSD-FF-8.6-50";
+            "CO_PROC_TEXT": "The commissioning of a compressor is of special significance. Correct commissioning is the first step in building up the equipment history. The equipment history is essential for proper follow-up.";
+            "CO_PROC_IMG": "";
+
+            "CO_PROC_CHECK_LIST_ENTRIES": {
+              "0": {
+                "DONE": "true";
+                "DESC": "Air receiver installed";
+                "COMMENT": "Yes";
+              };
+              "1": {
+                "DONE": "false";
+                "DESC": "Filter(s) installed behind compressor";
+                "COMMENT": "No";
+              };
+              "2": {
+                "DONE": "true";
+                "DESC": "Dryer installed";
+                "COMMENT": "7.0 /7.3 Bar";
+              };
+            };
+
+            "CO_PROC_OPERATIONS_LIST_ENTRIES": {
+              "0": {
+                "DONE": "true";
+                "DESC": "Give machine description";
+                "COMMENT": "";
+              };
+              "1": {
+                "DONE": "true";
+                "DESC": "Record machine serial number";
+                "COMMENT": "";
+              };
+              "2": {
+                "DONE": "true";
+                "DESC": "Record elements part nr &amp; serial nr";
+                "COMMENT": "";
+              };
+            };
+
+            "WORK_COMMENTS": "Removed transport bolts. Checked oil level. Put oil in element. Checked all pipes and fittings. Checked direction on dryer fan motor; and cooling fan motor and main motor. Start comp and checked pressure and temperatures. Set pressure to 12 bar. All in order.";
+
+            "NEXT_VISIT_DATE": "2016/03/24";
+            "NEXT_VISIT_TYPE" : "ordinary";
+            "NEXT_VISIT_HEADLINE" : "Engine check";
+            "NEXT_VISIT_HOURS" : "3";
+            "NEXT_VISIT_DESCRIPTION" : "Internal surface contour";
+
+            "TIME_CONFIRMATION_ENTRIES": {
+              "0": {
+                "DATE": "2016/03/24";
+                "SERVICE_ENG_NAME": "Leon Rautenbach";
+                "ACTIVITY_TYPE": "NORMAL TIME";
+                "EFFORT": "3.00 H";
+              };
+              "1": {
+                "DATE": "2016/03/24";
+                "SERVICE_ENG_NAME": "Leon Rautenbach";
+                "ACTIVITY_TYPE": "TRAVEL TIME";
+                "EFFORT": "2.00 H";
+              };
+              "2": {
+                "DATE": "2016/03/24";
+                "SERVICE_ENG_NAME": "Leon Rautenbach";
+                "ACTIVITY_TYPE": "MILEAGE";
+                "EFFORT": "120.00 KM";
+              };
+            };
+
+            "MATERIAL_CONFIRMATION_ENTRIES": {
+              "0": {
+                "PART_NUMBER": "1930052400";
+                "PART_DESC": "SCREW - APX23D";
+                "QUANTITY": "2";
+              };
+              "1": {
+                "PART_NUMBER": "2335489123";
+                "PART_DESC": "WASHER - D3 - 12mm";
+                "QUANTITY": "10";
+              };
+            };
+
+            "WORK_DONE_ENTRIES": {
+              "0": {
+                "DONE": "true";
+                "DESC": "Check condenser (AC) and clean extern.";
+                "COMMENT": "";
+              };
+              "1": {
+                "DONE": "false";
+                "DESC": "Check blow-off operation";
+                "COMMENT": "";
+              };
+              "2": {
+                "DONE": "true";
+                "DESC": "Check cycle of air intake throttle valve";
+                "COMMENT": "";
+              };
+              "3": {
+                "DONE": "true";
+                "DESC": "Check electrical components";
+                "COMMENT": "";
+              };
+              "4": {
+                "DONE": "false";
+                "DESC": "Check display+settings:digital panel(s)";
+                "COMMENT": "";
+              };
+              "5": {
+                "DONE": "false";
+                "DESC": "Check the approach temp. coolers";
+                "COMMENT": "";
+              };
+              "6": {
+                "DONE": "true";
+                "DESC": "Check LAT (FF units)";
+                "COMMENT": "";
+              };
+              "7": {
+                "DONE": "true";
+                "DESC": "Check function of after cooler";
+                "COMMENT": "";
+              };
+              "8": {
+                "DONE": "true";
+                "DESC": "Check oil level";
+                "COMMENT": "";
+              };
+              "9": {
+                "DONE": "true";
+                "DESC": "Check setting of overload relay";
+                "COMMENT": "";
+              };
+              "10": {
+                "DONE": "true";
+                "DESC": "Inspect bear. controller repl. when nec.";
+                "COMMENT": "";
+              };
+            };
+
+            "MEASUREMENT_POINTS_LAST_VISIT": "2016/03/29";
+            "MEASUREMENT_POINTS_ENTRIES": {
+              "0": {
+                "COUNTER": "Running hours";
+                "READ_AFTER": "0";
+                "READ_UNIT": "H";
+                "READ_BEFORE": "0";
+                "READ_BEFORE_DATE": "2016/03/29";
+              };
+              "1": {
+                "COUNTER": "Accumulated volume";
+                "READ_AFTER": "0";
+                "READ_UNIT": "m3 x (1000)";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "2": {
+                "COUNTER": "Motor start";
+                "READ_AFTER": "5";
+                "READ_UNIT": "#";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "3": {
+                "COUNTER": "Load relay";
+                "READ_AFTER": "7";
+                "READ_UNIT": "#";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "4": {
+                "COUNTER": "VSD 1-20% RPM";
+                "READ_AFTER": "1";
+                "READ_UNIT": "%";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "5": {
+                "COUNTER": "VSD 20-40% RPM";
+                "READ_AFTER": "29";
+                "READ_UNIT": "%";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "6": {
+                "COUNTER": "VSD 40-60% RPM";
+                "READ_AFTER": "3";
+                "READ_UNIT": "%";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "7": {
+                "COUNTER": "VSD 60-80% RPM";
+                "READ_AFTER": "27";
+                "READ_UNIT": "%";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "8": {
+                "COUNTER": "VSD 80-100% RPM";
+                "READ_AFTER": "39";
+                "READ_UNIT": "%";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "9": {
+                "COUNTER": "Working pressure";
+                "READ_AFTER": "12";
+                "READ_UNIT": "bar";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "10": {
+                "COUNTER": "Ambient temperature";
+                "READ_AFTER": "23";
+                "READ_UNIT": "°C";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "11": {
+                "COUNTER": "Outlet temperature element 1";
+                "READ_AFTER": "80";
+                "READ_UNIT": "°C";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "12": {
+                "COUNTER": "Motor Current U1";
+                "READ_AFTER": "75";
+                "READ_UNIT": "A";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "13": {
+                "COUNTER": "Motor Current V1";
+                "READ_AFTER": "77";
+                "READ_UNIT": "A";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "14": {
+                "COUNTER": "Motor Current W1";
+                "READ_AFTER": "75";
+                "READ_UNIT": "A";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+              "15": {
+                "COUNTER": "Fan Starts";
+                "READ_AFTER": "11";
+                "READ_UNIT": "#";
+                "READ_BEFORE": "";
+                "READ_BEFORE_DATE": "";
+              };
+            };
+            "SERV_ENG_CONFIRMATION": {
+              "SIGN_NAME": "Leon Rautenbach";
+            };
+            "JOB_RATING": "Excellent";
+            // FOOTER
+            "FOOTER_QUALITY_LOGO": "";
+            // 1st row
+            "COMPANY_GROUP_NAME": "Atlas Copco Group Center";
+            // 2st row
+            "COMPANY_LEGAL_NAME": "Atlas Copco AB";
+            "COMPANY_PHONE": "+48 (0)8 743 8000";
+            "FOOTER_ADDITIONAL_INFO_1": "A Public Company (publ)";
+            // 3rd row
+            "COMPANY_ADDRESS_1": "SE-105 23 Stockholm";
+            "VISITOR_ADDRESS_1": "Sickla Induxtfiväg 19";
+            "COMPANY_FAX": "+46 (0)8 644 9045";
+            "FOOTER_ADDITIONAL_INFO_2": "Reg. No: 558014-2720";
+            // 4th row
+            "COMPANY_ADDRESS_2": "Sweden";
+            "VISITOR_ADDRESS_2": "Nacka";
+            "COMPANY_URL": "www.atlascopco.com";
+            "FOOTER_ADDITIONAL_INFO_3": "Reg. Office Nacka";
+          };
+
+          <!-- DEPLOY APP EVERY TIME FOR DEV -->
+          zip = getDocument($document:"HTML5_DEV_POOL", "FormsWebAppKey");
+          deployWebapp(zip, "atlas_copco_forms_visit");
+        </onEnterAssignment>
+        <onLeaveOkPersistAssignment>
+          writeContainer("html-debug", $global:FORM_OUTPUT_HTML, 0);
+        </onLeaveOkPersistAssignment>
+      </question>
+
+	  <question type="0" key="#2" title="HMTL5 dev movelet output" backNavigationAllowed="true">
+        <answer key="#2_1" nextQuestionKey="END">
+          <text>Errors</text>
+        </answer>
+        <onEnterAssignment>
+          addAnswer($answer:"#2_1", "CK#2_1", $global:FORM_ERRORS);
+        </onEnterAssignment>
+      </question>
+
+      <!--<syncDownloadAssignment></syncDownloadAssignment>-->
+      <name>Visit Report</name>
+      <document documentPool="HTML5_DEV_POOL"/>
+    </movelet>
+
+    <!-- deviceAddress="@html5.test@atlascopco.com" secret="1" -->
+    <participant participantKey="1" name="HTML5 Test Participant" deviceAddress="+9991986"/>
+    <!-- <participant participantKey="1" name="HTML5 test participant" deviceAddress="${#AtlasCopco#devParticipantDeviceAddress}"/> -->
+
+  </moveletSet>
+</MovilizerRequest>

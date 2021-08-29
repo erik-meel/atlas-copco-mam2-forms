@@ -1,0 +1,358 @@
+<ho-form>
+  <!-- HEADER -->
+  <ho-header>
+    <ho-row>
+      <ho-cell ho-width="18%">
+        <img id="logo" src="../shared/img/atlas-copco-blue.png" alt="">
+      </ho-cell>
+      <ho-cell ho-width="22%">
+        <img id="logo" src="../shared\img\Atlas_Copco_service_symbol.jpg" alt="">
+      </ho-cell>
+
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('COMMISSION_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }}
+          <br/>
+          {{text('CONTACT')}}:{{ tag('CUST_CONTACT') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+
+  </ho-header>
+  <div class="clear"></div>
+  <!-- END: HEADER -->
+  <!-- BODY -->
+  <ho-body>
+    <div class="spacer"></div>
+    <ho-row>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('COMM_TEXT1')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="100%" class="allow-break-lines">
+            <div style="white-space: pre-line;">{{text('COMM_TEXT2')}}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
+          <ho-cell ho-width="30%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+          <ho-cell ho-width="20%">{{ +tag('EQUI_RUNNING_HOURS') > 0? tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS') : '' }}
+          </ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="30%"><b>{{text('LOAD_HOURS')}}:</b></ho-cell>
+          <ho-cell ho-width="20%">{{ +tag('EQUI_LOAD_HOURS') > 0? tag('EQUI_LOAD_HOURS') + ' ' + text('HOURS') : '' }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISIT_DATE') }}</ho-cell>
+          <ho-cell ho-width="30%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="20%">{{ tag('ORDER_NUMBER') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="30%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="20%">{{ tag('PO_NUMBER') }}</ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"></div>
+  <!-- Flow charge -->
+    <ho-row ho-avoid-break>
+        <ho-cell ho-width="100%" >
+          <img src=".\img\zt-ifd.png" width="100%">
+        </ho-cell>
+    </ho-row>
+
+    <ho-row>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('WORK_COMMENTS')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="100%" class="allow-break-lines">
+            <div style="white-space: pre-line;">{{ tag('WORK_COMMENTS') }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+
+       <div class="spacer"></div>
+         <ho-row >
+             <ho-cell ho-width="100%">
+               <ho-section-header><b>{{text('COMM_TEXT3')}}</b></ho-section-header>
+               <ho-row>
+                 <ho-cell ho-width="100%">
+                   <table class="table-ac">
+                     <thead>
+                     <tr>
+                       <th width="50%">{{text('COMM_TEXT4')}}</th>
+                       <th width="50%">{{text('COMM_TEXT5')}}</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                        <td>{{text('COMM_Q1_Q')}}</td>
+                        <td><input type="radio" name="Q1" value="N/A" checked="checked"> N/A <input type="radio" name="Q1" value="Atlas Copco" > {{text('COMM_Q1_A1')}} <input type="radio" name="Q1" value="Customer" > {{text('COMM_Q1_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q2_Q')}}</td>
+                       <td><input type="radio" name="Q2" value="N/A" checked="checked"> N/A <input type="radio" name="Q2" value="Atlas Copco "> {{text('COMM_Q2_A1')}} <input type="radio" name="Q2" value="Customer" > {{text('COMM_Q2_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q3_Q')}}</td>
+                       <td><input type="radio" name="Q3" value="N/A" checked="checked"> N/A <input type="radio" name="Q3" value="Yes" > {{text('COMM_Q3_A1')}} <input type="radio" name="Q3" value="No" > {{text('COMM_Q3_A2')}} <input type="text" name="Q3-1" size="32" placeholder="{{text('COMM_Q3_A3')}}"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q4_Q')}}</td>
+                       <td><input type="radio" name="Q4" checked="checked"> N/A <input type="radio" name="Q4"> {{text('COMM_Q4_A1')}} <input type="radio" name="Q4"> {{text('COMM_Q4_A2')}} <input type="text" size="32" placeholder="{{text('COMM_Q4_A3')}}"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q5_Q')}}</td>
+                       <td><input type="radio" name="Q5" checked="checked"> N/A <input type="radio" name="Q5"> {{text('COMM_Q5_A1')}} <input type="radio" name="Q5"> {{text('COMM_Q5_A2')}} <input type="radio" name="Q5" > {{text('COMM_Q5_A3')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q6_Q')}}</td>
+                       <td><input type="radio" name="Q6" checked="checked"> N/A <input type="radio" name="Q6"> {{text('COMM_Q6_A1')}} <input type="radio" name="Q6"> {{text('COMM_Q6_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q7_Q')}}</td>
+                       <td><input type="radio" name="Q7" checked="checked"> N/A <input type="radio" name="Q7"> {{text('COMM_Q7_A1')}} <input type="radio" name="Q7"> {{text('COMM_Q7_A2')}} <input type="text" size="30" placeholder="{{text('COMM_Q7_A3')}}"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q8_Q')}}</td>
+                       <td><input type="radio" name="Q8" checked="checked"> N/A <input type="radio" name="Q8"> {{text('COMM_Q8_A1')}} <input type="radio" name="Q8"> {{text('COMM_Q8_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q9_Q')}}</td>
+                       <td><input type="radio" name="Q9" checked="checked"> N/A <input type="radio" name="Q9"> {{text('COMM_Q9_A1')}} <input type="radio" name="Q9"> {{text('COMM_Q9_A2')}} <input type="radio" name="Q9" > {{text('COMM_Q9_A3')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q10_Q')}}</td>
+                       <td><input type="radio" name="Q10" checked="checked"> N/A <input type="radio" name="Q10"> {{text('COMM_Q10_A1')}} <input type="radio" name="Q10"> {{text('COMM_Q10_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q11_Q')}}</td>
+                       <td><input type="radio" name="Q11" checked="checked"> N/A <input type="radio" name="Q11"> {{text('COMM_Q11_A1')}} <input type="radio" name="Q11"> {{text('COMM_Q11_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q12_Q')}}</td>
+                       <td><input type="radio" name="Q12" checked="checked"> N/A <input type="radio" name="Q12"> {{text('COMM_Q12_A1')}} <input type="radio" name="Q12"> {{text('COMM_Q12_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q13_Q')}}</td>
+                       <td><input type="radio" name="Q13" checked="checked"> N/A <input type="radio" name="Q13"> {{text('COMM_Q13_A1')}} <input type="radio" name="Q13"> {{text('COMM_Q13_A2')}} | {{text('COMM_Q13_A3')}} <input type="text" size="5" style="text-align:right;"> {{text('COMM_Q13_A4')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q14_Q')}}</td>
+                       <td><input type="radio" name="Q14" checked="checked"> N/A <input type="radio" name="Q14"> {{text('COMM_Q14_A1')}} <input type="radio" name="Q14"> {{text('COMM_Q14_A2')}} <input type="text" size="30" placeholder="{{text('COMM_Q14_A3')}}"> </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q15_Q')}}</td>
+                       <td><input type="radio" name="Q15" checked="checked"> N/A <input type="radio" name="Q15"> {{text('COMM_Q15_A1')}} <input type="radio" name="Q15"> {{text('COMM_Q15_A2')}} <input type="text" size="30" placeholder="{{text('COMM_Q15_A3')}}"> </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q16_Q')}}</td>
+                       <td><input type="radio" name="Q16" checked="checked"> N/A <input type="radio" name="Q16"> {{text('COMM_Q16_A1')}} <input type="radio" name="Q16"> {{text('COMM_Q16_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q17_Q')}}</td>
+                       <td><input type="radio" name="Q17" checked="checked"> N/A <input type="radio" name="Q17"> {{text('COMM_Q17_A1')}} <input type="radio" name="Q17"> {{text('COMM_Q17_A2')}} <input type="text" size="5" style="text-align:right;"> {{text('COMM_Q17_A3')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q18_Q')}}</td>
+                       <td><input type="radio" name="Q18" checked="checked"> N/A <input type="radio" name="Q18"> {{text('COMM_Q18_A1')}} <input type="radio" name="Q18"> {{text('COMM_Q18_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q19_Q')}}</td>
+                       <td><input type="text" maxlength="5" size="3" style="text-align:right;"> V</td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q20_Q')}}</td>
+                       <td><input type="text" maxlength="2" size="3" style="text-align:right;"> Hz</td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q21_Q')}}</td>
+                       <td><input type="text" size="3" style="text-align:right;"> A</td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q22_Q')}}</td>
+                       <td><input type="text" size="10" style="text-align:right;"> A</td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q23_Q')}}</td>
+                       <td><input type="text" size="10" style="text-align:right;"> {{text('COMM_Q23_A1')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q24_Q')}}</td>
+                       <td><input type="radio" name="Q24" checked="checked"> N/A <input type="radio" name="Q24"> {{text('COMM_Q24_A1')}} <input type="radio" name="Q24"> {{text('COMM_Q24_A2')}} </td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q25_Q')}}<input type="text" size="40" placeholder="{{text('COMM_Q25_A1')}}"></td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q26_Q')}}<input type="text" size="40" placeholder="{{text('COMM_Q26_A1')}}"></td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q27_Q')}}<input type="text" size="40" placeholder="{{text('COMM_Q27_A1')}}"></td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q28_Q')}}</td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q29_Q')}}</td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     <tr>
+                       <td>{{text('COMM_Q30_Q')}}</td>
+                       <td><input type="text" size="55"></td>
+                     </tr>
+                     </tbody>
+                   </table>
+                 </ho-cell>
+               </ho-row>
+             </ho-cell>
+           </ho-row>
+           <div class="spacer"></div>
+
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0">
+               <ho-cell ho-width="100%">
+                 <ho-section-header><b>{{text('WORK_DONE')}}</b></ho-section-header>
+                 <ho-row>
+                   <ho-cell ho-width="100%">
+                     <table class="table-ac">
+                       <thead>
+                       <tr>
+                         <th width="3%"></th>
+                         <th width="47%">{{text('OPERATIONS')}}</th>
+                         <th width="50%">{{text('COMMENTS')}}</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <tr *ngFor="let entry of INPUT.getVarArray('WORK_DONE_ENTRIES')">
+                         <td>
+                           <ho-checkbox checked="{{ entry.tag('DONE')}}" disabled></ho-checkbox>
+                         </td>
+                         <td>{{ entry.tag('DESC') }}</td>
+                         <td> - {{ entry.tag('COMMENT') }}</td>
+                       </tr>
+                       </tbody>
+                     </table>
+                   </ho-cell>
+                 </ho-row>
+               </ho-cell>
+             </ho-row>
+             <div class="spacer" *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
+
+            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
+            <ho-cell ho-width="100%">
+            <ho-section-header><b>{{text('MEASUREMENT_POINTS')}}</b></ho-section-header>
+            <ho-row>
+              <ho-cell ho-width="100%">
+                <table class="table-ac">
+                  <thead>
+                  <tr>
+                    <th width="30%">{{text('COUNTER')}}</th>
+                    <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let entry of INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
+                    <td>{{ entry.tag('COUNTER') }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
+                    <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </ho-cell>
+            </ho-row>
+            </ho-cell>
+            </ho-row>
+          <div class="spacer"></div>
+
+    <!-- Add picture -->
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('PICTURES').length > 0">
+        <ho-cell ho-width="100%">
+          <ho-section-header><b>Picture</b></ho-section-header>
+          <ho-row *ngFor="let entry of INPUT.getVarArray('PICTURES')">
+            {{entry.tag('name')}}<br/>
+            <img src="data:image/png;base64,{{entry.tag('image')}}" width="700"/>
+          </ho-row>
+        </ho-cell>
+    </ho-row>
+    <!-- End: Add picture -->
+
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <div class="spacer"></div>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="50%"><b>{{text('CUSTOMER_CONFIRMATION')}}</b></ho-cell>
+          <ho-cell ho-width="50%"><b>{{text('SERVICE_ENGINEER_CONFIRMATION')}}</b></ho-cell>
+        </ho-row>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="50%">
+            <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
+            <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
+            <div class="signature-comment" *ngIf="customerSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
+            </div>
+            <div class="signature-comment">{{ text('BEING_DULY_AUTHORISED')}}</div>
+          </ho-cell>
+          <ho-cell ho-width="50%">
+            <ho-signature width="220px" height="90px" (onEnd)="onTechSignatureEnd()" (onClear)="onTechSignatureClear()"></ho-signature>
+            <div class="signature-comment" *ngIf="techSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-body>
+  <!-- END: BODY -->
+  <!-- FOOTER -->
+  <ho-footer>
+    <ho-row>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('VISITORS_ADDRESS')}}:</ho-cell>
+          <ho-cell ho-width="25%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <!-- END: FOOTER -->
+</ho-form>

@@ -1,0 +1,24 @@
+@media print {
+    @page {
+        @bottom-center {
+            margin: 0;
+            /*content: flow(footer); !* Prince *!*/
+            content: element(footer); /* Flyingsaucer*/
+            background-color: darkgreen !important;
+        }
+    }
+
+    #ho-footer {
+        background-color: greenyellow !important;
+        margin-bottom: 0;
+        /*prince-flow: static(footer, start); !* Prince *!*/
+        position: running(footer); /* Flyingsaucer*/
+
+        height: 25mm;
+        min-height: 25mm;
+        max-height: 25mm;
+        width: 180mm;
+        min-width: 180mm;
+        max-width: 180mm;
+    }
+}

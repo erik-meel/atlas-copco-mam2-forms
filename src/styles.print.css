@@ -1,0 +1,212 @@
+/* Flying saucer does NOT support to have @page inside @media print */
+@page {
+    size: A4; /* 210mm x 297mm */
+    margin: 55mm 14mm 25mm;
+
+    @top-center {
+        content: flow(header); /* Prince */
+        /*content: element(header); !* Flyingsaucer*!*/
+    }
+
+    @bottom-center {
+        content: flow(footer); /* Prince */
+        /*content: element(footer); !* Flyingsaucer*!*/
+    }
+}
+
+@media screen {
+  .print {
+    display: none!important;
+  }
+}
+
+@media print {
+    /* app.component.print.css */
+    .table-ac th, .table-ac td {
+        padding-left: 0.75mm;
+        padding-right: 0.75mm;
+        /*padding-top: 0;*/
+        /*padding-bottom: 0;*/
+    }
+
+    .table-ac th {
+        border-bottom: groove black 0.25mm;
+    }
+
+    .signature-comment {
+        font-size: 2.5mm;
+    }
+
+    .no-print, .no-print * {
+      display: none!important;
+    }
+
+    /* ------------------------------------------------------------------------------------- STANDARD */
+    /*
+        IMPORTANT: This is here in the same @media print since Flying saurcer can't process multiple @media prints and
+        stitch them together.
+    */
+    /* CUSTOMIZATION */
+    #ho-header, .ho-header, header {
+        padding-top: 5mm !important; /* MODIFICATION! */
+        height: 55mm !important; /* MODIFICATION! */
+        min-height: 55mm !important; /* MODIFICATION! */
+        max-height: 55mm !important; /* MODIFICATION! */
+    }
+    #logo {
+        height: 12.75mm !important;
+        margin-top: 4.5mm !important;
+        /*margin-bottom: 4mm !important;*/
+    }
+    #ho-footer, .ho-footer, footer {
+        position: fixed;
+        bottom: 50;
+        font-size: 1.2mm;
+        /*padding-top: 15px; /* MODIFICATION! */
+    }
+
+    /* bordered.component.print.css */
+    .ho-bordered {
+        border: solid black 0.25mm;
+        margin: -0.25mm;
+    }
+    .ho-section-header.ho-bordered,
+    .ho-row.ho-bordered {
+        margin: -0.25mm -1.75mm;
+    }
+    .ho-cell.ho-bordered {
+        border-top: none;
+        border-bottom: none;
+        margin: 0 0 0 -0.25mm;
+    }
+    .ho-cell.ho-bordered:last-child {
+        border-right: hidden;
+    }
+
+    /* cell.component.print.css */
+    .ho-cell {
+        padding-right: 1.5mm;
+        padding-left: 1.5mm;
+    }
+    .ho-cell.bordered {
+        border-right-width: 0.25mm;
+        border-left-width: 0.25mm;
+        margin-left: -0.25mm;
+    }
+    .ho-cell.bordered:last-child {
+        border-right: hidden;
+    }
+
+    /* row.component.print.css */
+    .ho-row {
+        margin-right: -1.5mm;
+        margin-left: -1.5mm;
+    }
+
+    /* section-header.component.print.css */
+    .ho-section-header {
+        margin-right: -1.5mm;
+        margin-left: -1.5mm;
+
+        padding: 0.5mm 1.5mm;
+
+        border-bottom-width: 0.25mm;
+        margin-bottom: 0.25mm;
+    }
+
+    /* body.component.print.css */
+    .ho-body {
+        width: 100%; /* It's not 180mm because prince is not calculating sizes right*/
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* header.component.print.css */
+    #ho-header {
+        /*background-color: red !important;*/
+        position: running(header); /* Flyingsaucer*/
+        prince-flow: static(header, start); /* Prince */
+        margin-top: 0;
+
+        height: 40mm;
+        min-height: 40mm;
+        max-height: 40mm;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* footer.component.print.css */
+    #ho-footer {
+        /*background-color: greenyellow !important;*/
+        position: running(footer); /* Flyingsaucer*/
+        prince-flow: static(footer, start); /* Prince */
+        margin-bottom: 0;
+
+        height: 25mm;
+        min-height: 25mm;
+        max-height: 25mm;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+    /* form.component.print.css */
+    html {
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-size: 2.5mm;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 9mm;
+    }
+    h2 {
+        font-size: 7.5mm;
+    }
+    h3 {
+        font-size: 6mm;
+    }
+    .ho-page-number {
+        font-size: 3.5mm;
+    }
+    .ho-section-header {
+        font-size: 4mm;
+    }
+    .ho-footer {
+        font-size: 2.5mm;
+    }
+    .ho-form {
+        -fs-page-sequence: start;
+
+        /* Page margins */
+        padding: 0 !important; /* This was to emulate page margins */
+
+        /* Page size */
+        margin: 0 !important;
+        width: 100%; /* 210mm x4 -> 840px */
+        /*height: 1188px; !* 297mm x4 1188px *!*/
+        min-width: 0;
+        min-height: 0;
+        max-width: none;
+
+        display: block;
+
+        /* SHADOW */
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .container {
+        padding-left: 1.5mm;
+        padding-right: 1.5mm;
+    }
+    .container.bordered {
+        border-width: 0.25mm;
+        margin: -0.25mm;
+    }
+}

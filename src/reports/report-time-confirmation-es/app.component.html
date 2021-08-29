@@ -1,0 +1,112 @@
+<ho-form>
+  <!-- HEADER -->
+  <ho-header>
+    <ho-row>
+      <ho-cell ho-width="40%">
+        <img id="logo" src="../shared/atlas-copco-logo.svg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="60%" ho-text-align="right">
+        <div id="header-title">{{text('TIME_CONFIRMATION_REPORT')}}</div>
+        <div ho-page-number ho-text-align="right"></div>
+      </ho-cell>
+    </ho-row>
+    <ho-row ho-bordered ho-class="header header-left-margin-hack">
+      <ho-cell ho-width="100%"><b>{{text('WORKER_DETAIL')}}</b></ho-cell>
+    </ho-row>
+    <ho-row ho-bordered ho-class="header header-left-margin-hack">
+      <ho-cell ho-width="100%">
+        <ho-row>
+          <ho-cell ho-width="45%">
+            <div><b>{{text('SERVICE_ENGINEER')}}:</b></div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ENG_NAME') }}</div>
+            <div><b>{{text('REPORT_DATE')}}:</b></div>
+            <div>{{ tag('REPORT_DATE') }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <!-- END: HEADER -->
+  <!-- BODY -->
+  <ho-body>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <ho-row ho-avoid-break >
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('SEARCH_OPTIONS')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="30%">
+            <div><b>{{text('ORDER_NUMBER')}}:</b></div>
+            <div><b>{{text('ACTIVITY_TYPE')}}:</b></div>
+            <div><b>{{text('QUANTITY_UNIT')}}:</b></div>
+            <div><b>{{text('DATE_FROM')}}:</b></div>
+            <div><b>{{text('DATE_TO')}}:</b></div>
+          </ho-cell>
+          <ho-cell ho-width="70%">
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ORDER_ID') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ACTIVITY') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('UNIT') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('FROM') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('TO') || "-"}}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <ho-row ho-avoid-break
+            *ngIf="!INPUT.getVar('HIDE_SECTION').has('TIME_CONFIRMATION_REPORT') && INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES').length > 0">
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
+        <!-- weeks -->
+        <ho-row *ngFor="let week of INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES')">
+          <ho-cell ho-width="100%">
+            <ho-section-header width="100%"><b>{{text('WEEK')}} {{week.tag("NUMBER")}} {{text('TOTAL')}}: {{week.tag("TOTAL_HRS")}}h-{{week.tag("TOTAL_KMS")}}km</b></ho-section-header>
+            <ho-cell ho-width="100%" *ngFor="let activity of week.getVarArray('ENTRIES')"  >
+            <ho-section-header width="30%">{{activity.tag("NAME")}} {{text('TOTAL')}}: {{activity.tag("TOTAL_HRS")}}h-{{activity.tag("TOTAL_KMS")}}km</ho-section-header>
+            <table class="table-ac">
+              <thead>
+              <tr>
+                <th width="30%">{{text('ORDER_NUMBER')}}</th>
+                <th width="10%">{{text('HOUR_KM')}}</th>
+                <th width="15%">{{text('DATE')}}</th>
+                <th width="15%">{{text('WORK_CENTER')}}</th>                
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let line of activity.getVarArray('ENTRIES')">                
+                <td>{{ line.tag('ORDER_ID') }}</td>
+                <td>{{ line.tag('ACTUAL_WORK') }}{{ line.tag('UNIT') }}</td>
+                <td>{{ line.tag('DATE') }}</td>
+                <td>{{ line.tag('CENTER') }}</td>
+              </tr>
+              </tbody>
+            </table>
+            </ho-cell>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"
+         *ngIf="!INPUT.getVar('HIDE_SECTION').has('TIME_CONFIRMATION_REPORT') && INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES').length > 0"></div>
+    <div class="spacer"></div>
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="70%">
+        <div class="spacer"></div>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="70%"><b>{{text('SERVICE_ENGINEER_CONFIRMATION')}}</b></ho-cell>
+        </ho-row>
+        <ho-row ho-bordered>          
+          <ho-cell ho-width="70%">
+            <ho-signature width="220px" height="90px" (onEnd)="onTechSignatureEnd()" (onClear)="onTechSignatureClear()"></ho-signature>
+            <!--<img class="signature-image"-->
+                 <!--[attr.src]="INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_DATA')"-->
+                 <!--alt="signature-service">-->
+            <div class="signature-comment">{{text('SIGNED_BY')}} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-body>
+  <!-- END: BODY -->
+</ho-form>
+

@@ -1,0 +1,45 @@
+<div class="ho-signature">
+  <div class="signature-wrapper">
+    <img #image class="signature-image" [width]="width" [height]="height" (click)="onClickSignature()"
+         [src]="signatureURL"/>
+  </div>
+</div>
+
+<div class="resize-canvas ho-no-print">
+  <canvas #signatureCanvasResized [width]="width" [height]="height"></canvas>
+</div>
+
+<div class="modal in {{visible?'':'invisible'}} ho-no-print" tabindex="-1" role="dialog">
+  <div #dialog class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="signature-wrapper">
+          <div class="signature-controls">
+            <img (click)="onClearButton()" class="sign-icon" src="delete-button.component.svg"/>
+          </div>
+          <canvas #signatureCanvas class="signature-canvas"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+                <span *ngIf="blockButtons">
+                  <div id="floatBarsG">
+                    <div id="floatBarsG_1" class="floatBarsG"></div>
+                    <div id="floatBarsG_2" class="floatBarsG"></div>
+                    <div id="floatBarsG_3" class="floatBarsG"></div>
+                    <div id="floatBarsG_4" class="floatBarsG"></div>
+                    <div id="floatBarsG_5" class="floatBarsG"></div>
+                    <div id="floatBarsG_6" class="floatBarsG"></div>
+                    <div id="floatBarsG_7" class="floatBarsG"></div>
+                    <div id="floatBarsG_8" class="floatBarsG"></div>
+                  </div>
+                </span>
+        <button *ngIf="showCancelButton" type="button" class="btn btn-default" (click)="onClick('CANCEL')"
+                [disabled]="blockButtons">{{ cancelButtonText }}
+        </button>
+        <button type="button" class="btn btn-primary" [disabled]="blockButtons" (click)="onClick('OK')">{{ okButtonText
+          }}
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

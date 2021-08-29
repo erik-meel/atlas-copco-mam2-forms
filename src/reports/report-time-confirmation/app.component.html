@@ -1,0 +1,133 @@
+
+<ho-form>
+  <!-- HEADER -->
+  <ho-header>
+    <ho-row>
+      <ho-cell ho-width="18%">
+        <img id="logo" src="../shared/img/atlas-copco-blue.png" alt="">
+      </ho-cell>
+      <ho-cell ho-width="22%">
+        <img id="logo" src="../shared\img\Atlas_Copco_service_symbol.jpg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('TIME_CONFIRMATION_REPORT')}}</div>
+         <br/>
+         <p class="address">
+           <div><b>{{text('SERVICE_ENGINEER')}}:</b></div>
+           <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ENG_NAME') }}</div>
+           <div><b>{{text('REPORT_DATE')}}:</b></div>
+           <div>{{ tag('REPORT_DATE') }}</div>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <div class="clear"></div>
+  <!-- END: HEADER -->
+  <!-- BODY -->
+  <ho-body>
+    <ho-row ho-avoid-break >
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('SEARCH_OPTIONS')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="30%">
+            <div><b>{{text('ORDER_NUMBER')}}:</b></div>
+            <div><b>{{text('ACTIVITY_TYPE')}}:</b></div>
+            <div><b>{{text('QUANTITY_UNIT')}}:</b></div>
+            <div><b>{{text('DATE_FROM')}}:</b></div>
+            <div><b>{{text('DATE_TO')}}:</b></div>
+          </ho-cell>
+          <ho-cell ho-width="70%">
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ORDER_ID') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ACTIVITY') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('UNIT') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('FROM') || "-"}}</div>
+            <div>{{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('TO') || "-"}}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"></div>
+    <ho-row ho-avoid-break
+            *ngIf="!INPUT.getVar('HIDE_SECTION').has('TIME_CONFIRMATION_REPORT') && INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES').length > 0">
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
+        <!-- weeks -->
+        <ho-row *ngFor="let week of INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES')">
+          <ho-cell ho-width="100%">
+            <ho-section-header width="100%"><b>{{text('WEEK')}} {{week.tag("NUMBER")}} {{text('TOTAL')}}: {{week.tag("TOTAL_HRS")}} h - {{week.tag("TOTAL_KMS")}} km/mileage</b></ho-section-header>
+            <ho-cell ho-width="100%" *ngFor="let activity of week.getVarArray('ENTRIES')"  >
+            <ho-section-header width="30%">{{activity.tag("NAME")}} {{text('TOTAL')}}: {{activity.tag("TOTAL_HRS")}}{{activity.tag("TOTAL_KMS")}}</ho-section-header>
+            <table class="table-ac">
+              <thead>
+              <tr>
+                <th width="30%">{{text('ORDER_NUMBER')}}</th>
+                <th width="10%">{{text('HOUR_KM')}}</th>
+                <th width="15%">{{text('DATE')}}</th>
+                <th width="15%">{{text('WORK_CENTER')}}</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let line of activity.getVarArray('ENTRIES')">
+                <td>{{ line.tag('ORDER_ID') }}</td>
+                <td>{{ line.tag('ACTUAL_WORK') }} {{ line.tag('UNIT') }}</td>
+                <td>{{ line.tag('DATE') }}</td>
+                <td>{{ line.tag('CENTER') }}</td>
+              </tr>
+              </tbody>
+            </table>
+            </ho-cell>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"
+         *ngIf="!INPUT.getVar('HIDE_SECTION').has('TIME_CONFIRMATION_REPORT') && INPUT.getVarArray('TIME_CONFIRMATION_REPORT_ENTRIES').length > 0"></div>
+    <div class="spacer"></div>
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <div class="spacer"></div>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="100%"><b>{{text('SERVICE_ENGINEER_CONFIRMATION')}}</b></ho-cell>
+        </ho-row>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="50%">
+            <ho-signature width="220px" height="90px" (onEnd)="onTechSignatureEnd()" (onClear)="onTechSignatureClear()"></ho-signature>
+            <div class="signature-comment">{{text('SIGNED_BY')}} {{ INPUT.getVar('TIME_CONFIRMATION_REPORT').tag('ENG_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-body>
+  <!-- END: BODY -->
+  <ho-footer>
+    <ho-row>
+      <ho-cell ho-width="144px">
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('VISITORS_ADDRESS')}}:</ho-cell>
+          <ho-cell ho-width="25%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <!-- END: FOOTER -->
+</ho-form>

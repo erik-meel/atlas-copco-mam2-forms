@@ -1,0 +1,87 @@
+/*
+    http://stackoverflow.com/questions/20946723/chrome-does-not-support-the-css-page
+    https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/
+
+    To see conversion from pixel to inch - https://github.com/flyingsaucerproject/flyingsaucer/blob/master/flying-saucer-pdf/src/main/java/org/xhtmlrenderer/pdf/ITextRenderer.java
+    remember 1pt is equal to exactly 1/72th of an inch
+    default is 96px per inch -> 3.779527559055118px per mm (1inch = 25.4mm)
+    default dpi is 1920
+*/
+@page {
+    size: A4; /* 210mm x 297mm */
+    margin: 40mm 15mm 25mm 15mm;
+}
+
+@media print {
+    html {
+        background: none;
+        margin: 0;
+        padding: 0;
+        font-size: 2.5mm;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 9mm;
+    }
+
+    h2 {
+        font-size: 7.5mm;
+    }
+
+    h3 {
+        font-size: 6mm;
+    }
+
+    .ho-page-number {
+        font-size: 3.5mm;
+    }
+
+    .ho-section-header {
+        font-size: 4mm;
+    }
+
+    .ho-footer {
+        font-size: 2.5mm;
+    }
+
+    .ho-form {
+        -fs-page-sequence: start;
+
+        /* Page margins */
+        padding: 0 !important; /* This was to emulate page margins */
+
+        /* Page size */
+        margin: 0 !important;
+        width: 180mm;
+        height: auto;
+        min-width: 180mm;
+        min-height: 1mm; /*257mm;*/
+        max-width: 180mm;
+        max-height: none;
+
+        display: block;
+        background-color: purple;
+
+        /* SHADOW */
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .container {
+        background-color: darkslategrey !important;
+        padding-left: 1.5mm;
+        padding-right: 1.5mm;
+    }
+
+    .container.bordered {
+        border-width: 0.25mm;
+        margin: -0.25mm;
+    }
+
+}

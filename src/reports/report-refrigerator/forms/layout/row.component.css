@@ -1,0 +1,18 @@
+.ho-row {
+    display: block;
+
+    margin-right: -6px;
+    margin-left: -6px;
+
+    page-break-inside: avoid;
+}
+
+.ho-row:before,
+.ho-row:after {
+    display: table;
+    content: " ";
+}
+
+.ho-row:after {
+    clear: both;
+}

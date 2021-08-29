@@ -1,0 +1,558 @@
+
+<ho-form>
+  <!-- HEADER -->
+  <ho-header>
+    <ho-row>
+      <ho-cell ho-width="18%">
+        <img id="logo" src="../shared/img/atlas-copco-blue.png" alt="">
+      </ho-cell>
+      <ho-cell ho-width="22%">
+        <img id="logo" src="../shared\img\Atlas_Copco_service_symbol.jpg" alt="">
+      </ho-cell>
+
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }}
+          <br/>
+          {{text('CONTACT')}}:{{ tag('CUST_CONTACT') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+
+  </ho-header>
+  <div class="clear"></div>
+  <!-- END: HEADER -->
+  <!-- BODY -->
+  <ho-body>
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('WORK_COMMENTS')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="100%" class="allow-break-lines">
+            <div style="white-space: pre-line;">{{ tag('WORK_COMMENTS') }}</div>
+            <!-- {{ tag('WORK_COMMENTS') }} -->
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"></div>
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+        <ho-cell ho-width="100%">
+          <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
+          <ho-row>
+            <ho-cell ho-width="100%">
+              <table class="table-ac">
+                <thead>
+                <tr>
+                  <th width="20%">{{text('DATE')}}</th>
+                  <th width="30%">{{text('SERVICE_ENGINEER')}}</th>
+                  <th width="35%">{{text('ACTIVITY_TYPE')}}</th>
+                  <th width="15%" >{{text('HOUR_KM')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES') ">
+                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
+                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                <!--  <td>{{ entry.tag('EFFORT') }}</td> -->
+                  <td *ngIf="INPUT.tag('PMACTTYPE') != 'OH' && INPUT.tag('PMACTTYPE') != 'FP' ">{{ entry.tag('EFFORT') }}</td>
+                 </tr>
+                </tbody>
+              </table>
+            </ho-cell>
+          </ho-row>
+        </ho-cell>
+    </ho-row>
+    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"></div>
+
+<!-- Single order REPORT -->
+    <ho-row  *ngIf="!INPUT.getVarArray('ORD_GR_DATA').length > 0">
+      <ho-row ho-bordered ho-class="header">
+        <ho-cell ho-width="100%">
+            <ho-row ho-avoid-break>
+             <ho-cell ho-width="100%">
+               <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
+               <ho-row>
+                 <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
+                 <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: locale }}</ho-cell>
+               </ho-row>
+               <ho-row>
+                 <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('ORDER_NUMBER') }}</ho-cell>
+               </ho-row>
+               <ho-row>
+                 <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+                 <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
+               </ho-row>
+               <ho-row>
+                 <ho-cell ho-width="50%"></ho-cell>
+                 <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
+               </ho-row>
+             </ho-cell>
+           </ho-row>
+           <div class="spacer"></div>
+
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_TYPE').length > 0">
+             <ho-cell ho-width="100%">
+               <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
+               <ho-row>
+                 <ho-cell ho-width="100%">
+                   {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
+                     {{ tag('NEXT_VISIT_DATE') | date: locale }}<br/>
+                 </ho-cell>
+               </ho-row>
+             </ho-cell>
+           </ho-row>
+           <div class="spacer"></div>
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+              <ho-cell ho-width="100%">
+               <ho-section-header><b>Recommended Repair</b></ho-section-header>
+               <ho-row>
+                 <ho-cell ho-width="75%">
+                   <b>{{ text('FOLLOWING_WORK_IS') }}</b>
+                 </ho-cell>
+                 <ho-cell ho-width="25%">
+                   <b>{{ text('ESTIMATED_WORK_HOUR') }}:</b>
+                 </ho-cell>
+                 <ho-cell ho-width="75%">
+                   {{ tag('NEXT_VISIT_HEADLINE') }}
+                 </ho-cell>
+                 <ho-cell ho-width="25%">
+                   {{ tag('NEXT_VISIT_HOURS') }}
+                 </ho-cell>
+                 <ho-cell ho-width="100%">
+                   <div style="white-space: pre-line;">{{ tag('NEXT_VISIT_DESCRIPTION') }}</div>
+                 </ho-cell>
+               </ho-row>
+              </ho-cell>
+             </ho-row>
+           <div class="spacer" *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+
+         <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0">
+             <ho-cell ho-width="100%">
+               <ho-section-header><b>{{text('WORK_DONE')}}</b></ho-section-header>
+               <ho-row>
+                 <ho-cell ho-width="100%">
+                   <table class="table-ac">
+                     <thead>
+                     <tr>
+                       <th width="3%"></th>
+                       <th width="47%">{{text('OPERATIONS')}}</th>
+                       <th width="50%">{{text('COMMENTS')}}</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr *ngFor="let entry of INPUT.getVarArray('WORK_DONE_ENTRIES')">
+                       <td>
+                         <ho-checkbox checked="{{ entry.tag('DONE')}}" disabled></ho-checkbox>
+                       </td>
+                       <td>{{ entry.tag('DESC') }}</td>
+                       <td> - {{ entry.tag('COMMENT') }}</td>
+                     </tr>
+                     </tbody>
+                   </table>
+                 </ho-cell>
+               </ho-row>
+             </ho-cell>
+           </ho-row>
+           <div class="spacer" *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
+
+            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+              <ho-cell ho-width="100%">
+                <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
+                <ho-row>
+                  <ho-cell ho-width="100%">
+                    <table class="table-ac">
+                      <thead>
+                      <tr>
+                        <th width="15%">{{text('PART_NUMBER')}}</th>
+                        <th width="70%">{{text('PART_DESCRIPTION')}}</th>
+                        <th width="15%">{{text('QUANTITY_UNIT')}}</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let entry of INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES')">
+                        <td>{{ entry.tag('PART_NUMBER') }}</td>
+                        <td>{{ entry.tag('PART_DESC') }}</td>
+                        <td>{{ entry.tag('QUANTITY') }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </ho-cell>
+                </ho-row>
+              </ho-cell>
+            </ho-row>
+            <div class="spacer" *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+
+            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
+            <ho-cell ho-width="100%">
+            <ho-section-header><b>{{text('MEASUREMENT_POINTS')}}</b></ho-section-header>
+            <ho-row>
+              <ho-cell ho-width="100%">
+                <table class="table-ac">
+                  <thead>
+                  <tr>
+                    <th width="30%">{{text('COUNTER')}}</th>
+                    <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
+                    <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
+                    <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let entry of INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
+                    <td>{{ entry.tag('COUNTER') }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
+                    <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
+                    <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
+                    <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </ho-cell>
+            </ho-row>
+            </ho-cell>
+            </ho-row>
+          <div class="spacer"></div>
+        </ho-cell>
+      </ho-row>
+    </ho-row>
+<!-- End single report -->
+
+<!-- Global REPORT -->
+<ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
+ <HR id="blue-line">
+  <ho-row ho-bordered ho-class="header">
+    <ho-cell ho-width="100%">
+    <ho-row ho-avoid-break >
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
+          <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: locale }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+          <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="50%"></ho-cell>
+          <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+
+<!--Show confirmations for current equipment          -->
+    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+        <ho-cell ho-width="100%">
+          <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
+          <ho-row>
+            <ho-cell ho-width="100%">
+              <table class="table-ac">
+                <thead>
+                <tr>
+                  <th width="20%">{{text('DATE')}}</th>
+                  <th width="30%">{{text('SERVICE_ENGINEER')}}</th>
+                  <th width="35%">{{text('ACTIVITY_TYPE')}}</th>
+                  <th width="15%">{{text('HOUR_KM')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
+                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
+                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                <!--  <td>{{ entry.tag('EFFORT') }}</td> -->
+                  <td *ngIf="INPUT.tag('PMACTTYPE') != 'OH' && INPUT.tag('PMACTTYPE') != 'FP' ">{{ entry.tag('EFFORT') }}</td> 
+                 </tr>
+                </tbody>
+              </table>
+            </ho-cell>
+          </ho-row>
+        </ho-cell>
+    </ho-row>
+    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"></div>
+
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0">
+          <ho-cell ho-width="100%">
+            <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
+            <ho-row>
+              <ho-cell ho-width="100%">
+                {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
+                  {{ entryOrd.tag('NEXT_VISIT_DATE') }}<br/>
+              </ho-cell>
+            </ho-row>
+          </ho-cell>
+        </ho-row>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0"></div>
+
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+          <ho-cell ho-width="100%">
+            <ho-section-header><b>Recommended Repair</b></ho-section-header>
+            <ho-row>
+              <ho-cell ho-width="75%">
+                <b>{{ text('FOLLOWING_WORK_IS') }}</b>
+              </ho-cell>
+              <ho-cell ho-width="25%">
+                <b>{{ text('ESTIMATED_WORK_HOUR') }}:</b>
+              </ho-cell>
+              <ho-cell ho-width="75%">
+                {{ entryOrd.tag('NEXT_VISIT_HEADLINE') }}
+              </ho-cell>
+              <ho-cell ho-width="25%">
+                {{ entryOrd.tag('NEXT_VISIT_HOURS') }}
+              </ho-cell>
+              <ho-cell ho-width="100%">
+                <div style="white-space: pre-line;">{{ entryOrd.tag('NEXT_VISIT_DESCRIPTION') }}</div>
+              </ho-cell>
+            </ho-row>
+          </ho-cell>
+        </ho-row>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+
+         <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0">
+           <ho-cell ho-width="100%">
+             <ho-section-header><b>{{text('WORK_DONE')}}</b></ho-section-header>
+             <ho-row>
+               <ho-cell ho-width="100%">
+                 <table class="table-ac">
+                   <thead>
+                   <tr>
+                     <th width="3%"></th>
+                     <th width="47%">{{text('OPERATIONS')}}</th>
+                     <th width="50%">{{text('COMMENTS')}}</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr *ngFor="let entry of entryOrd.getVarArray('WORK_DONE_ENTRIES')">
+                     <td>
+                       <ho-checkbox checked="{{ entry.tag('DONE')}}" disabled></ho-checkbox>
+                     </td>
+                     <td>{{ entry.tag('DESC') }}</td>
+                     <td> - {{ entry.tag('COMMENT') }}</td>
+                  </tr>
+                   </tbody>
+                 </table>
+               </ho-cell>
+             </ho-row>
+           </ho-cell>
+        </ho-row>
+
+        <div class="spacer" *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
+
+          <ho-row ho-avoid-break  *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+            <ho-cell ho-width="100%">
+              <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
+              <ho-row>
+                <ho-cell ho-width="100%">
+                  <table class="table-ac">
+                    <thead>
+                    <tr>
+                      <th width="15%">{{text('PART_NUMBER')}}</th>
+                      <th width="70%">{{text('PART_DESCRIPTION')}}</th>
+                      <th width="15%">{{text('QUANTITY_UNIT')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let entry of entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES')">
+                      <td>{{ entry.tag('PART_NUMBER') }}</td>
+                      <td>{{ entry.tag('PART_DESC') }}</td>
+                      <td>{{ entry.tag('QUANTITY') }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </ho-cell>
+              </ho-row>
+            </ho-cell>
+          </ho-row>
+          <div class="spacer" *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+
+    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('MEASUREMENT_POINTS')}}</b></ho-section-header>
+        <ho-row>
+          <ho-cell ho-width="100%">
+            <table class="table-ac">
+              <thead>
+              <tr>
+                <th width="30%">{{text('COUNTER')}}</th>
+                <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
+                <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
+                <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let entry of entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
+                <td>{{ entry.tag('COUNTER') }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
+                <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
+                <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
+                <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+              </tr>
+              </tbody>
+            </table>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+    </ho-cell>
+    </ho-row>
+ <HR id="blue-line">
+</ho-row>
+<div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
+  <!-- End global report -->
+
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('PICTURES').length > 0">
+        <ho-cell ho-width="100%">
+          <ho-section-header><b>Picture</b></ho-section-header>
+          <ho-row *ngFor="let entry of INPUT.getVarArray('PICTURES')">
+            {{entry.tag('name')}}<br/>
+            <img src="data:image/png;base64,{{entry.tag('image')}}" width="700"/>
+          </ho-row>
+        </ho-cell>
+      </ho-row>
+
+  <!-- Show/Hide LMRA if 'LMRA_ENABLED_IN_VISIT_REPORT' -->
+      <ho-row ho-avoid-break *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false'">
+        <ho-cell ho-width="100%">
+          <ho-section-header><b>{{text('SAFETY_FIRST')}}</b></ho-section-header>
+          <ho-row>
+            <ho-cell ho-width="100%">
+              <table class="table-ac">
+                <thead>
+                <tr>
+                  <th width="55%">{{text('QUESTION')}}</th>
+                  <th width="5%" class="text-align-center">{{text('CHECKED')}}</th>
+                  <th>{{text('COMMENTS')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let entry of INPUT.getVarArray('SAFETY_CHECK_LIST_ENTRIES')">
+                  <td>{{ entry.tag('DESC') }}</td>
+                  <td class="text-align-center">{{ entry.tag('DONE') }}</td>
+                  <td> - {{ entry.tag('COMMENT') }}</td>
+                </tr>
+                </tbody>
+              </table>
+            </ho-cell>
+          </ho-row>
+        </ho-cell>
+      </ho-row>
+      <div class="spacer" *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
+ <!-- End LMRA -->
+    <ho-row ho-avoid-break>
+      <ho-cell ho-width="100%">
+        <ho-section-header><b>{{text('AUTHORISATION_TO_CARRY')}}</b></ho-section-header>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="100%">
+            <b>{{text('NOTES')}}</b>
+            {{text('CUSTOMER_WILL_AGREE')}}
+          </ho-cell>
+        </ho-row>
+        <div class="spacer"></div>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="50%"><b>{{text('CUSTOMER_CONFIRMATION')}}</b></ho-cell>
+          <ho-cell ho-width="50%"><b>{{text('SERVICE_ENGINEER_CONFIRMATION')}}</b></ho-cell>
+        </ho-row>
+        <ho-row ho-bordered>
+          <ho-cell ho-width="50%">
+            <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
+            <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
+            <div class="signature-comment" *ngIf="customerSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
+            </div>
+            <div class="signature-comment">{{text('BEING_DULY_AUTHORISED')}}</div>
+          </ho-cell>
+          <ho-cell ho-width="50%">
+            <ho-signature width="220px" height="90px" (onEnd)="onTechSignatureEnd()" (onClear)="onTechSignatureClear()"></ho-signature>
+            <div class="signature-comment" *ngIf="techSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
+          </ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-body>
+  <!-- END: BODY -->
+  <!-- FOOTER -->
+  <ho-footer>
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_1').length > 0">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_1').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length > 0">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length == 0"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length > 0">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_2').length > 0">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_2').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length > 0">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length == 0"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length > 0">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_3').length > 0">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_3').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length > 0">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length == 0"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length > 0">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_4').length > 0">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_4').length == 0"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_4') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length == 0"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <!-- END: FOOTER -->
+</ho-form>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--<base href="/">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= process.env.ENV == 'production' ? '<script type="text/javascript" src="cordova.js"></script>': '' %>
+    <%
+
+      var customizationFileRegExp = /customization/gi;
+
+      var isCustomizationFile = function (filename) {
+        return filename.match(customizationFileRegExp);
+      };
+
+      for(var i=0; i<htmlWebpackPlugin.files.css.length; i++) {
+        if (!isCustomizationFile(htmlWebpackPlugin.files.css[i])) {
+    %>
+          <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+    <%
+        }
+      }
+    %>
+</head>
+<body>
+    <my-form></my-form>
+    <%
+      for(var j=0; j<htmlWebpackPlugin.files.js.length; j++) {
+        if (!isCustomizationFile(htmlWebpackPlugin.files.js[j])) {
+    %>
+          <script src="<%= htmlWebpackPlugin.files.js[j] %>"></script>
+    <%
+        }
+      }
+      if (htmlWebpackPlugin.files.chunks.customization.js) {
+    %>
+        <script src="<%= htmlWebpackPlugin.files.chunks.customization.js %>"></script>
+    <%
+      }
+      if (htmlWebpackPlugin.files.chunks.customization.css != '') {
+    %>
+        <link href="<%= htmlWebpackPlugin.files.chunks.customization.css %>" rel="stylesheet">
+    <%
+      }
+    %>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@media print {
+    .ho-body {
+        width: 100%; /* It's not 180mm because prince is not calculating sizes right*/
+        min-width: 180mm;
+        max-width: 180mm;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+

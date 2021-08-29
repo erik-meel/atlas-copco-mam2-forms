@@ -1,0 +1,25 @@
+/*
+    REMEMBER in PDF:
+     - 1pt is equal to exactly 1/72th of an inch
+     - default is 96px per inch -> 3.779527559055118px per mm (1inch = 25.4mm)
+     - default dpi is 1920
+     - Page size is A4 -> 210mm x 297mm -> 793.7px x 1122.5px
+     - Use vector images (.svg) as much as you can
+*/
+
+@media print {
+  .table-ac th, .table-ac td {
+    padding-left: 0.75mm;
+    padding-right: 0.75mm;
+    /*padding-top: 0;*/
+    /*padding-bottom: 0;*/
+  }
+
+  .table-ac th {
+    border-bottom: groove black 0.25mm;
+  }
+
+  .signature-comment {
+    font-size: 2.5mm;
+  }
+}

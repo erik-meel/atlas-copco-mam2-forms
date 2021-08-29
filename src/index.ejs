@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!--<base href="/">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= process.env.ENV == 'production' ? '<script type="text/javascript" src="cordova.js"></script>': '' %>
+    <%
+
+      var reportRegExp = /report-\w*/gi;
+      var filenameRegExp = new RegExp(htmlWebpackPlugin.options.filename.slice(0, -5), 'gi');
+
+      var isRelatedToCurrentReport = function (filename) {
+        if (filename.match(reportRegExp)) {
+          if (filename.match(filenameRegExp)) {
+            return true;
+          } else {
+            return false; //css or js files coming from compilation of other reports in the same build
+          }
+        } else {
+          return true; //any file that is not from a specific report
+        }
+      };
+
+      var customizationFileRegExp = /customization/gi;
+
+      var isCustomizationFile = function (filename) {
+        return filename.match(customizationFileRegExp);
+      };
+
+      for(var i=0; i<htmlWebpackPlugin.files.css.length; i++) {
+        if (!isCustomizationFile(htmlWebpackPlugin.files.css[i]) &&
+             isRelatedToCurrentReport(htmlWebpackPlugin.files.css[i])) {
+    %>
+          <link href="<%= htmlWebpackPlugin.files.css[i] %>" rel="stylesheet">
+    <%
+        }
+      }
+    %>
+</head>
+<body>
+    <my-form></my-form>
+    <%
+      for(var j=0; j<htmlWebpackPlugin.files.js.length; j++) {
+        if (!isCustomizationFile(htmlWebpackPlugin.files.js[j]) &&
+             isRelatedToCurrentReport(htmlWebpackPlugin.files.js[j])) {
+    %>
+          <script src="<%= htmlWebpackPlugin.files.js[j] %>"></script>
+    <%
+        }
+      }
+      if (htmlWebpackPlugin.files.chunks.customization.js) {
+    %>
+        <script src="<%= htmlWebpackPlugin.files.chunks.customization.js %>"></script>
+    <%
+      }
+      if (htmlWebpackPlugin.files.chunks.customization.css != '') {
+    %>
+        <link href="<%= htmlWebpackPlugin.files.chunks.customization.css %>" rel="stylesheet">
+    <%
+      }
+    %>
+</body>
+</html>

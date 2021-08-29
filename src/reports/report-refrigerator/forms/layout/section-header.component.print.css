@@ -1,0 +1,11 @@
+@media print {
+    .ho-section-header {
+        margin-right: -1.5mm;
+        margin-left: -1.5mm;
+
+        padding: 0.5mm 1.5mm;
+
+        border-bottom-width: 0.25mm;
+        margin-bottom: 0.25mm;
+    }
+}

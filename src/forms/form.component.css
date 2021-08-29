@@ -1,0 +1,59 @@
+html {
+    background: #818181 url('form.background.jpg') repeat;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Force no highlight on tap */
+    font-size: 10px;
+}
+
+body {
+    background: none;
+}
+
+.ho-form {
+    position: relative; /* Width this we can position header and footer relatively this container*/
+
+    /* Page margins */
+    padding: 160px 60px 100px 60px; /* This has to emulate page margins */
+
+    /* Page size */
+    margin: 80px auto;
+    width: 840px; /* 210mm x4 -> 840px */
+    /*height: 1188px; !* 297mm x4 1188px *!*/
+    min-width: 840px;
+    min-height: 1188px;
+    max-width: 840px;
+    /*max-height: 1188px;*/
+
+    /* Hide any content that goes beyond the page */
+    /*word-wrap: break-word;*/
+    /*overflow: hidden;*/
+
+    display: block;
+    background-color: white;
+
+    /* SHADOW */
+    -webkit-box-shadow: 8px 8px 10px #524d4d;
+    -moz-box-shadow: 8px 8px 10px #524d4d;
+    box-shadow: 8px 8px 10px #524d4d;
+}
+
+.container {
+    width: 100%;
+
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ho-form:before,
+.ho-form:after,
+.container:before,
+.container:after {
+    display: table;
+    content: " ";
+}
+
+.ho-form:after, .container:after {
+    clear: both;
+}
+

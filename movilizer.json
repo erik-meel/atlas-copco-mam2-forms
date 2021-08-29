@@ -1,0 +1,10 @@
+{
+  "url": "https://demo.movilizer.com/mds/document",
+  "systemId": "51840015",
+  "password": "1337",
+  "pool": "HTML5_DEV_POOL",
+  "key": "FormsWebAppKey",
+  "lang": "",
+  "suffix": "zip",
+  "devParticipantDeviceAddress": "@html5.test@atlascopco.com"
+}

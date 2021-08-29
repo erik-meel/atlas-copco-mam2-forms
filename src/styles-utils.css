@@ -1,0 +1,89 @@
+/* Utils classes */
+.clip-text {
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-underlined {
+    text-decoration: underline;
+}
+
+.add-margin-top {
+  margin-top: 3px !important;
+}
+
+.dash-underlined {
+  border-bottom: dashed black 2px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide, .hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.spacer {
+    height: 1em;
+    min-height: 1em;
+    width: 100%;
+    content: ' ';
+}
+
+.background-red {
+    background-color: darkred;
+}
+
+.background-blue {
+    background-color: dodgerblue;
+}
+
+.allow-break-lines{
+    white-space: pre-line;
+}

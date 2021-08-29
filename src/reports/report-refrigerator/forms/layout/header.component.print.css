@@ -1,0 +1,31 @@
+@media print {
+    @page {
+        @top-center {
+            margin: 0;
+            /*content: flow(header); !* Prince *!*/
+            content: element(header); /* Flyingsaucer*/
+            background-color: lightcoral !important;
+
+            height: 40mm;
+            min-height: 40mm;
+            max-height: 40mm;
+            width: 100%;
+            min-width: 160mm;
+            max-width: 180mm;
+        }
+    }
+
+    #ho-header {
+        background-color: red !important;
+        margin-top: 0;
+        /*prince-flow: static(header, start); !* Prince *!*/
+        position: running(header); /* Flyingsaucer*/
+
+        height: 40mm;
+        min-height: 40mm;
+        max-height: 40mm;
+        width: 100%;
+        min-width: 160mm;
+        max-width: 180mm;
+    }
+}

@@ -1,0 +1,21 @@
+input[type="checkbox"] {
+  display: none;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url('checkbox-unchecked.component.svg') !important;
+  line-height: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: middle;
+}
+
+/* Prince doesn't have the :checked selector. See: http://www.princexml.com/doc/selectors/ */
+input[type="checkbox"]:checked + label,
+input[type="checkbox"].checked + label {
+  background-image: url('checkbox-checked.component.svg') !important;
+}

@@ -1,0 +1,43 @@
+html {
+    font-size: 10px;
+}
+
+body, table {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+/* Master Styles */
+h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.ho-page-number {
+    font-size: 14px;
+}
+
+.ho-section-header {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ho-footer {
+    font-size: 10px;
+}

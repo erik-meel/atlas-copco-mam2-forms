@@ -1,0 +1,24 @@
+{
+  "name": "gulp-movilizer-report-pdf",
+  "description": "Runs a Movilizer report and returns the PDF that is generated in the cloud.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https¡://github.com/Movilizer/gulp-movilizer-report-pdf.git"
+  },
+  "author": "Jesús de Mula Cano <jesus.demula@movilizer.com> (http://movilizer.com/)",
+  "license": "LicenseRef-LICENSE",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.5"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

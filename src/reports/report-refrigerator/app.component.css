@@ -1,0 +1,159 @@
+.ho-main-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(48, 84, 150);
+  background-color: white;
+  border: solid 2px rgb(48,84,150);
+}
+
+.ho-main-section .hdr {
+  border-top: solid 2px rgb(48,84,150);
+}
+
+.ho-main-section b {
+  font-size: 20px!important;
+  text-align: center;
+}
+
+.ho-main-section ho-row {
+  border-top: solid 2px rgb(48,84,150);
+  border-bottom: solid 2px rgb(48,84,150);
+  border-spacing: 2px;
+}
+
+.ho-sub-section {
+  min-width: 616px;
+  padding-left: 5px;
+  border: solid 2px rgb(48,84,150);
+  background-color: rgb(217,225,242);
+  color: rgb(48,84,150);
+}
+
+.ho-sub-section div {
+  font-size: 11px!important;
+}
+
+.ho-sub-section .section {
+  background-color: white!important;
+  margin-left: -5px;
+  text-align: center;
+  border-top: solid 2px rgb(48,84,150);
+  margin-top: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#row1 .ho-row {
+  font-size: 11px!important;
+}
+
+.ho-spacer {
+  border-top: solid 2px rgb(48,84,150);
+  margin-left: -5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ho-sub-section input {
+  line-height: 1.3;
+  font-size: 9px;
+}
+
+.table-ac {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0px!important;
+  border: solid 2px rgb(48,84,150);
+  border-top: 0px;
+  /*border-spacing: 10px;*/
+  /*border-collapse: separate;*/
+}
+
+.table-ac .hdr {
+  text-align: center;
+  color: rgb(48,84,150);
+}
+
+.table-ac .hdr td {
+  border-top: solid 2px rgb(48,84,150);
+  border-bottom: solid 2px rgb(48,84,150);
+  border-spacing: 0px;
+}
+
+.table-ac th, .table-ac td {
+  /*border-bottom: solid 2px rgb(48,84,150);
+  min-height: 20px; */
+  line-height: 1.3;
+  /*padding-top: 0;*/
+  /*padding-bottom: 0;*/
+}
+
+.table-ac input {
+  padding: 0px!important;
+}
+
+.table-ac thead {
+  border-top: solid 2px rgb(48,84,150);
+}
+
+.table-ac th {
+  border-bottom: groove black 1px;
+}
+
+.table-ac tr {
+  height: 25px;
+}
+
+.signature-name-input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.signature-name-input input {
+  margin-left: 4px;
+}
+
+.signature-image {
+  width: 98%;
+  height: auto;
+}
+
+.signature-comment {
+  font-size: 10px;
+}
+
+#vca-logo {
+  position: absolute;
+  bottom: 144px;
+  left: 0;
+  float: left;
+  height: 52px;
+  width: auto;
+}
+
+#vianorm-logo {
+  position: absolute;
+  bottom: 72px;
+  left: 0;
+  float: left;
+  height: 52px;
+  width: auto;
+}
+#header-title {
+    color: #0099CC;
+    text-align: left;
+}
+#blue-line {
+    color: #0099CC;
+}
+.address {
+    line-height: 16px;
+}
+.margtop5 {
+    margin-top: 5px;
+}
+h2.margtop0.margbtm0 {
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
