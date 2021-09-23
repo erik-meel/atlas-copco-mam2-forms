@@ -24,6 +24,8 @@ export var textLiterals = {
 
   'ORDER_NUMBER': 'Order Number',
 
+  'ORDER_DESCRIPTION': 'Description',
+
   'CONTRACT_NUMBER': 'Contract Number',
 
   'PO_NUMBER': 'PO number',
@@ -85,6 +87,8 @@ export var textLiterals = {
   'SERVICE_ENGINEER_CONFIRMATION': 'Service Engineer Confirmation',
 
   'SIGNED_BY': 'Signed by',
+
+  'ENTER_YOUR_NAME': 'Enter your name',
 
   'AT': 'at',
 

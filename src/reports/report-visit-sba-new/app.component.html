@@ -509,41 +509,41 @@
         </ho-row>
         <ho-row>
           <ho-cell ho-width="27%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="23%" *ngIf="text('VISITORS_ADDRESS').length > 0">{{text('VISITORS_ADDRESS')}}:</ho-cell>
-          <ho-cell ho-width="23%" *ngIf="text('VISITORS_ADDRESS').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length > 0">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length == 0"></ho-cell>
+          <ho-cell ho-width="23%" *ngIf="text('VISITORS_ADDRESS') != ''">{{text('VISITORS_ADDRESS')}}:</ho-cell>
+          <ho-cell ho-width="23%" *ngIf="text('VISITORS_ADDRESS') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE') != ''">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1') != ''">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1') == ''"></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_1').length > 0">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_1').length == 0"></ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_1').length > 0">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_1').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length > 0">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length == 0"></ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_1') != ''">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_1') == ''"></ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_1') != ''">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_1') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX') != ''">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2') != ''">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2') == ''"></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_2').length > 0">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_2').length == 0"></ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_2').length > 0">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_2').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length > 0">{{ tag('COMPANY_URL') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length == 0"></ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_2') != ''">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_2') == ''"></ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_2') != ''">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_2') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL') != ''">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL') == ''"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3') != ''">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3') == ''"></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_3').length > 0">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_3').length == 0"></ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_3').length > 0">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_3').length == 0"></ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_3') != ''">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="27%" *ngIf="tag('COMPANY_ADDRESS_3') == ''"></ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_3') != ''">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="23%" *ngIf="tag('VISITOR_ADDRESS_3') == ''"></ho-cell>
           <ho-cell ho-width="25%"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_4') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4') != ''">{{ tag('FOOTER_ADDITIONAL_INFO_4') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4') == ''"></ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>
