@@ -1,135 +1,124 @@
-﻿export var textLiterals = {
+export var textLiterals = {
 
- 'VISIT_REPORT': 'Relatório de Visita',
+  'LANGUAGE':'PL',
 
- 'LMRA_REPORT': 'LMRA Report',
+ 'VISIT_REPORT': 'Raport serwisowy',
 
-  'CUSTOMER_DETAILS': 'Dados do Cliente',
+  'CUSTOMER_DETAILS': 'Dane klienta',
 
-  'CONTACT': 'Contato',
+  'CONTACT': 'Osoba kontaktowa',
 
   'REPORT_DATE': 'Data',
 
-  'EQUIPMENT': 'Equipamento',
+  'EQUIPMENT': 'Urządzenie',
 
-  'RUNNING_HOURS': 'Horas de Trabalho',
+  'RUNNING_HOURS': 'Aktualne godziny pracy',
 
-  'HOURS': 'horas',
+  'HOURS': 'h',
 
-  'SERIAL_NUMBER': 'Número de Série',
+  'SERIAL_NUMBER': 'Numer seryjny',
 
-  'LOAD_HOURS': 'Horas em Carga',
+  'LOAD_HOURS': 'Godziny w dociążeniu',
 
-  'VISIT_DATE': 'Data da Visita',
+  'VISIT_DATE': 'Data wizyty',
 
-  'ORDER_NUMBER': 'Número da Ordem',
+  'ORDER_NUMBER': 'Nr zlecenia',
 
-  'CONTRACT_NUMBER': 'Número de Contrato',
+  'CONTRACT_NUMBER': 'Nr kontraktu',
 
-  'PO_NUMBER': 'Número de PC',
+  'PO_NUMBER': 'Nr zamówienia',
 
-  'ORDER_DESCRIPTION': 'Descrição',
+  'WORK_COMMENTS': 'Opis prac',
 
-  'WORK_COMMENTS': 'Relatório',
+  'NEXT_VISIT': 'Zalecenia dot. nastepnej wizyty',
 
-  'NEXT_VISIT': 'Próxima Visita',
+  'NEXT_RECOMMENDED_SERVICE_1': 'Typ wizyty: “',
 
-  'NEXT_RECOMMENDED_SERVICE_1': 'Próxima revisão recomendada é “',
+  'NEXT_RECOMMENDED_SERVICE_2': '”     Szacowana data następnej wizyty:',
 
-  'NEXT_RECOMMENDED_SERVICE_2': '” com data prevista para',
+  'FOLLOWING_WORK_IS': 'Zalecenia dot. koniecznych do przeprowadzenia prac:',
 
-  'FOLLOWING_WORK_IS': 'Os serviços a seguir são recomendados, nossa equipe de vendas irá contatá-lo',
+  'ESTIMATED_WORK_HOUR': 'Przybliżony czas pracy',
 
-  'ESTIMATED_WORK_HOUR': 'Horas de trabalho estimadas',
-
-  'TIME_CONFIRMATION': 'Apontamento de Horas',
+  'TIME_CONFIRMATION': 'Potwierdzenia',
 
   'DATE': 'Data',
-  'SERVICE_ENGINEER': 'Técnico de Serviço',
+  'SERVICE_ENGINEER': 'Autor',
 
-  'ACTIVITY_TYPE': 'Tipo de Atividade',
-  'HOUR_KM': 'Hora/Km',
+  'ACTIVITY_TYPE': 'Rodzaj zadania',
+  'HOUR_KM': 'h/km',
 
-  'MATERIAL_CONFIRMATION': 'Peças Planejadas',
+  'MATERIAL_CONFIRMATION': 'Potwierdzenie wydania materiału',
 
-  'PART_NUMBER': 'Código',
+  'PART_NUMBER': 'Nr części',
 
-  'PART_DESCRIPTION': 'Descrição',
+  'PART_DESCRIPTION': 'Nazwa części',
 
-  'QUANTITY_UNIT': 'Quantidade',
+  'QUANTITY_UNIT': 'Ilość',
 
-  'WORK_DONE': 'Lista de Tarefas',
+  'WORK_DONE': 'Zakończono',
 
-  'OPERATIONS': 'Operações',
+  'OPERATIONS': 'Działania',
 
-  'COMMENTS': 'Comentários',
+  'COMMENTS': 'Uwagi',
 
-  'MEASUREMENT_POINTS': 'Medições',
+  'MEASUREMENT_POINTS': 'Punkty pomiarowe',
 
-  'COUNTER': 'Contadores',
+  'COUNTER': 'Nazwa',
 
-  'READING_AFTER_SERVICE': 'Leitura após serviço',
+  'READING_AFTER_SERVICE': 'Odczyt końcowy',
 
-  'BEFORE_SERVICE': 'antes do serviço',
+  'BEFORE_SERVICE': 'Przed usługą',
 
-  'FROM_LAST_VISIT_ON': 'Dados da última visita',
+  'FROM_LAST_VISIT_ON': 'Data ostat. odczytu/Odczyt',
 
-  'AUTHORISATION_TO_CARRY': 'AUTORIZAÇÃO PARA REALIZAÇÃO DO SERVIÇO COM/SEM PC.',
+  'AUTHORISATION_TO_CARRY': 'AUTHORISATION_TO_CARRY',
 
-  'NOTES': 'Notas',
+  'NOTES': 'Notes',
 
-  'CUSTOMER_WILL_AGREE': 'O cliente está de acordo em fornecer um número de pedido de compra válido caso seja necessário, para faturamento do serviço prestado conforme detalhamento nesta ordem de serviço.',
+  'CUSTOMER_WILL_AGREE': 'Wkrótce mogą Państwo otrzymać krótką ankietę dot. jakości wykonania ww. zlecenia. Państwa ocena jest bardzo ważna, ponieważ bezpośrednio wpływa na utrzymanie wysokiej jakości świadczonych usług. Będziemy zobowiązani, jeśli zechcą Państwo ją wypełnić.',
 
-  'CUSTOMER_CONFIRMATION': 'Assinatura do Cliente',
+  'CUSTOMER_CONFIRMATION': 'Potwierdznie Klienta',
 
-  'SERVICE_ENGINEER_CONFIRMATION': 'Assinatura do Técnico de Serviços',
+  'SERVICE_ENGINEER_CONFIRMATION': 'Potwierdzenie Inżyniera Serwisu',
 
-  'SIGNED_BY': 'Assinado por',
+  'SIGNED_BY': 'Potwierdzone przez',
 
-  'ENTER_YOUR_NAME': 'Insira seu nome',
+  'AT': 'w dniu',
 
-  'AT': 'em',
+  'BEING_DULY_AUTHORISED': '(Upoważniony do podpisania w imieniu klienta)',
 
-  'BEING_DULY_AUTHORISED': '(Está devidamente autorizado a assinar em nome do cliente)',
+  'COMPANY_GROUP_NAME': 'Atlas Copco Polska Sp. z o.o.',
 
-  'COMPANY_GROUP_NAME': 'Atlas Copco Brasil - PTS',
+  'COMPANY_LEGAL_NAME': '',
 
-  'COMPANY_LEGAL_NAME': 'Atlas Copco Brasil Ltda',
+  'COMPANY_ADDRESS_1': 'Badylarska 25',
 
-  'COMPANY_ADDRESS_1': 'Av. Anápolis, 100 - 20° andar',
+  'COMPANY_ADDRESS_2': '02-484 Warszawa',
 
-  'COMPANY_ADDRESS_2': 'Barueri - SP – Brasil - 06404-250',
+  'VISITORS_ADDRESS': 'Serwis +48 (0) 22 572 68 00',
 
-  'VISITORS_ADDRESS': 'Centro de Distribuição',
+  'VISITOR_ADDRESS_1': '',
 
-  'VISITOR_ADDRESS_1': 'Av. Georg Schaeffler, 430',
+  'VISITOR_ADDRESS_2': 'Fax   +48 (0) 22 572 68 09',
 
-  'VISITOR_ADDRESS_2': 'Sorocaba - SP - Brasil - 18087-175',
+  'FOOTER_CENTER_LINE1': 'acpoland@pl.atlascopco.com',
 
-  'FOOTER_CENTER_LINE1': '+55 11 2167-0618',
+  'COMPANY_FAX': '',
 
-  'COMPANY_FAX': '+55 11 98421-6160',
+  'COMPANY_URL': 'www.atlascopco.pl',
 
-  'COMPANY_URL': 'www.atlascopco.com.br',
+  'FOOTER_ADDITIONAL_INFO_1': 'Bank: Deutsche Bank Polska S.A. Nr konta 44188000090000001102101000',
 
-  'FOOTER_ADDITIONAL_INFO_1': 'CNPJ: 57.029.431/0050-86',
+  'FOOTER_ADDITIONAL_INFO_2': 'Rejestr: Sąd Rejonowy dla m. st. Warszawy XIV Wydział Gospodarczy KRS: 0000060819',
 
-  'FOOTER_ADDITIONAL_INFO_2': 'IE: 669.807.247.119',
-
-  'FOOTER_ADDITIONAL_INFO_3': '',
-
-  'TELEPHONE': 'Telf',
-
-  'FAX': 'Fax',
+  'FOOTER_ADDITIONAL_INFO_3': 'Kapitał Spółki: PLN 2.000.000,-   NIP 527-00-11-039',
 
   'SAFETY_FIRST': 'Safety First',
-
-  'QUESTION': 'Questões',
-
-
-  'CHECKED': 'Verificada',
-
-  //Literals Commissioning Report
+  'QUESTION': 'Pytania',
+  'CHECKED': 'Checked',
+  
+  //Literals Commissioning Report - to be translated
   'COMM_TEXT1': 'Commissioning procedure',
   'COMM_TEXT2': 'The commissioning of a compressor is of special significance. Correct commissioning is the first step in building up the equipment history. The equipment history is essential for proper follow-up. During commissioning the service engineer will record the initial service readings and other operating data of the equipment. All temperatures, pressures, voltage, amps, etc. need to be properly recorded, using the correct service instruments and gauges. The service data in the commissioning report will provide an important source of reference at a later stage. You will refer to them when handling e.g. when discussing any service problem. If the service readings have not recorded during commissioning, then comparison at a later stage may become considerably more difficult.',
   'COMM_TEXT3': 'Commisioning check',
@@ -217,5 +206,4 @@
   'COMM_Q28_Q': '28. Measurement instrument',
   'COMM_Q29_Q': '29. Serial Number',
   'COMM_Q30_Q': '30. Certificate number'
-
 };

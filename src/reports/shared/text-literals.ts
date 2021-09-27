@@ -109,6 +109,32 @@ import * as VNE_VI from "./text-literals-vne-vi";
 import * as ZDI_TH from "./text-literals-zdi-th";
 import * as VNE_EN from "./text-literals-vne-en";
 
+//Cluster 8
+import * as AOC_EN from "./text-literals-aoc-en";
+import * as AOC_PT from "./text-literals-aoc-pt";
+import * as CZA_CS from "./text-literals-cza-cs";
+import * as DZB_EN from "./text-literals-dzb-en";
+import * as DZB_FR from "./text-literals-dzb-fr";
+import * as EGY_EN from "./text-literals-egy-en";
+import * as KEN_EN from "./text-literals-ken-en";
+import * as KZB_EN from "./text-literals-kzb-en";
+import * as KZB_RU from "./text-literals-kzb-ru";
+import * as MAB_EN from "./text-literals-mab-en";
+import * as MAB_FR from "./text-literals-mab-fr";
+import * as NGR_EN from "./text-literals-ngr-en";
+import * as PKA_EN from "./text-literals-pka-en";
+import * as PLB_PL from "./text-literals-plb-pl";
+import * as RUA_RU from "./text-literals-rua-ru";
+import * as SAA_EN from "./text-literals-saa-en";
+import * as TRC_TR from "./text-literals-trc-tr";
+import * as TRF_EN from "./text-literals-trf-en";
+import * as TRF_TR from "./text-literals-trf-tr";
+import * as TRT_EN from "./text-literals-trt-en";
+import * as UAA_EN from "./text-literals-UAA-en";
+import * as UAA_UK from "./text-literals-UAA-uk";
+import * as ZAA_EN from "./text-literals-zaa-en";
+import * as ZMC_EN from "./text-literals-zmc-en";
+
 export var textLiterals = {};
 export var currentLanguage = 'EN';
 
@@ -222,3 +248,28 @@ textLiterals['UVB_EN'] = UVB_EN.textLiterals;
 textLiterals['VNE_VI'] = VNE_VI.textLiterals;
 textLiterals['ZDI_TH'] = ZDI_TH.textLiterals;
 textLiterals['VNE_EN'] = VNE_EN.textLiterals;
+
+//Cluster 8
+textLiterals['AOC_EN'] = AOC_EN.textLiterals;
+textLiterals['AOC_PT'] = AOC_PT.textLiterals;
+textLiterals['CZA_CS'] = CZA_CS.textLiterals;
+textLiterals['DZB_EN'] = DZB_EN.textLiterals;
+textLiterals['DZB_FR'] = DZB_FR.textLiterals;
+textLiterals['EGY_EN'] = EGY_EN.textLiterals;
+textLiterals['KEN_EN'] = KEN_EN.textLiterals;
+textLiterals['KZB_RU'] = KZB_RU.textLiterals;
+textLiterals['MAB_EN'] = MAB_EN.textLiterals;
+textLiterals['MAB_FR'] = MAB_FR.textLiterals;
+textLiterals['NGR_EN'] = NGR_EN.textLiterals;
+textLiterals['PKA_EN'] = PKA_EN.textLiterals;
+textLiterals['PLB_PL'] = PLB_PL.textLiterals;
+textLiterals['RUA_RU'] = RUA_RU.textLiterals;
+textLiterals['SAA_EN'] = SAA_EN.textLiterals;
+textLiterals['TRT_EN'] = TRT_EN.textLiterals;
+textLiterals['TRT_TR'] = TRT_TR.textLiterals;
+textLiterals['TRC_TR'] = TRC_TR.textLiterals;
+textLiterals['TRF_TR'] = TRF_TR.textLiterals;
+textLiterals['UAA_EN'] = UAA_EN.textLiterals;
+textLiterals['UAA_UK'] = UAA_UK.textLiterals;
+textLiterals['ZAA_EN'] = ZAA_EN.textLiterals;
+textLiterals['ZMC_EN'] = ZMC_EN.textLiterals;
