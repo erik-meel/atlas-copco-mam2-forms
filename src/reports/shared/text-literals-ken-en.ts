@@ -100,6 +100,8 @@ export var textLiterals = {
 
   'VISITORS_ADDRESS':'Visitors Adress:' ,
 
+  'VISITORS_ADDRESS':'Visitors Adress' ,
+
   'VISITOR_ADDRESS_1': 'P.O. Box 1373 ',
 
   'VISITOR_ADDRESS_2': '',
@@ -117,6 +119,10 @@ export var textLiterals = {
   'FOOTER_ADDITIONAL_INFO_3': '',
 
   'TELEPHONE': 'Trunklines',
+
+  'TELEPHONE': 'Tel.',
+
+  'FAX': 'Mob.',
 
   'SAFETY_FIRST': 'Safety First',
 
