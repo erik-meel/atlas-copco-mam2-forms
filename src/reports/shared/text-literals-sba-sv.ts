@@ -24,6 +24,8 @@
 
   'ORDER_NUMBER': 'Ordernr',
 
+  'ORDER_DESCRIPTION': 'Beställningsbeskrivning',
+
   'CONTRACT_NUMBER': 'Kontraktsnr',
 
   'PO_NUMBER': 'Inköpsordernr',
@@ -81,6 +83,8 @@
   'CUSTOMER_CONFIRMATION': 'Kunds godkännande',
 
   'SERVICE_ENGINEER_CONFIRMATION': 'Serviceteknikers godkännande',
+
+  'ENTER_YOUR_NAME': 'Ange ditt namn',
 
   'SIGNED_BY': 'Signerad av',
 

@@ -1,114 +1,124 @@
 export var textLiterals = {
 
-  'LANGUAGE': 'EN',
+  'LANGUAGE':'PL',
 
-  'VISIT_REPORT': 'Visit Report',
+ 'VISIT_REPORT': 'Raport serwisowy',
 
-  'CUSTOMER_DETAILS': 'Customer Details',
+  'CUSTOMER_DETAILS': 'Dane klienta',
 
-  'CONTACT': 'Contact',
+  'CONTACT': 'Osoba kontaktowa',
 
-  'REPORT_DATE': 'Report date',
+  'REPORT_DATE': 'Data',
 
-  'EQUIPMENT': 'Equipment',
+  'EQUIPMENT': 'Urządzenie',
 
-  'RUNNING_HOURS': 'Running Hours',
+  'RUNNING_HOURS': 'Aktualne godziny pracy',
 
-  'HOURS': 'hours',
+  'HOURS': 'h',
 
-  'SERIAL_NUMBER': 'Serial Number',
+  'SERIAL_NUMBER': 'Numer seryjny',
 
-  'LOAD_HOURS': 'Load Hours',
+  'LOAD_HOURS': 'Godziny w dociążeniu',
 
-  'VISIT_DATE': 'Visit date',
+  'VISIT_DATE': 'Data wizyty',
 
-  'ORDER_NUMBER': 'Order Number',
+  'ORDER_NUMBER': 'Nr zlecenia',
 
-  'ORDER_DESCRIPTION': 'Description',
+  'CONTRACT_NUMBER': 'Nr kontraktu',
 
-  'CONTRACT_NUMBER': 'Contract Number',
+  'PO_NUMBER': 'Nr zamówienia',
 
-  'PO_NUMBER': 'PO number',
+  'WORK_COMMENTS': 'Opis prac',
 
-  'WORK_COMMENTS': 'Work Comments',
+  'NEXT_VISIT': 'Zalecenia dot. nastepnej wizyty',
 
-  'NEXT_VISIT': 'Next Visit',
+  'NEXT_RECOMMENDED_SERVICE_1': 'Typ wizyty: “',
 
-  'NEXT_RECOMMENDED_SERVICE_1': 'Next recommended service is at “',
+  'NEXT_RECOMMENDED_SERVICE_2': '”     Szacowana data następnej wizyty:',
 
-  'NEXT_RECOMMENDED_SERVICE_2': '” estimated due date',
+  'FOLLOWING_WORK_IS': 'Zalecenia dot. koniecznych do przeprowadzenia prac:',
 
-  'FOLLOWING_WORK_IS': 'The following work is recommended, our service team will contact you.',
+  'ESTIMATED_WORK_HOUR': 'Przybliżony czas pracy',
 
-  'ESTIMATED_WORK_HOUR': '',
+  'TIME_CONFIRMATION': 'Potwierdzenia',
 
-  'TIME_CONFIRMATION': 'Time Confirmation',
+  'DATE': 'Data',
+  'SERVICE_ENGINEER': 'Autor',
 
-  'DATE': 'Date',
+  'ACTIVITY_TYPE': 'Rodzaj zadania',
+  'HOUR_KM': 'h/km',
 
-  'SERVICE_ENGINEER': 'Service Engineer',
+  'MATERIAL_CONFIRMATION': 'Potwierdzenie wydania materiału',
 
-  'ACTIVITY_TYPE': 'Activity Type',
+  'PART_NUMBER': 'Nr części',
 
-  'HOUR_MILES': 'Hour/miles',
+  'PART_DESCRIPTION': 'Nazwa części',
 
-  'MATERIAL_CONFIRMATION': 'Material Confirmation',
+  'QUANTITY_UNIT': 'Ilość',
 
-  'PART_NUMBER': 'Part Number',
+  'WORK_DONE': 'Zakończono',
 
-  'PART_DESCRIPTION': 'Part Description',
+  'OPERATIONS': 'Działania',
 
-  'QUANTITY_UNIT': 'Quantity unit',
+  'COMMENTS': 'Uwagi',
 
-  'WORK_DONE': 'Work Done',
+  'MEASUREMENT_POINTS': 'Punkty pomiarowe',
 
-  'OPERATIONS': 'Operations',
+  'COUNTER': 'Nazwa',
 
-  'COMMENTS': 'Comments',
+  'READING_AFTER_SERVICE': 'Odczyt końcowy',
 
-  'MEASUREMENT_POINTS': 'Measurement Points',
+  'BEFORE_SERVICE': 'Przed usługą',
 
-  'COUNTER': 'Counter',
+  'FROM_LAST_VISIT_ON': 'Data ostat. odczytu/Odczyt',
 
-  'READING_AFTER_SERVICE': 'Reading after service',
-
-  'BEFORE_SERVICE': 'Before service',
-
-  'FROM_LAST_VISIT_ON': 'From last visit on',
-
-  'AUTHORISATION_TO_CARRY': 'AUTHORISATION TO CARRY OUT WORK WITH/WITHOUT AN ORDER NO.',
+  'AUTHORISATION_TO_CARRY': 'AUTHORISATION_TO_CARRY',
 
   'NOTES': 'Notes',
 
-  'CUSTOMER_WILL_AGREE': 'Customer will agree to supply Atlas Copco with a valid order number or payment for non-account holders for actual time spend, travelling and parts used during the breakdown intervention by next working day.',
+  'CUSTOMER_WILL_AGREE': 'Wkrótce mogą Państwo otrzymać krótką ankietę dot. jakości wykonania ww. zlecenia. Państwa ocena jest bardzo ważna, ponieważ bezpośrednio wpływa na utrzymanie wysokiej jakości świadczonych usług. Będziemy zobowiązani, jeśli zechcą Państwo ją wypełnić.',
 
-  'CUSTOMER_CONFIRMATION': 'Customer Confirmation',
+  'CUSTOMER_CONFIRMATION': 'Potwierdznie Klienta',
 
-  'SERVICE_ENGINEER_CONFIRMATION': 'Service Engineer Confirmation',
+  'SERVICE_ENGINEER_CONFIRMATION': 'Potwierdzenie Inżyniera Serwisu',
 
-  'SIGNED_BY': 'Signed by',
+  'SIGNED_BY': 'Potwierdzone przez',
 
-  'ENTER_YOUR_NAME': 'Enter your name',
+  'AT': 'w dniu',
 
-  'AT': 'at',
+  'BEING_DULY_AUTHORISED': '(Upoważniony do podpisania w imieniu klienta)',
 
-  'BEING_DULY_AUTHORISED': '(Being duly authorised to sign on behalf of the customer)',
+  'COMPANY_GROUP_NAME': 'Atlas Copco Polska Sp. z o.o.',
 
-  'COMPANY_GROUP_NAME': 'Atlas Copco Ltd',
+  'COMPANY_LEGAL_NAME': '',
 
-  'COMPANY_LEGAL_NAME': 'Atlas Copco Compressors',
+  'COMPANY_ADDRESS_1': 'Badylarska 25',
 
-  'COMPANY_ADDRESS_1': 'Swallowdale Lane',
+  'COMPANY_ADDRESS_2': '02-484 Warszawa',
 
-  'COMPANY_ADDRESS_2': 'Hemel Hempstead, HP2 7EA',
+  'VISITORS_ADDRESS': 'Serwis +48 (0) 22 572 68 00',
 
-  'TELEPHONE_NUMBER': 'Tel. 0845 6050630 Option 1',
+  'VISITOR_ADDRESS_1': '',
 
-  'FOOTER_CENTER_LINE1': 'compressor.service@uk.atlascopco.com',
+  'VISITOR_ADDRESS_2': 'Fax   +48 (0) 22 572 68 09',
 
-  'COMPANY_URL': 'www.atlascopco.com',
+  'FOOTER_CENTER_LINE1': 'acpoland@pl.atlascopco.com',
 
-  //Literals Commissioning Report
+  'COMPANY_FAX': '',
+
+  'COMPANY_URL': 'www.atlascopco.pl',
+
+  'FOOTER_ADDITIONAL_INFO_1': 'Bank: Deutsche Bank Polska S.A. Nr konta 44188000090000001102101000',
+
+  'FOOTER_ADDITIONAL_INFO_2': 'Rejestr: Sąd Rejonowy dla m. st. Warszawy XIV Wydział Gospodarczy KRS: 0000060819',
+
+  'FOOTER_ADDITIONAL_INFO_3': 'Kapitał Spółki: PLN 2.000.000,-   NIP 527-00-11-039',
+
+  'SAFETY_FIRST': 'Safety First',
+  'QUESTION': 'Pytania',
+  'CHECKED': 'Checked',
+  
+  //Literals Commissioning Report - to be translated
   'COMM_TEXT1': 'Commissioning procedure',
   'COMM_TEXT2': 'The commissioning of a compressor is of special significance. Correct commissioning is the first step in building up the equipment history. The equipment history is essential for proper follow-up. During commissioning the service engineer will record the initial service readings and other operating data of the equipment. All temperatures, pressures, voltage, amps, etc. need to be properly recorded, using the correct service instruments and gauges. The service data in the commissioning report will provide an important source of reference at a later stage. You will refer to them when handling e.g. when discussing any service problem. If the service readings have not recorded during commissioning, then comparison at a later stage may become considerably more difficult.',
   'COMM_TEXT3': 'Commisioning check',
@@ -196,5 +206,4 @@ export var textLiterals = {
   'COMM_Q28_Q': '28. Measurement instrument',
   'COMM_Q29_Q': '29. Serial Number',
   'COMM_Q30_Q': '30. Certificate number'
-
 };
