@@ -12,7 +12,7 @@
 
       <ho-cell ho-width="60%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
-         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'dd MMM yyyy' }}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -39,7 +39,7 @@
         <ho-section-header><b>{{text('WORK_COMMENTS')}}</b></ho-section-header>
         <ho-row>
           <ho-cell ho-width="100%" class="allow-break-lines">
-            <div>{{ tag('WORK_COMMENTS') }}</div>
+            <div style="white-space: pre-line;">{{ tag('WORK_COMMENTS') }}</div>
             <!-- {{ tag('WORK_COMMENTS') }} -->
           </ho-cell>
         </ho-row>
@@ -62,7 +62,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('DATE') | date: 'dd MMM yyyy' }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -87,7 +87,7 @@
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: locale }}</ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: 'dd MMM yyyy' }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -117,7 +117,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') | date: locale }}<br/>
+                     {{ tag('NEXT_VISIT_DATE') | date: 'dd MMM yyyy' }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -213,18 +213,21 @@
                   <thead>
                   <tr>
                     <th width="30%">{{text('COUNTER')}}</th>
-                    <th width="30%" class="text-align-right">{{text('READING_AFTER_SERVICE')}}</th>
-                    <th width="10%"></th>
+                    <th width="70%" colspan="2" class="text-align-right">{{text('READING_AFTER_SERVICE')}}</th>
+<!--
                     <th width="30%" colspan="2" class="text-align-right">{{text('FROM_LAST_VISIT_ON')}}<br><span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+-->
                   </tr>
                   </thead>
                   <tbody>
                   <tr *ngFor="let entry of INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
                     <td width="30%">{{ entry.tag('COUNTER') }}</td>
-                    <td width="20%" class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
-                    <td width="15%">{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+                    <td width="65%" class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
+                    <td width="5%">{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+<!--
                     <td width="30%" class="text-align-right">{{ entry.tag('READ_LAST_VISIT')}}</td>
                     <td width="5%" class="text-align-left">{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+-->
                   </tr>
                   </tbody>
                 </table>
@@ -250,7 +253,7 @@
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: locale }}</ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: 'dd MMM yyyy' }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -290,7 +293,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('DATE') | date: 'dd MMM yyyy' }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -408,18 +411,21 @@
               <thead>
               <tr>
                 <th width="30%">{{text('COUNTER')}}</th>
-                <th width="30%" class="text-align-right">{{text('READING_AFTER_SERVICE')}}</th>
-                <th width="15%"></th>
+                <th width="70%" colspan="2" class="text-align-right">{{text('READING_AFTER_SERVICE')}}</th>
+<!--
                 <th width="25%" colspan="2" class="text-align-right">{{text('FROM_LAST_VISIT_ON')}}<br><span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+-->
               </tr>
               </thead>
               <tbody>
               <tr *ngFor="let entry of entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
                 <td width="30%">{{ entry.tag('COUNTER') }}</td>
-                <td width="20%" class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
-                <td width="15%">{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+                <td width="65%" class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
+                <td width="5%">{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
+<!--
                 <td width="30%" class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
                 <td width="5%" class="text-align-left">{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+-->
               </tr>
               </tbody>
             </table>
@@ -490,7 +496,7 @@
           <ho-cell ho-width="50%">
             <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
             <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
-            <div class="signature-comment" *ngIf="customerSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
+            <div class="signature-comment" *ngIf="customerSignatureDate.length > 0">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text('AT')}} {{ customerSignatureDate }}
             </div>
             <div class="signature-comment">{{ text('BEING_DULY_AUTHORISED')}}</div>
           </ho-cell>

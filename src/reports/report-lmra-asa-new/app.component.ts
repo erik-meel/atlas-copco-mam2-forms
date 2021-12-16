@@ -45,7 +45,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    var d = new Date();
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var month = months[d.getMonth()];
+    var day = d.getDate();
+    var year = d.getFullYear();
+    var custDate = day + " " + month + " " + year;
+    this.customerSignatureDate = custDate;
     this.formService.saveHtmlToMel();
   }
 
@@ -55,7 +61,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    var d = new Date();
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var month = months[d.getMonth()];
+    var day = d.getDate();
+    var year = d.getFullYear();
+    var custDate = day + " " + month + " " + year;
+    this.techSignatureDate = custDate;
     this.formService.saveHtmlToMel();
   }
 

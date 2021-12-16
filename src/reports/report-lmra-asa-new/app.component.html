@@ -12,7 +12,7 @@
 
       <ho-cell ho-width="60%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('LMRA_REPORT')}}</div>
-         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'dd MMM yyyy' }}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -53,7 +53,7 @@
             <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
             <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
             <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-            <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: locale }}</ho-cell>
+            <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: 'dd MMM yyyy' }}</ho-cell>
           </ho-row>
           <ho-row>
             <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -92,7 +92,7 @@
               <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
               <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
               <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-              <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: locale }}</ho-cell>
+              <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: 'dd MMM yyyy' }}</ho-cell>
             </ho-row>
             <ho-row>
               <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
