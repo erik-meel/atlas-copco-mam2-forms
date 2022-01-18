@@ -98,7 +98,7 @@ export var textLiterals = {
 
   'COMPANY_ADDRESS_2': 'LAGUNA TECHNOPARK , BINAN LAGUNA, 4024, PHILIPPINES',
 
-  'VISITORS_ADDRESS':'Visitors Adress' ,
+  'VISITORS_ADDRESS':'Visitors Adress:' ,
 
   'VISITOR_ADDRESS_1': 'P.O. Box 1373 ',
 
@@ -116,9 +116,7 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': '',
 
-  'TELEPHONE': 'Tel.',
-
-  'FAX': 'Mob.',
+  'TELEPHONE': 'Trunklines',
 
   'SAFETY_FIRST': 'Safety First',
 

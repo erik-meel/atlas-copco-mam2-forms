@@ -45,7 +45,7 @@
       </ho-cell>
     </ho-row>
     <div class="spacer"></div>
-    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length < 0"> <!-- don't show time confirmations -->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -73,7 +73,7 @@
           </ho-row>
         </ho-cell>
     </ho-row>
-    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"></div>
+    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length < 0"></div>
 
 <!-- Single order REPORT -->
     <ho-row  *ngIf="!INPUT.getVarArray('ORD_GR_DATA').length > 0">
@@ -110,7 +110,7 @@
            </ho-row>
            <div class="spacer"></div>
 
-           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_TYPE').length > 0">
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_TYPE').length < 0"> <!-- don't show Next visit -->
              <ho-cell ho-width="100%">
                <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
                <ho-row>
@@ -122,7 +122,7 @@
              </ho-cell>
            </ho-row>
            <div class="spacer"></div>
-           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length < 0">
               <ho-cell ho-width="100%">
                <ho-section-header><b>{{ text('NEXT_RECOMMENDED_SERVICE_1')}}</b></ho-section-header>
                <ho-row>
@@ -144,7 +144,7 @@
                </ho-row>
               </ho-cell>
              </ho-row>
-           <div class="spacer" *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+           <div class="spacer" *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length < 0"></div>
 
          <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0">
              <ho-cell ho-width="100%">
@@ -175,7 +175,7 @@
            </ho-row>
            <div class="spacer" *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
 
-            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length < 0"> <!-- don't show material confirmations -->
               <ho-cell ho-width="100%">
                 <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
                 <ho-row>
@@ -200,7 +200,7 @@
                 </ho-row>
               </ho-cell>
             </ho-row>
-            <div class="spacer" *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+            <div class="spacer" *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length < 0"></div>
 
             <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
             <ho-cell ho-width="100%">
@@ -240,7 +240,7 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
+
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -274,7 +274,7 @@
     </ho-row>
 
 <!--Show confirmations for current equipment          -->
-    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length < 0"> <!-- don't show time confirmations -->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -302,9 +302,9 @@
           </ho-row>
         </ho-cell>
     </ho-row>
-    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"></div>
+    <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length < 0"></div>
 
-        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0">
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length < 0"> <!-- don't show next visit -->
           <ho-cell ho-width="100%">
             <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
             <ho-row>
@@ -315,9 +315,9 @@
             </ho-row>
           </ho-cell>
         </ho-row>
-        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0"></div>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length < 0"></div>
 
-        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length < 0">
           <ho-cell ho-width="100%">
             <ho-section-header><b>{{ text('NEXT_RECOMMENDED_SERVICE_1') }}</b></ho-section-header>
             <ho-row>
@@ -339,7 +339,7 @@
             </ho-row>
           </ho-cell>
         </ho-row>
-        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length < 0"></div>
 
          <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0">
            <ho-cell ho-width="100%">
@@ -371,7 +371,7 @@
 
         <div class="spacer" *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
 
-          <ho-row ho-avoid-break  *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+          <ho-row ho-avoid-break  *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length < 0"> <!-- don't show material confirmations -->
             <ho-cell ho-width="100%">
               <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
               <ho-row>
@@ -396,7 +396,7 @@
               </ho-row>
             </ho-cell>
           </ho-row>
-          <div class="spacer" *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+          <div class="spacer" *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length < 0"></div>
 
     <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
       <ho-cell ho-width="100%">
@@ -430,7 +430,6 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
@@ -474,7 +473,7 @@
       <div class="spacer" *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
  <!-- End LMRA -->
     <ho-row ho-avoid-break>
-      <ho-cell ho-width="100%">
+      <ho-cell ho-width="100%" *ngIf="1==2"> <!-- Hide authorization section -->
         <ho-section-header><b>{{ text('AUTHORISATION_TO_CARRY')}}</b></ho-section-header>
         <ho-row ho-bordered>
           <ho-cell ho-width="100%">
@@ -482,11 +481,14 @@
             {{text('CUSTOMER_WILL_AGREE')}}
           </ho-cell>
         </ho-row>
+      </ho-cell>
+      <ho-cell ho-width="100%">
         <div class="spacer"></div>
         <ho-row ho-bordered>
           <ho-cell ho-width="50%"><b>{{text('CUSTOMER_CONFIRMATION')}}</b></ho-cell>
           <ho-cell ho-width="50%"><b>{{text('SERVICE_ENGINEER_CONFIRMATION')}}</b></ho-cell>
         </ho-row>
+
         <ho-row ho-bordered>
           <ho-cell ho-width="50%">
             <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>

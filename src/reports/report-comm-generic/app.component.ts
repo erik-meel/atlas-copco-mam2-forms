@@ -92,6 +92,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   loadProductFamilies(): void {
     this.productFamilies = {
       'Ranges': [
+  {'name': 'AQ15-55VSD', 'description': 'AQ 15-55 VSD/AQ 30-55' },
   {'name': 'BAPI12-142+', 'description': 'BAPI12-142+' },
   {'name': 'DZS100-200-400VSD+', 'description': 'DZS100-200-400VSD+' },
   {'name': 'FD5-95', 'description': 'FD5-95' },
