@@ -89,6 +89,7 @@
         <ho-cell ho-width="100%" >
           <img *ngIf="rangeValue=='AQ15-55VSD'" src='./img/AQ VSD AirCooled.png' id='AQ15-55VSD' width="100%">
           <img *ngIf="rangeValue=='BAPI12-142+'" src='./img/BAP12-142+.png' id='BAPI12-142+' width="100%">
+          <img *ngIf="rangeValue=='CHILLER'" src='./img/chiller.png' id='Chillers' width="100%">
           <img *ngIf="rangeValue=='DZS100-200-400VSD+'" src='./img/dzs100-200-400vsd+.png' id='DZS100-200-400VSD+' width="100%">
           <img *ngIf="rangeValue=='FD5-95'" src='./img/fd5-95.png' id='FD5-95' width="100%">
           <img *ngIf="rangeValue=='G7-15FF'" src='./img/g7-15ff.png' id='G7-15FF' width="100%">
@@ -283,6 +284,10 @@
                      </tr>
                      <tr>
                        <td>{{text('COMM_Q30_Q')}}</td>
+                       <td><input type="text" [ngModel]="Q30" name="Q30" size="55" (change)="onSettingValue($event.target)"></td>
+                     </tr>
+                     <tr *ngIf="rangeValue=='CHILLER'">
+                       <td>CHILLER</td>
                        <td><input type="text" [ngModel]="Q30" name="Q30" size="55" (change)="onSettingValue($event.target)"></td>
                      </tr>
                      </tbody>
