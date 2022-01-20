@@ -1,6 +1,6 @@
 export var formInputVar = {
   //SETTINGS
-  'LANG': 'HUN_HU',
+  'LANG': 'EN',
   // HEADER
   //THIS IS A TEST PHRASE
   'SOLDTO_NAME': 'Glass Partners (PTY) LTD',
