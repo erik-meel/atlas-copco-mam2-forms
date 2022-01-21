@@ -107,6 +107,8 @@ import * as SGC_EN from "./text-literals-sgc-en";
 import * as VNE_VI from "./text-literals-vne-vi";
 import * as ZDI_TH from "./text-literals-zdi-th";
 import * as VNE_EN from "./text-literals-vne-en";
+import * as CBC_CN from "./text-literals-vne-en";
+
 
 export var textLiterals = {};
 export var currentLanguage = 'EN';
@@ -220,3 +222,4 @@ textLiterals['UVB_EN'] = UVB_EN.textLiterals;
 textLiterals['VNE_VI'] = VNE_VI.textLiterals;
 textLiterals['ZDI_TH'] = ZDI_TH.textLiterals;
 textLiterals['VNE_EN'] = VNE_EN.textLiterals;
+textLiterals['CBC_CN'] = CBC_CN.textLiterals;
