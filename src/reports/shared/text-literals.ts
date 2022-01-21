@@ -110,7 +110,6 @@ import * as ZDI_TH from "./text-literals-zdi-th";
 import * as VNE_EN from "./text-literals-vne-en";
 import * as CBC_CN from "./text-literals-vne-en";
 
-
 //Cluster 8
 import * as AOC_EN from "./text-literals-aoc-en";
 import * as AOC_PT from "./text-literals-aoc-pt";
@@ -250,10 +249,7 @@ textLiterals['UVB_EN'] = UVB_EN.textLiterals;
 textLiterals['VNE_VI'] = VNE_VI.textLiterals;
 textLiterals['ZDI_TH'] = ZDI_TH.textLiterals;
 textLiterals['VNE_EN'] = VNE_EN.textLiterals;
-<<<<<<< HEAD
 textLiterals['CBC_CN'] = CBC_CN.textLiterals;
-=======
-
 //Cluster 8
 textLiterals['AOC_EN'] = AOC_EN.textLiterals;
 textLiterals['AOC_PT'] = AOC_PT.textLiterals;
@@ -278,4 +274,3 @@ textLiterals['UAA_EN'] = UAA_EN.textLiterals;
 textLiterals['UAA_UK'] = UAA_UK.textLiterals;
 textLiterals['ZAA_EN'] = ZAA_EN.textLiterals;
 textLiterals['ZMC_EN'] = ZMC_EN.textLiterals;
->>>>>>> 37b09114902d40d924709b6e705c723ef049a7d9
