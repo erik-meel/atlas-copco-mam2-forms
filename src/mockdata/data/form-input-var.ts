@@ -17,7 +17,7 @@ export var formInputVar = {
   'CUST_CONTACT': 'KOBUS',
   'CUST_PHONE': '888.888.88',
   'CUST_EMAIL': 'kobus@glasspartners.com',
-  'REPORT_DATE': '2016/03/24 10:05:10 AM',
+  'REPORT_DATE': '2022/01/25 10:05:10 AM',
   'PMACTTYPE': 'CH',
   'ORDER_SHORT_TEXT': 'GA 90 Planned Visit-A',
   // BODY
@@ -44,12 +44,12 @@ export var formInputVar = {
     // 'ORD_GR_DATA': 'not_relevant'
   },
   // -- Equipment
-  'EQUI_ID': 'GA45VSDFF A 13',
+  'EQUI_ID': 'TCX 4-90A',
   'EQUI_SERIAL_NUMBER': 'API486502',
-  'EQUI_RUNNING_HOURS': '200',
-  'EQUI_LOAD_HOURS': '30',
+  'EQUI_RUNNING_HOURS': '2',
+  'EQUI_LOAD_HOURS': '2',
   'EQUI_ACC_VOLUME': '90', // 1000 m^3 for commisioning report
-  'VISIT_DATE': '2016/03/24',
+  'VISIT_DATE': '2022/01/25',
   'WORK_TYPE': 'CHX',
   'ORDER_NUMBER': '664686',
   'CONTRACT_NUMBER': '302305',
