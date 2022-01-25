@@ -94,7 +94,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       'Ranges': [
   {'name': 'AQ15-55VSD', 'description': 'AQ 15-55 VSD/AQ 30-55' },
   {'name': 'BAPI12-142+', 'description': 'BAPI12-142+' },
-  {'name': 'CHILLER', 'description': 'Chillers' },
   {'name': 'DZS100-200-400VSD+', 'description': 'DZS100-200-400VSD+' },
   {'name': 'FD5-95', 'description': 'FD5-95' },
   {'name': 'G7-15FF', 'description': 'G7-15FF' },
@@ -122,6 +121,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   {'name': 'GAAIRCOOLED', 'description': 'GAAIRCOOLED' },
   {'name': 'GHS-VSD+', 'description': 'GHS-VSD+' },
   {'name': 'NGMS1-3', 'description': 'NGMS1-3' },
+  {'name': 'NGP+', 'description': 'NGP/NGP+/OGP' },
+  {'name': 'TCX4-90A', 'description': 'TCX 4-90A' },
   {'name': 'ZE3S', 'description': 'ZE3S' },
   {'name': 'ZH-2STAGE', 'description': 'ZH-2STAGE' },
   {'name': 'ZH-3STAGE', 'description': 'ZH-3STAGE' },
