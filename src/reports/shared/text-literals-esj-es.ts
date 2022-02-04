@@ -26,6 +26,8 @@ export var textLiterals = {
 
   'CONTRACT_NUMBER': 'Numero de Contrato',
 
+  'ORDER_DESCRIPTION': 'Descripcion Orden',
+
   'PO_NUMBER': 'Numero Pedido Cliente',
 
   'WORK_COMMENTS': 'Comentarios Intervención',
@@ -81,6 +83,8 @@ export var textLiterals = {
   'CUSTOMER_WILL_AGREE': 'El Cliente se compromete a proporcionar a Sogimair dentro de los dos siguientes días hábiles a la salida del técnico un número de pedido válido para la mano de obra, los viajes y las piezas utilizadas durante el diagnostico/reparación',
 
   'CUSTOMER_CONFIRMATION': 'Confirmación Cliente',
+
+  'ENTER_YOUR_NAME': 'Ingrese su nombre',
 
   'SERVICE_ENGINEER_CONFIRMATION': 'Confirmación Tecnico',
 
