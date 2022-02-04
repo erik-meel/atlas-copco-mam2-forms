@@ -4,6 +4,8 @@
 
   'VISIT_REPORT': 'Munkalap',
 
+  'LMRA_REPORT': 'Biztonsági jelentés',
+
   'CUSTOMER_DETAILS': 'Ügyfél adatok',
 
   'CONTACT': 'Kapcsolattartó',
@@ -55,7 +57,7 @@
 
   'PART_DESCRIPTION': 'Megnevezés',
 
-  'ORDER_DESCRIPTION': 'Order description',
+  'ORDER_DESCRIPTION': 'Munka megnevezés',
 
   'QUANTITY_UNIT': 'Mennyiség',
 

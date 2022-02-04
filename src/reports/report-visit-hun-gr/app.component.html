@@ -268,7 +268,8 @@
           <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="55%"></ho-cell>
+          <ho-cell ho-width="30%"><b>{{ text("ORDER_DESCRIPTION")}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ tag("ORDER_SHORT_TEXT") }}</ho-cell>
           <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
           <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
         </ho-row>
