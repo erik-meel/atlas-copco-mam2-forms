@@ -4,7 +4,7 @@
   <ho-header>
     <ho-row>
       <ho-cell ho-width="60%">
-        <img style="max-height: 80px !important;height: 80px !important" id="logo" src="../shared/img/servatechnik.jpg" alt="">
+        <img style="max-height: 80px !important;height: 80px !important" id="logo" src="../shared/img/ALUP_ServaTechnik.png" alt="">
       </ho-cell>
 
       <ho-cell ho-width="40%"  ho-text-align="left">
@@ -118,7 +118,7 @@
              </ho-cell>
            </ho-row>
            <div class="spacer"></div>
-           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+           <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length == 999">  <!-- Recommended repair should not be visible -->
               <ho-cell ho-width="100%">
                <ho-section-header><b>Recommended Repair</b></ho-section-header>
                <ho-row>
@@ -140,7 +140,7 @@
                </ho-row>
               </ho-cell>
              </ho-row>
-           <div class="spacer" *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+           <div class="spacer" *ngIf="INPUT.getVarArray('NEXT_VISIT_HEADLINE').length == 999"></div>
 
          <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0">
              <ho-cell ho-width="100%">
@@ -281,7 +281,7 @@
         </ho-row>
         <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0"></div>
 
-        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length == 999">  <!-- Recommended repair should not be visible -->
           <ho-cell ho-width="100%">
             <ho-section-header><b>Recommended Repair</b></ho-section-header>
             <ho-row>
@@ -303,7 +303,7 @@
             </ho-row>
           </ho-cell>
         </ho-row>
-        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0"></div>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length == 999"></div>
 
          <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0">
            <ho-cell ho-width="100%">

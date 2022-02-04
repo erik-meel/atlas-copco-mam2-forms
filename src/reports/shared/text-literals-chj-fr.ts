@@ -47,6 +47,7 @@ export var textLiterals = {
   'SERVICE_ENGINEER_CONFIRMATION': 'Signature technicien',
   'SIGNED_BY': 'Nom du signataire: ',
   'AT': 'le',
+  'ENTER_YOUR_NAME': 'Entrez votre nom',
   'BEING_DULY_AUTHORISED': '(Pouvoir à été donné pour signer au nom du client)',
   'TELEPHONE': 'Tel',
   'FAX': 'Fax',
