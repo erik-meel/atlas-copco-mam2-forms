@@ -49,23 +49,18 @@
           <ho-row>
             <ho-cell ho-width="30%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
             <ho-cell ho-width="25%">{{ tag('EQUI_ID') }}</ho-cell>
-            <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-            <ho-cell ho-width="20%" class="text-align-right">{{ tag('VISIT_DATE') }}</ho-cell>
-          </ho-row>
-          <ho-row>
-            <ho-cell ho-width="30%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
-            <ho-cell ho-width="25%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
             <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
             <ho-cell ho-width="20%" class="text-align-right">{{ tag('ORDER_NUMBER') }}</ho-cell>
           </ho-row>
           <ho-row>
-            <ho-cell ho-width="30%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
-            <ho-cell ho-width="25%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+            <ho-cell ho-width="30%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+            <ho-cell ho-width="25%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
             <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
             <ho-cell ho-width="20%" class="text-align-right">{{ tag('PO_NUMBER') }}</ho-cell>
           </ho-row>
           <ho-row>
-            <ho-cell ho-width="55%"></ho-cell>
+            <ho-cell ho-width="30%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+            <ho-cell ho-width="25%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
             <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
             <ho-cell ho-width="20%" class="text-align-right">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
           </ho-row>
@@ -87,23 +82,18 @@
             <ho-row>
               <ho-cell ho-width="30%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
               <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
-              <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-              <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('VISIT_DATE') | date: 'dd/MM/yyyy' }}</ho-cell>
-            </ho-row>
-            <ho-row>
-              <ho-cell ho-width="30%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
-              <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
               <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
               <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
             </ho-row>
             <ho-row>
-              <ho-cell ho-width="30%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
-              <ho-cell ho-width="25%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+              <ho-cell ho-width="30%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+              <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
               <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
               <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
             </ho-row>
             <ho-row>
-              <ho-cell ho-width="55%"></ho-cell>
+              <ho-cell ho-width="30%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+              <ho-cell ho-width="25%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
               <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
               <ho-cell ho-width="20%" class="text-align-right">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
             </ho-row>
