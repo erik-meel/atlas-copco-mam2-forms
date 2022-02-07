@@ -131,6 +131,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   {'name': 'ZR55-90FF', 'description': 'ZR55-90FF' },
   {'name': 'ZR55-90VSD', 'description': 'ZR75-90VSD' },
   {'name': 'ZR75-90VSDFF', 'description': 'ZR75-90VSDFF' },
+  {'name': 'ZR90-160VSD+', 'description': 'ZR90-160VSD+' },
   {'name': 'ZR110-275', 'description': 'ZR110-275' },
   {'name': 'ZR110-275FF', 'description': 'ZR110-275FF' },
   {'name': 'ZR132-315VSD', 'description': 'ZR132-315VSD' },
