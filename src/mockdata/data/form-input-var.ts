@@ -44,7 +44,7 @@ export var formInputVar = {
     // 'ORD_GR_DATA': 'not_relevant'
   },
   // -- Equipment
-  'EQUI_ID': 'TCX 4-90A',
+  'EQUI_ID': 'ZR90VSD',
   'EQUI_SERIAL_NUMBER': 'API486502',
   'EQUI_RUNNING_HOURS': '2',
   'EQUI_LOAD_HOURS': '2',
