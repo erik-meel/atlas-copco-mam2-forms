@@ -82,6 +82,8 @@ export var textLiterals = {
 
   'SERVICE_ENGINEER_CONFIRMATION': 'signature du technicien',
 
+  'ENTER_YOUR_NAME': 'Entrez votre nom',
+
   'SIGNED_BY': 'Signé par',
 
   'AT': 'le',

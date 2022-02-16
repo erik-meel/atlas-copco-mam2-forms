@@ -63,8 +63,8 @@
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
                   <td>{{ entry.tag('DATE')  | date: 'dd/MM/yyyy'   }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td>{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('EFFORT') }}</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>
