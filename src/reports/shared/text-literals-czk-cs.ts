@@ -9,7 +9,7 @@ export var textLiterals = {
   'REPORT_DATE': 'Datum výkazu',
 
   'EQUIPMENT_HEADER': 'ZAŘÍZENÍ',
-  
+
   'EQUIPMENT': 'Zařízení',
 
   'RUNNING_HOURS': 'Provozní hodiny',
@@ -76,9 +76,9 @@ export var textLiterals = {
 
   'AUTHORISATION_TO_CARRY': 'Autorizace provedení servisu',
 
-  'NOTES': 'Poznámka',
+  'NOTES': 'Poznámka:',
 
-  'CUSTOMER_WILL_AGREE': ' Zákazník potvrzuje, proplacení servisního zásahu dle cenové nabídky, aktuálního odpracovaného času, cestovních nákladů a použitých dílů.  V případě, že byl servisní zásah proveden bez objednávky, zajistí vystavení objednávky následující pracovní den.',
+  'CUSTOMER_WILL_AGREE': ' Zákazník potvrzuje proplacení servisního zásahu dle cenové nabídky. V případě že byl serv. zásah proveden bez cenové nabídky bude zákazníkovi vystavena faktura dle aktuálního odpracovaného času, cestovních nákladů a použitých dílů. Pokud byl servisní zásah proveden bez objednávky, zákazník zajistí vystavení objednávky následující pracovní den. Pokud se jedná prokazatelně o záruční opravu, budou náklady na servisní zásah pokryty společností Atlas Copco.',
 
   'CUSTOMER_CONFIRMATION': 'Potvrzení - Zákazník',
 
