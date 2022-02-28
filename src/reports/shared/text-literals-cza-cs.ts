@@ -1,6 +1,6 @@
 export var textLiterals = {
 
- 'VISIT_REPORT': 'Pracovní výkaz',
+ 'VISIT_REPORT': 'Servisni protokol',
 
   'CUSTOMER_DETAILS': 'Detaily - Zákazník',
 
@@ -9,7 +9,7 @@ export var textLiterals = {
   'REPORT_DATE': 'Datum výkazu',
 
   'EQUIPMENT_HEADER': 'ZAŘÍZENÍ',
-  
+
   'EQUIPMENT': 'Zařízení',
 
   'RUNNING_HOURS': 'Provozní hodiny',
