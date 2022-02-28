@@ -199,7 +199,7 @@ export var textLiterals = {
 'COMM_Q18_Q': '18. El agua se drena a',
 'COMM_Q18_A1': 'Filtro de aceite/agua',
 'COMM_Q18_A2': 'Alcantarilla',
-'COMM_Q19_Q': '19. Volgaje',
+'COMM_Q19_Q': '19. Voltaje',
 'COMM_Q20_Q': '20. Frecuencia',
 'COMM_Q21_Q': '21. Ajustes del relé de sobrecarga del motor principal',
 'COMM_Q22_Q': '22. Ajuntes del relé de sobrecarga del motor del ventilador',
