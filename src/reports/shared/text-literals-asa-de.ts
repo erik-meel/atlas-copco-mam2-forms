@@ -92,7 +92,7 @@ export var textLiterals = {
 
   'NOTES': 'Bemerkungen',
 
-  'CUSTOMER_WILL_AGREE': 'Der Kunde erklärt sich einverstanden Atlas Copco am nächsten Werktag eine gültige Bestellnummer für die im Rahmen des Serviceeinsatzes erbrachten Arbeits- und Reisezeiten, sowie der verwendeten Ersatzteile zusenden.',
+  'CUSTOMER_WILL_AGREE': 'Der Kunde erklärt sich einverstanden Atlas Copco am nächsten Werktag eine gültige Bestellnummer für die im Rahmen des Serviceeinsatzes erbrachten Arbeits- und Reisezeiten, sowie der verwendeten Ersatzteile zusenden. Die Ausführung der Arbeiten erfolgte unter der denn allgemeinen Bedingungen „AGB’s für Serviceaufträge.',
 
   'CUSTOMER_CONFIRMATION': 'Kundenunterschrift',
 
