@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {FormService} from '../../forms';
 import {MelVariable} from '../../movilizer';
 import {textLiterals, currentLanguage} from "../shared/text-literals";
+declare let literalsSet: any;
 
 @Component({
   selector: 'my-form',
@@ -17,6 +18,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private textLiteralsSet = textLiterals;
+  private browserLocal = navigator.language;
+  private dateOptions = {};
+  private timeOptions = {};
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -24,8 +29,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
+          this.dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+          this.timeOptions = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
           this.INPUT = formInput;
           this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
+
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
           let that = this;
             Observable.timer(200).subscribe(
@@ -51,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -61,7 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 
