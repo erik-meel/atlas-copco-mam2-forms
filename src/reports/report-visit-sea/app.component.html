@@ -54,9 +54,9 @@
                 <thead>
                 <tr>
                   <th width="20%">{{text('DATE')}}</th>
-                  <th width="40%">{{text('SERVICE_ENGINEER')}}</th>
-                  <th width="40%">{{text('ACTIVITY_TYPE')}}</th>
-
+                  <th width="30%">{{text('SERVICE_ENGINEER')}}</th>
+                  <th width="35%">{{text('ACTIVITY_TYPE')}}</th>
+                  <th width="15%">{{text('HOUR_KM')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,6 +64,7 @@
                   <td>{{ entry.tag('DATE') | date: locale }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td>{{ entry.tag('EFFORT') }}</td>
                  </tr>
                 </tbody>
               </table>
@@ -280,8 +281,9 @@
                 <thead>
                 <tr>
                   <th width="20%">{{text('DATE')}}</th>
-                  <th width="40%">{{text('SERVICE_ENGINEER')}}</th>
-                  <th width="40%">{{text('ACTIVITY_TYPE')}}</th>
+                  <th width="30%">{{text('SERVICE_ENGINEER')}}</th>
+                  <th width="35%">{{text('ACTIVITY_TYPE')}}</th>
+                  <th width="15%">{{text('HOUR_KM')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -289,6 +291,7 @@
                   <td>{{ entry.tag('DATE') | date: locale }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td>{{ entry.tag('EFFORT') }}</td>
                  </tr>
                 </tbody>
               </table>
@@ -466,7 +469,7 @@
         </ho-cell>
       </ho-row>
       <div class="spacer" *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
- <!-- End LMRA --> 
+ <!-- End LMRA -->
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">
         <ho-section-header><b>{{ text('AUTHORISATION_TO_CARRY')}}</b></ho-section-header>
