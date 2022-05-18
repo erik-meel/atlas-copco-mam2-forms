@@ -1,7 +1,6 @@
 export var textLiterals = {
-//Visit Report
   'LANGUAGE': 'FR',
-  'VISIT_REPORT': "Rapport d'intervention",
+ 'VISIT_REPORT': "Rapport d'intervention",
   'CUSTOMER_DETAILS': 'Client',
   'CONTACT': 'Contact',
   'REPORT_DATE': 'Date du rapport',
@@ -17,11 +16,11 @@ export var textLiterals = {
   'PO_NUMBER': 'N° de commande client',
   'WORK_COMMENTS': 'Commentaires',
   'NEXT_VISIT': 'Prochaine visite de maintenance',
-  'NEXT_RECOMMENDED_SERVICE_1': 'prochaine intervention de maintenance préconisé“',
-  'NEXT_RECOMMENDED_SERVICE_2': 'prochaine intervention de maintenance préconisé“',
+  'NEXT_RECOMMENDED_SERVICE_1': 'prochaine intervention de maintenance préconisé',
+  'NEXT_RECOMMENDED_SERVICE_2': 'prochaine intervention de maintenance préconisé',
   'FOLLOWING_WORK_IS': "nous préconisons l'intervention suivante : ",
   'ESTIMATED_WORK_HOUR': 'Heures estimées',
-  'TIME_CONFIRMATION': 'Réalisations',
+  'TIME_CONFIRMATION': 'Heures réalisées',
   'DATE': 'Date',
   'SERVICE_ENGINEER': 'Technicien',
   'ACTIVITY_TYPE': 'Code activité',
@@ -33,65 +32,50 @@ export var textLiterals = {
   'WORK_DONE': 'Opérations effectuées',
   'OPERATIONS': 'Operations',
   'COMMENTS': 'Remarque',
-  'MEASUREMENT_POINTS': 'Points de mesure',
-  'COUNTER': 'Description',
+  'MEASUREMENT_POINTS': 'Point de mesure',
+  'COUNTER': 'Compteur',
   'READING_AFTER_SERVICE': 'Après réparation',
   'BEFORE_SERVICE': 'Avant réparation',
-  'FROM_LAST_VISIT_ON': 'Précédente intervention',
+  'FROM_LAST_VISIT_ON': 'suite à la précédente intervention',
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
   'AUTHORISATION_TO_CARRY': "Autorisation de réaliser l'intervention avec ou sans obtention d'un N° de commande client",
   'NOTES': 'Note',
-  'CUSTOMER_WILL_AGREE': "Le Client s'engage à fournir à Atlas Copco dans les deux jours ouvrés suivant le depart du technicien, un numéro de commande valide pour l'intervention effectuée",
+  'CUSTOMER_WILL_AGREE': "Le Client s'engage à fournir à Exlair dans les deux jours ouvrés suivant le depart du technicien, un numéro de commande valide pour l'intervention effectuée",
   'CUSTOMER_CONFIRMATION': 'Confirmation client',
   'SERVICE_ENGINEER_CONFIRMATION': 'Confirmation Technicien',
   'SIGNED_BY': 'Signé par',
-  'ENTER_YOUR_NAME': 'Entrez votre nom',
   'AT': 'le',
   'BEING_DULY_AUTHORISED': '(Pouvoir à été donné pour signer au nom du client)',
+  'ENTER_YOUR_NAME': 'Ecrivez votre nom',
 
-  'COMPANY_GROUP_NAME': 'Atlas Copco Compresseurs',
-  'COMPANY_GROUP_NAME_2': '',
+  'FAX': 'Fax',
+  'TELEPHONE': 'Tél.',
 
-  'COMPANY_LEGAL_NAME': "Atlas Copco France S.A.S.",
+  'COMPANY_GROUP_NAME': 'MultiAir France',
 
-  'COMPANY_ADDRESS_1': "2 Avenue de l'Eguillette BP 67722",
+  'COMPANY_LEGAL_NAME': 'PA Du Vert Galant',
 
-  'COMPANY_ADDRESS_2': 'ZI du Vert Galant',
+  'COMPANY_ADDRESS_1': '2, Avenue des Gros Chevaux',
 
-  'COMPANY_ADDRESS_3': '95046 Cergy-Pontoise Cedex',
+  'COMPANY_ADDRESS_2': "95310 St Ouen L'Aumône",
 
-  'COMPANY_ADDRESS_4': 'Capital social : 4.655.456 Euros',
+  'VISITORS_ADDRESS': '',
 
-  'VISITORS_ADDRESS': 'Tél: +33 (0)1 39 09 31 00',
+  'VISITOR_ADDRESS_1': '',
 
-  'VISITOR_ADDRESS_1': 'Fax: +33 (0)1 39 09 30 99',
+  'VISITOR_ADDRESS_2': '',
 
-  'VISITOR_ADDRESS_2': 'compresseurs@fr.atlascopco.com',
+  'FOOTER_CENTER_LINE1': 'Tel : +33 (0)1 34 32 95 00',
 
-  'VISITOR_ADDRESS_3': 'www.atlascopco.fr',
+  'COMPANY_FAX': 'Fax : +33 (0)1 34 32 95 33',
 
-  'VISITOR_ADDRESS_4': '',
+  'COMPANY_URL': 'http://www.worthington-creyssensac.com/fr',
 
-  'TELEPHONE': 'Tél: +33 (0)1 39 09 31 00',
+  'FOOTER_ADDITIONAL_INFO_1': 'Siret 388 163 099 00137 ',
 
-  'FAX': 'Fax: +33 (0)1 39 09 30 99',
+  'FOOTER_ADDITIONAL_INFO_2': 'TVA FR 41 388 163 099',
 
-  'FOOTER_CENTER_LINE1': 'SIRET: 348 582 834 00118 ',
-
-  'FOOTER_CENTER_LINE2': 'R.C.S. PONTOISE',
-
-  'COMPANY_FAX': 'B 348 582 834-APE 4669B',
-
-  'COMPANY_URL': 'N° TVA intracommunautaire:',
-
-  'COMPANY_URL_2': 'FR 50348582834',
-
-  'FOOTER_ADDITIONAL_INFO_1': "Nos références bancaires:",
-
-  'FOOTER_ADDITIONAL_INFO_2': 'BNP IDF NORD ENTREPRISES',
-
-  'FOOTER_ADDITIONAL_INFO_3': 'IBAN: FR 76 3000 4018 5600 01002360 611',
-
-  'FOOTER_ADDITIONAL_INFO_4': 'BNPAFRPPXXX',
+  'FOOTER_ADDITIONAL_INFO_3': 'IBAN : FR 76 3000 4018 5600 0100 2341 211 ',
 
   //Commission report
   'COMMISSION_REPORT': 'Procédure de Mise en service',

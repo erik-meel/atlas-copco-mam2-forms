@@ -24,6 +24,8 @@ export var textLiterals = {
 
   'ORDER_NUMBER': 'Nr zlecenia',
 
+  'ORDER_DESCRIPTION': 'Opis zamówienia',
+
   'CONTRACT_NUMBER': 'Nr kontraktu',
 
   'PO_NUMBER': 'Nr zamówienia',
@@ -82,6 +84,8 @@ export var textLiterals = {
 
   'SERVICE_ENGINEER_CONFIRMATION': 'Potwierdzenie Inżyniera Serwisu',
 
+  'ENTER_YOUR_NAME': 'Wpisz swoje imię',
+
   'SIGNED_BY': 'Potwierdzone przez',
 
   'AT': 'w dniu',
@@ -96,13 +100,17 @@ export var textLiterals = {
 
   'COMPANY_ADDRESS_2': '02-484 Warszawa',
 
-  'VISITORS_ADDRESS': 'Serwis +48 (0) 22 572 68 00',
+  'VISITORS_ADDRESS': '',
 
   'VISITOR_ADDRESS_1': '',
 
   'VISITOR_ADDRESS_2': 'Fax   +48 (0) 22 572 68 09',
 
   'FOOTER_CENTER_LINE1': 'acpoland@pl.atlascopco.com',
+
+  'TELEPHONE': 'Tel.',
+
+  'FAX': 'Fax',
 
   'COMPANY_FAX': '',
 
@@ -117,7 +125,7 @@ export var textLiterals = {
   'SAFETY_FIRST': 'Safety First',
   'QUESTION': 'Pytania',
   'CHECKED': 'Checked',
-  
+
   //Literals Commissioning Report - to be translated
   'COMM_TEXT1': 'Commissioning procedure',
   'COMM_TEXT2': 'The commissioning of a compressor is of special significance. Correct commissioning is the first step in building up the equipment history. The equipment history is essential for proper follow-up. During commissioning the service engineer will record the initial service readings and other operating data of the equipment. All temperatures, pressures, voltage, amps, etc. need to be properly recorded, using the correct service instruments and gauges. The service data in the commissioning report will provide an important source of reference at a later stage. You will refer to them when handling e.g. when discussing any service problem. If the service readings have not recorded during commissioning, then comparison at a later stage may become considerably more difficult.',

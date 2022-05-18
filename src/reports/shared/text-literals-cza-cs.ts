@@ -1,6 +1,6 @@
 export var textLiterals = {
 
- 'VISIT_REPORT': 'Servisni protokol',
+ 'VISIT_REPORT': 'Servisní protokol',
 
   'CUSTOMER_DETAILS': 'Detaily - Zákazník',
 
@@ -109,6 +109,8 @@ export var textLiterals = {
   'FOOTER_CENTER_LINE1': 'servis.kompresory@cz.atlascopco.com',
 
   'TELEPHONE': 'Tel.',
+
+  'FAX': 'Fax',
 
   'COMPANY_FAX': '',
 
