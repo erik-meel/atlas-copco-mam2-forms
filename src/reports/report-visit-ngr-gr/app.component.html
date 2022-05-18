@@ -171,7 +171,7 @@
            </ho-row>
            <div class="spacer" *ngIf="INPUT.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
 
-            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length == -1"> <!-- never show -->
               <ho-cell ho-width="100%">
                 <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
                 <ho-row>
@@ -196,7 +196,7 @@
                 </ho-row>
               </ho-cell>
             </ho-row>
-            <div class="spacer" *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+            <div class="spacer" *ngIf="INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length == -1"></div> <!-- never show -->
 
             <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
             <ho-cell ho-width="100%">
@@ -363,7 +363,7 @@
 
         <div class="spacer" *ngIf="entryOrd.getVarArray('WORK_DONE_ENTRIES').length > 0"></div>
 
-          <ho-row ho-avoid-break  *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0">
+          <ho-row ho-avoid-break  *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length == -1"> <!-- Never show -->
             <ho-cell ho-width="100%">
               <ho-section-header><b>{{text('MATERIAL_CONFIRMATION')}}</b></ho-section-header>
               <ho-row>
@@ -388,7 +388,7 @@
               </ho-row>
             </ho-cell>
           </ho-row>
-          <div class="spacer" *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length > 0"></div>
+          <div class="spacer" *ngIf="entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES').length == -1"></div> <!-- never show -->
 
     <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES').length > 0">
       <ho-cell ho-width="100%">
