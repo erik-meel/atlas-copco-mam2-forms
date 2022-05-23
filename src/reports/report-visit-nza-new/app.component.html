@@ -110,6 +110,30 @@
            </ho-row>
            <div class="spacer"></div>
 
+           <!-- ACAP Score -->
+                      <ho-row ho-avoid-break *ngIf="INPUT.tag('CUST_ID').indexOf('1000946506') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946507') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946508') !== -1">
+                        <ho-cell ho-width="100%">
+                          <ho-section-header><b>ACAP Condition Score</b></ho-section-header>
+                          <ho-row>
+                            <ho-cell ho-width="100%">
+                              <td>ACAP score made by Atlas Copco service technician</td><br/>
+                              <td>
+                                <form action="">
+                                <input type="radio" name="ACAP" value="1" > 1 - Very good condition
+                                <input type="radio" name="ACAP" value="2" > 2 - Good condition
+                                <input type="radio" name="ACAP" value="3" > 3 - Moderate condition
+                                <input type="radio" name="ACAP" value="4" > 4 - Poor condition
+                                <input type="radio" name="ACAP" value="5" > 5 - Very poor condition
+                                </form>
+                              </td>
+                           <br/>
+                            </ho-cell>
+                          </ho-row>
+                        </ho-cell>
+                      </ho-row>
+                      <div class="spacer" *ngIf="INPUT.tag('CUST_NAME').indexOf('Fonterra') !== -1 || INPUT.tag('CUST_NAME').indexOf('FONTERRA') !== -1"></div>
+           <!-- End ACAP Score -->
+
            <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('NEXT_VISIT_TYPE').length > 0">
              <ho-cell ho-width="100%">
                <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
@@ -301,7 +325,31 @@
           </ho-row>
         </ho-cell>
     </ho-row>
-    <div class="spacer"> <!--*ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"> --> </div>
+    <div class="spacer"><!--*ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"> --> </div>
+
+    <!-- ACAP Score -->
+               <ho-row ho-avoid-break *ngIf="INPUT.tag('CUST_ID').indexOf('1000946506') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946507') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946508') !== -1">
+                 <ho-cell ho-width="100%">
+                   <ho-section-header><b>ACAP Condition Score</b></ho-section-header>
+                   <ho-row>
+                     <ho-cell ho-width="100%">
+                       <td>ACAP score made by Atlas Copco service technician</td><br/>
+                       <td>
+                         <form action="">
+                         <input type="radio" name="ACAP" value="1 - Very good condition" > 1 - Very good condition
+                         <input type="radio" name="ACAP" value="2 - Good condition" > 2 - Good condition
+                         <input type="radio" name="ACAP" value="3 - Moderate condition" > 3 - Moderate condition
+                         <input type="radio" name="ACAP" value="4 - Poor condition" > 4 - Poor condition
+                         <input type="radio" name="ACAP" value="5 - Very poor condition" > 5 - Very poor condition
+                         </form>
+                       </td>
+                    <br/>
+                     </ho-cell>
+                   </ho-row>
+                 </ho-cell>
+               </ho-row>
+               <div class="spacer" *ngIf="INPUT.tag('CUST_NAME').indexOf('Fonterra') !== -1 || INPUT.tag('CUST_NAME').indexOf('FONTERRA') !== -1"></div>
+    <!-- End ACAP Score -->
 
         <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0">
           <ho-cell ho-width="100%">
@@ -444,7 +492,7 @@
         </ho-cell>
       </ho-row>
 
-  <!-- Show/Hide LMRA if 'LMRA_ENABLED_IN_VISIT_REPORT' 
+  <!-- Show/Hide LMRA if 'LMRA_ENABLED_IN_VISIT_REPORT'
       <ho-row ho-avoid-break *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false'">
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('SAFETY_FIRST')}}</b></ho-section-header>

@@ -84,6 +84,8 @@ export var textLiterals = {
 
   'SIGNED_BY': 'Signed by',
 
+  'ENTER_YOUR_NAME': 'Enter your name',
+
   'AT': 'at',
 
   'BEING_DULY_AUTHORISED': '(Being duly authorised to sign on behalf of the customer)',
