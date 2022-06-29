@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
+    this.customerSignatureDate = (new Date()).toLocaleString("pl-PL", this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
+    this.techSignatureDate = (new Date()).toLocaleString("pl-PL", this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 

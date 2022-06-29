@@ -41,7 +41,7 @@
       </ho-cell>
     </ho-row>
     <div class="spacer"></div>
-    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 999"> <!-- never show confirmations-->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -182,14 +182,14 @@
                     <table class="table-ac">
                       <thead>
                       <tr>
-                        <th width="15%">{{text('PART_NUMBER')}}</th>
+                        <th width="15%"></th>
                         <th width="70%">{{text('PART_DESCRIPTION')}}</th>
                         <th width="15%">{{text('QUANTITY_UNIT')}}</th>
                       </tr>
                       </thead>
                       <tbody>
                       <tr *ngFor="let entry of INPUT.getVarArray('MATERIAL_CONFIRMATION_ENTRIES')">
-                        <td>{{ entry.tag('PART_NUMBER') }}</td>
+                        <td></td>
                         <td>{{ entry.tag('PART_DESC') }}</td>
                         <td>{{ entry.tag('QUANTITY') }}</td>
                       </tr>
@@ -273,7 +273,7 @@
     </ho-row>
 
 <!--Show confirmations for current equipment          -->
-    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 999">  <!-- never show confirmations-->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -382,14 +382,14 @@
                   <table class="table-ac">
                     <thead>
                     <tr>
-                      <th width="15%">{{text('PART_NUMBER')}}</th>
+                      <th width="15%"></th>
                       <th width="70%">{{text('PART_DESCRIPTION')}}</th>
                       <th width="15%">{{text('QUANTITY_UNIT')}}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr *ngFor="let entry of entryOrd.getVarArray('MATERIAL_CONFIRMATION_ENTRIES')">
-                      <td>{{ entry.tag('PART_NUMBER') }}</td>
+                      <td></td>
                       <td>{{ entry.tag('PART_DESC') }}</td>
                       <td>{{ entry.tag('QUANTITY') }}</td>
                     </tr>

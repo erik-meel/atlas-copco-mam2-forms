@@ -24,7 +24,7 @@ export var textLiterals = {
 
   'ORDER_NUMBER': 'Nr zlecenia',
 
-  'ORDER_DESCRIPTION': 'Opis zamówienia',
+  'ORDER_DESCRIPTION': 'Opis zlecenia',
 
   'CONTRACT_NUMBER': 'Nr kontraktu',
 
@@ -74,7 +74,7 @@ export var textLiterals = {
 
   'FROM_LAST_VISIT_ON': 'Data ostat. odczytu/Odczyt',
 
-  'AUTHORISATION_TO_CARRY': 'AUTHORISATION_TO_CARRY',
+  'AUTHORISATION_TO_CARRY': 'Upoważnienie do wykonania usługi z/bez numeru zamówienia',
 
   'NOTES': 'Notes',
 
@@ -122,6 +122,7 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': 'Kapitał Spółki: PLN 2.000.000,-   NIP 527-00-11-039',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
   'SAFETY_FIRST': 'Safety First',
   'QUESTION': 'Pytania',
   'CHECKED': 'Checked',
