@@ -99,12 +99,7 @@
                  <ho-cell ho-width="30%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
-               </ho-row>
-               <ho-row>
-                 <ho-cell ho-width="50%"></ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
-               </ho-row>
+               </ho-row> <!-- Next row with order description and contract number removed on request -->
              </ho-cell>
            </ho-row>
            <div class="spacer"></div>
@@ -263,12 +258,7 @@
           <ho-cell ho-width="30%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
-        </ho-row>
-        <ho-row>
-          <ho-cell ho-width="50%"></ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
-        </ho-row>
+        </ho-row>  <!-- Next row with order description and contract number removed on request -->
       </ho-cell>
     </ho-row>
         <!-- Hiding Next visit by testing on length less than 0      -->
