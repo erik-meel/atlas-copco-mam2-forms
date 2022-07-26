@@ -1,4 +1,11 @@
+<!--
+  Before Compilation: change styles.css with adjusted colors:
+  .ho-section-header {
+    background-color: transparent!important;
+    border-bottom: 2px solid #ff6f01!important;
+  }
 
+-->
 <ho-form>
   <!-- HEADER -->
   <ho-header>
@@ -58,11 +65,13 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td>{{ entry.tag('EFFORT') }}</td>
-                  <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM001' || entry.tag('ACT_TYPE') == 'ZAM008' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACT_WORK') }} Saat</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM015'">{{ entry.tag('ACT_WORK') }} TRY</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM016'">{{ entry.tag('ACT_WORK') }} Kg</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM018' || entry.tag('ACT_TYPE') =='ZAM027'">{{ entry.tag('ACT_WORK') }}</td>
                  </tr>
                 </tbody>
               </table>
@@ -83,7 +92,7 @@
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: locale }}</ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: 'dd/MM/yyyy' }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -113,7 +122,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') | date: locale }}<br/>
+                     {{ tag('NEXT_VISIT_DATE') | date: 'dd/MM/yyyy' }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -237,7 +246,7 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
+ <HR id="ekomak-line">
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -247,7 +256,7 @@
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: locale }}</ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: 'dd/MM/yyyy' }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -287,10 +296,13 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td>{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM001' || entry.tag('ACT_TYPE') == 'ZAM008' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACT_WORK') }} Saat</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM015'">{{ entry.tag('ACT_WORK') }} TRY</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM016'">{{ entry.tag('ACT_WORK') }} Kg</td>
+                  <td *ngIf="entry.tag('ACT_TYPE') =='ZAM018' || entry.tag('ACT_TYPE') =='ZAM027'">{{ entry.tag('ACT_WORK') }}</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>
@@ -307,7 +319,7 @@
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') }}<br/>
+                  {{ entryOrd.tag('NEXT_VISIT_DATE') | date: 'dd/MM/yyyy'}}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>
@@ -416,7 +428,7 @@
                 <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
                 <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
                 <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') | date: 'dd/MM/yyyy' }}</td>
                 <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
               </tr>
               </tbody>
@@ -427,7 +439,7 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
+ <HR id="ekomak-line">
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
