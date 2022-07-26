@@ -38,6 +38,7 @@ export var textLiterals = {
   'READING_AFTER_SERVICE': 'Après réparation',
   'BEFORE_SERVICE': 'Avant réparation',
   'FROM_LAST_VISIT_ON': 'Précédente intervention',
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
   'AUTHORISATION_TO_CARRY': "Autorisation de réaliser l'intervention avec ou sans obtention d'un N° de commande client",
   'NOTES': 'Note',
   'CUSTOMER_WILL_AGREE': "Le Client s'engage à fournir à Atlas Copco dans les deux jours ouvrés suivant le depart du technicien, un numéro de commande valide pour l'intervention effectuée",

@@ -29,6 +29,7 @@
     </ho-row>
 
   </ho-header>
+  
   <div class="clear"></div>
   <!-- END: HEADER -->
   <!-- BODY -->
@@ -65,7 +66,7 @@
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td *ngIf="entry.tag('ACT_TYPE')=='ZAM001'||entry.tag('ACT_TYPE')=='ZAM003'||entry.tag('ACT_TYPE')=='ZAM004'||entry.tag('ACT_TYPE')=='ZAM008'||entry.tag('ACT_TYPE')=='ZAM009'||entry.tag('ACT_TYPE')=='ZAM010'||entry.tag('ACT_TYPE')=='ZAM012'||entry.tag('ACT_TYPE')=='ZAM018'">{{ entry.tag('ACT_WORK')}} Heure(s)</td>
-                  <td *ngIf="entry.tag('ACT_TYPE')=='ZAM015'">{{ entry.tag('ACT_WORK') }} Eur</td>
+                  <!--td *ngIf="entry.tag('ACT_TYPE')=='ZAM015'">{{ entry.tag('ACT_WORK') }} Eur</td-->
                   <td *ngIf="entry.tag('ACT_TYPE')=='ZAM029'">{{ entry.tag('ACT_WORK') }} kilomètres</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
@@ -292,11 +293,11 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
-                  <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td *ngIf="entry.tag('ACT_TYPE')!='ZAM015'">{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
+                  <td *ngIf="entry.tag('ACT_TYPE')!='ZAM015'">{{ entry.tag('SERVICE_ENG_NAME') }}</td>
+                  <td *ngIf="entry.tag('ACT_TYPE')!='ZAM015'">{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td *ngIf="entry.tag('ACT_TYPE')=='ZAM001'||entry.tag('ACT_TYPE')=='ZAM003'||entry.tag('ACT_TYPE')=='ZAM004'||entry.tag('ACT_TYPE')=='ZAM008'||entry.tag('ACT_TYPE')=='ZAM009'||entry.tag('ACT_TYPE')=='ZAM010'||entry.tag('ACT_TYPE')=='ZAM012'||entry.tag('ACT_TYPE')=='ZAM018'">{{ entry.tag('ACT_WORK')}} Heure(s)</td>
-                  <td *ngIf="entry.tag('ACT_TYPE')=='ZAM015'">{{ entry.tag('ACT_WORK') }} Eur</td>
+                  <!--td *ngIf="entry.tag('ACT_TYPE')=='ZAM015'">{{ entry.tag('ACT_WORK') }} Eur</td-->
                   <td *ngIf="entry.tag('ACT_TYPE')=='ZAM029'">{{ entry.tag('ACT_WORK') }} kilomètres</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
