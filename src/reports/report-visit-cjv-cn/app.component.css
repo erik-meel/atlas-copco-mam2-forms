@@ -1,0 +1,82 @@
+.table-ac {
+  width: 100%;
+  text-align: left;
+  /*border-spacing: 10px;*/
+  /*border-collapse: separate;*/
+}
+
+.table-ac th, .table-ac td {
+  padding-left: 3px;
+  padding-right: 3px;
+  /*padding-top: 0;*/
+  /*padding-bottom: 0;*/
+
+}
+
+.table-ac th {
+  border-bottom: groove black 1px;
+}
+
+.signature-name-input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.signature-name-input input {
+  margin-left: 4px;
+}
+
+.signature-image {
+  width: 98%;
+  height: auto;
+}
+
+.signature-comment {
+  font-size: 10px;
+}
+
+#vca-logo {
+  position: absolute;
+  bottom: 144px;
+  left: 0;
+  float: left;
+  height: 52px;
+  width: auto;
+}
+
+#brand-logo {
+  margin-left: -6 !important; /* Take container padding out -6 */
+  margin-bottom: 10px !important;
+  max-height: 152px;
+  min-height: 152px;
+  height: 152px;
+  width: auto;
+}
+
+#vianorm-logo {
+  position: absolute;
+  bottom: 72px;
+  left: 0;
+  float: left;
+  height: 52px;
+  width: auto;
+}
+#header-title {
+    color: #1c76B4;
+    text-align: left;
+}
+#blue-line {
+    color: #01479D;
+    border-top: solid 2px #01479D;
+}
+
+.address {
+    line-height: 16px;
+}
+.margtop5 {
+    margin-top: 5px;
+}
+h2.margtop0.margbtm0 {
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
