@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString('es-VE', this.formService.dateTimeFormat);
     this.formService.saveHtmlToMel();
   }
 
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString('es-VE', this.formService.dateTimeFormat);
     this.formService.saveHtmlToMel();
   }
 

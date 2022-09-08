@@ -464,7 +464,7 @@
           <ho-cell ho-width="50%">
             <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
             <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
-            <div class="signature-comment">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
+            <div class="signature-comment">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text('AT')}} {{ customerSignatureDate }}
             </div>
             <div class="signature-comment">(Being duly authorize to sign on behalf of the customer)</div>
           </ho-cell>
@@ -490,20 +490,20 @@
         </ho-row>
         <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_1')}}:</ho-cell>
-          <ho-cell ho-width="25%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_1')}}</ho-cell>
+          <ho-cell ho-width="20%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
           <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
           <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="20%">{{ tag('COMPANY_URL') }}</ho-cell>
           <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
         </ho-row>
       </ho-cell>
