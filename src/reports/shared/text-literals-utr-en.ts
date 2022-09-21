@@ -1,6 +1,7 @@
 export var textLiterals =
 { 'VISIT_REPORT': 'Visit Report',
- 'CUSTOMER_DETAILS': 'Customer Details',
+  'LMRA_REPORT': 'Safety',
+  'CUSTOMER_DETAILS': 'Customer Details',
   'CONTACT': 'Contact',
   'REPORT_DATE': 'Report date',
   'EQUIPMENT': 'Equipment',

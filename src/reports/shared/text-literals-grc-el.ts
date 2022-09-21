@@ -46,7 +46,7 @@
   'CUSTOMER_WILL_AGREE': 'Ο πελάτης θα συμφωνήσει να προμηθεύσει την Atlas Copco με έγκυρο αριθμό παραγγελίας ή πληρωμής για κατόχους εκτός λογαριασμού για τις πραγματικές δαπάνες,τα ταξίδια και τα ανταλλακτικά που χρησιμοποιήθηκαν κατά την παρεμβολή την επόμενη εργάσιμη ημέρα.',
   'CUSTOMER_CONFIRMATION': 'Επιβεβαίωση πελάτη',
   'SERVICE_ENGINEER_CONFIRMATION': 'Επιβεβαίωση τεχνικού',
-  'ENTER_YOUR_NAME': 'Enter your name',
+  'ENTER_YOUR_NAME': 'Εισάγετε το όνομά σας',
   'PLEASE_ENTER_YOUR': 'Please enter your name here',
   'SIGNED_BY': 'Υπογραφή από',
   'AT': 'Στις',
@@ -55,7 +55,8 @@
   'SAFETY_FIRST': 'Safety First',
   'QUESTION': 'Ερώτηση',
   'CHECKED': 'Ελεγμένο',
-
+  'TELEPHONE': 'Τηλ',
+  'FAX': 'Φαξ',
   'COMPANY_GROUP_NAME': 'Ατλας Κόπκο Ελλάς Α.Ε.',
   'COMPANY_LEGAL_NAME': 'Γραφεία-Συνεργείο-Προμήθειες & Ανταλλακτικά',
   'COMPANY_ADDRESS_1': 'Λ.Κορωπίου Βάρης 82',

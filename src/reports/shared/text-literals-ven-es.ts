@@ -70,6 +70,8 @@
 
   'FROM_LAST_VISIT_ON': 'Desde la última visita en',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
+
   'AUTHORISATION_TO_CARRY': 'Autorización para realizar servicio con/sin OC',
 
   'NOTES': 'Notas',
@@ -114,7 +116,7 @@
 
   'FOOTER_ADDITIONAL_INFO_3': '',
 
-  'TELEPHONE': 'Tel:',
+  'TELEPHONE': 'Teléfono',
 
   'FAX': 'Fax:',
 

@@ -110,6 +110,10 @@ export var textLiterals = {
 
   'FOOTER_CENTER_LINE1': '4959331090@ru.atlascopco.com',
 
+  'TELEPHONE': 'тел.',
+
+  'FAX': 'K/C',
+
   'COMPANY_FAX': '',
 
   'COMPANY_URL': 'www.atlascopco.ru',

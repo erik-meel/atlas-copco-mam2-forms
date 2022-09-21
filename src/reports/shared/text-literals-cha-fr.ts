@@ -22,6 +22,8 @@ export var textLiterals = {
 
   'ORDER_NUMBER': 'Numéro du rapport',
 
+  'ORDER_DESCRIPTION': 'Description de la visite',
+
   'CONTRACT_NUMBER': 'Numéro de contrat',
 
   'PO_NUMBER': 'Numéro de commande',

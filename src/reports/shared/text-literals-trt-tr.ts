@@ -18,6 +18,7 @@ export var textLiterals = {
   'ORDER_NUMBER': 'Order Numarası',
   'CONTRACT_NUMBER': 'Kontrat No:',
   'PO_NUMBER': 'PO Numarası',
+  'ORDER_DESCRIPTION': 'Sipariş açıklaması',
   'WORK_COMMENTS': 'Servis  Acıklama',
   'NEXT_VISIT': 'Gelecek Servis Ziyareti',
   'NEXT_RECOMMENDED_SERVICE_1': 'Onerilen gelecek servis “',
