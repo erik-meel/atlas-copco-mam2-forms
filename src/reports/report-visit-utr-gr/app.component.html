@@ -10,15 +10,15 @@
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
          <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
          <p class="address">
-          <b>{{ tag('CUST_NAME') }} </b>
-          <br/>
+          <b>{{ tag('CUST_NAME1') }} </b>
+          <div *ngIf="tag('CUST_NAME2').length > 0"><b>{{ tag('CUST_NAME2') }} </b></div>
           {{ tag('CUST_ADDRESS_1') }}
           <br/>
           {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
           <br/>
           {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
           <br/>
-         </p>
+
          <div ho-page-number ho-text-align="right"></div>
          <br/>
       </ho-cell>
@@ -488,7 +488,7 @@
         <ho-row>
           <ho-cell ho-width="25%">{{tag('COMPANY_ADDRESS_1') }}</ho-cell>
           <ho-cell ho-width="25%"></ho-cell>
-          <ho-cell ho-width="25%">{{ag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%">{{tag('COMPANY_FAX') }}</ho-cell> 
           <ho-cell ho-width="25%">{{tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
         </ho-row>
         <ho-row>

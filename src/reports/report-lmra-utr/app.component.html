@@ -5,34 +5,28 @@
       <ho-cell ho-width="40%">
         <img id="logo" src="./img/beaconmedaes.jpg" alt="">
       </ho-cell>
-      <ho-cell ho-width="60%" ho-text-align="right">
-        <div id="header-title">{{text('LMRA_REPORT')}}</div>
-        <div ho-page-number ho-text-align="right"></div>
+
+
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('LMRA_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME1') }} </b>
+          <b *ngIf="tag('CUST_NAME2').length > 0"><br/>{{ tag('CUST_NAME2') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
       </ho-cell>
     </ho-row>
-    <ho-row ho-bordered ho-class="header header-left-margin-hack">
-      <ho-cell ho-width="100%"><b>{{text('CUSTOMER_DETAILS')}}</b></ho-cell>
-    </ho-row>
-    <ho-row ho-bordered ho-class="header header-left-margin-hack">
-      <ho-cell ho-width="100%">
-        <ho-row>
-          <ho-cell ho-width="60%">
-            <div><b>{{ tag('CUST_NAME') }}</b></div>
-            <div>{{ tag('CUST_ADDRESS_1') }}</div>
-            <div>{{ tag('CUST_ADDRESS_2') }}</div>
-          </ho-cell>
-          <ho-cell ho-width="15%">
-            <div><b>{{text('CONTACT')}}:</b></div>
-            <div><b>{{text('REPORT_DATE')}}:</b></div>
-          </ho-cell>
-          <ho-cell ho-width="25%">
-            <div>{{ tag('CUST_CONTACT') }}</div>
-            <div>{{ tag('REPORT_DATE') }}</div>
-          </ho-cell>
-        </ho-row>
-      </ho-cell>
-    </ho-row>
+
   </ho-header>
+  <div class="clear"></div>
   <!-- END: HEADER -->
   <!-- BODY -->
   <ho-body>
@@ -131,33 +125,52 @@
   <!-- END: BODY -->
   <!-- FOOTER -->
   <ho-footer>
-    <!-- <img id="vca-logo" src="../shared/nl-vca.png" alt="">
-    <img id="vianorm-logo" src="../shared/nl-vianorm.png" alt=""> -->
     <ho-row>
       <ho-cell ho-width="144px">
-        <img id="logo" src="./img/ISO_9001_2015.jpg" alt="">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
       </ho-cell>
-      <ho-cell ho-width="616px">
+      <ho-cell ho-width="100%">
         <ho-row ho-class="footer-title-section">
-          <ho-cell ho-width="100%">{{text('COMPANY_GROUP_NAME') }}</ho-cell>
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{text('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('VISITORS_ADDRESS')}}:</ho-cell>
-          <ho-cell ho-width="25%">{{text('COMPANY_PHONE') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="text('VISITORS_ADDRESS').length > 0">{{text('VISITORS_ADDRESS')}}:</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="text('VISITORS_ADDRESS').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length > 0">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length == 0"></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('COMPANY_FAX') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length > 0">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_1').length > 0">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_1').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length > 0">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length == 0"></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('COMPANY_URL') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length > 0">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_2').length > 0">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_2').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length > 0">{{ tag('COMPANY_URL') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length == 0"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length > 0">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length == 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_4') }}</ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('VISITOR_ADDRESS_3').length == 0"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length > 0"></ho-cell>
+          <ho-cell ho-width="25%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length == 0"></ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>
