@@ -59,6 +59,16 @@
 #blue-line {
     color: #0099CC;
 }
+
+#footerpic {
+  background-color: #0099cc;
+  color: #ffffff;
+  margin-left: -5px;
+  padding-left: 10px;
+  padding-top: 25px;
+  height: 110px;
+}
+
 .address {
     line-height: 16px;
 }
