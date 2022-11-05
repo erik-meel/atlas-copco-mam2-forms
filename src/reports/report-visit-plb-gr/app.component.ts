@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
           this.timeOptions = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
           this.INPUT = formInput;
-          this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
+          this.language = 'PLB_PL'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
 
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
           let that = this;
