@@ -116,9 +116,9 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': '',
 
-  'TELEPHONE': 'Tel. 1',
+  'TELEPHONE': '',
 
-  'FAX': 'Tel. 2',
+  'FAX': '',
 
   'SAFETY_FIRST': 'Safety First',
 
