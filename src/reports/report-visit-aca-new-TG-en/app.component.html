@@ -61,10 +61,10 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
-                  <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td>{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('DATE') | date: locale }} </td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('SERVICE_ENG_NAME') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('EFFORT') }}</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>
@@ -240,7 +240,6 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -272,6 +271,7 @@
         </ho-row>
       </ho-cell>
     </ho-row>
+    <div class="spacer"></div>
 
 <!--Show confirmations for current equipment          -->
     <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
@@ -290,10 +290,10 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
-                  <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td>{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('DATE') | date: locale }} </td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('SERVICE_ENG_NAME') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACTIVITY_TYPE') }}</td>
+                  <td *ngIf="INPUT.tag('PMACTTYPE') == 'CH' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('EFFORT') }}</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>
@@ -430,7 +430,6 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
