@@ -84,6 +84,8 @@
 
   'SERVICE_ENGINEER_CONFIRMATION': 'Akkoord service monteur',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
+
   'SIGNED_BY': 'Ondertekend door',
 
   'AT': 'op',
