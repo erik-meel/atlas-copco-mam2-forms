@@ -36,6 +36,16 @@
   <!-- END: HEADER -->
   <!-- BODY -->
   <ho-body>
+    <ho-row>
+      <ho-cell>
+        <div class="ho-no-print signature-name-input">Langue/Sprache/Linguaggio:
+          <select name="Choisissez/Wählen/Scegli" [(ngModel)]='selLanguage' id="selLanguage" (change)="onLanguageSelect($event)">
+            <option *ngFor="let entry of selLanguages.Languages" [selected]="entry.lang === languageValue" value="{{entry.lang}}">{{entry.description}}</option>
+          </select>
+        </div>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer ho-no-print"></div>
     <ho-row ho-avoid-break *ngIf="!INPUT.getVar('HIDE_SECTION').has('EQUIPMENT')">
       <ho-cell ho-width="100%">
         <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>

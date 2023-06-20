@@ -45,7 +45,7 @@
       </ho-cell>
     </ho-row>
     <div class="spacer"></div>
-    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0 && tag('PMACTTYPE') == 'CH'">
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -63,8 +63,10 @@
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
                   <td>{{ entry.tag('DATE')  | date: 'dd/MM/yyyy'   }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM001')">Ore lavorative</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM020')">Spese di viaggio</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM001')">{{ entry.tag('ACT_WORK') }} ore</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM020')">{{ entry.tag('ACT_WORK') }} lcu</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>

@@ -16,7 +16,7 @@
 
       <ho-cell ho-width="50%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
-         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'dd/MM/yyyy' }}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ cDate(tag('REPORT_DATE')) }}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -65,7 +65,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td *ngIf="entry.tag('ACT_TYPE') =='ZAM001' || entry.tag('ACT_TYPE') == 'ZAM008' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACT_WORK') }} Saat</td>
@@ -92,7 +92,7 @@
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: 'dd/MM/yyyy' }}</ho-cell>
+                 <ho-cell ho-width="30%">{{ cDate(tag('VISIT_DATE')) }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -107,8 +107,7 @@
                  <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="20%"><b>{{text('ORDER_DESCRIPTION')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{tag('ORDER_SHORT_TEXT')}}</ho-cell>
+                 <ho-cell ho-width="50%"></ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
                </ho-row>
@@ -122,7 +121,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') | date: 'dd/MM/yyyy' }}<br/>
+                     {{ cDate(tag('NEXT_VISIT_DATE')) }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -256,7 +255,7 @@
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: 'dd/MM/yyyy' }}</ho-cell>
+          <ho-cell ho-width="30%">{{ cDate(entryOrd.tag('VISIT_DATE')) }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -271,8 +270,7 @@
           <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('ORDER_DESCRIPTION')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{tag('ORDER_SHORT_TEXT')}}</ho-cell>
+          <ho-cell ho-width="50%"></ho-cell>
           <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
         </ho-row>
@@ -296,7 +294,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: 'dd/MM/yyyy' }} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td *ngIf="entry.tag('ACT_TYPE') =='ZAM001' || entry.tag('ACT_TYPE') == 'ZAM008' || entry.tag('ACT_TYPE') == 'ZAM012'">{{ entry.tag('ACT_WORK') }} Saat</td>
@@ -319,7 +317,7 @@
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') | date: 'dd/MM/yyyy'}}<br/>
+                  {{ cDate(entryOrd.tag('NEXT_VISIT_DATE')) }}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>

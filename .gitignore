@@ -1,4 +1,5 @@
 .metadata
+.gitignore
 .idea
 *.iml
 .project
@@ -7,7 +8,7 @@ build
 report
 dist
 typings
-node_modules
+**/node_modules
 jspm_packages
 link-checker-results.txt
 **/*npm-debug.log.*

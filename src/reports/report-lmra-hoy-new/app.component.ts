@@ -17,6 +17,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private logo = "AC";
+  private PlanGroup = '';
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -26,6 +28,30 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.context.run(() => {
           this.INPUT = formInput;
           this.language = 'HOY_EN';
+          this.PlanGroup = this.INPUT.get('PLANGROUP');
+          if(this.PlanGroup=="") {
+            this.logo = 'AC';
+          } 
+          switch (this.PlanGroup) {
+            case 'ZEB':
+              this.logo = 'CAS';
+              break;
+            case 'ZS3':
+              this.logo = 'CAP';
+              break;
+            case 'ZED':
+              this.logo = 'NEC';
+              break;
+            case 'ZWD':
+              this.logo = 'MESA';
+              break;
+            case 'ZET':
+              this.logo = 'TAYLOR';
+              break;  
+            default:
+              this.logo = 'AC';
+              break;
+          }
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
         });
       },

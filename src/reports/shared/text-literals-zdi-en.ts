@@ -1,137 +1,125 @@
-﻿export var textLiterals = {
+export var textLiterals = {
 
-  'LANGUAGE': 'IT',
+ 'VISIT_REPORT': 'Visit Report',
 
-  'VISIT_REPORT': 'Visit Report',
+  'CUSTOMER_DETAILS': 'Customer Details',
 
-  'CUSTOMER_DETAILS': 'Dettagli Cliente',
+  'CONTACT': 'Contact',
 
-  'CONTACT': 'Contatto',
-
-  'REPORT_DATE': 'Data di creazione',
+  'REPORT_DATE': 'Report date',
 
   'EQUIPMENT': 'Equipment',
 
-  'RUNNING_HOURS': 'Ore di funzionamento',
+  'RUNNING_HOURS': 'Running Hours',
 
-  'HOURS': 'Ore',
+  'HOURS': 'hours',
 
   'SERIAL_NUMBER': 'Serial Number',
 
-  'LOAD_HOURS': 'Ore a carico',
+  'LOAD_HOURS': 'Load Hours',
 
-  'VISIT_DATE': 'Data intervento',
+  'VISIT_DATE': 'Visit date',
 
-  'ORDER_NUMBER': 'Service Order',
+  'ORDER_NUMBER': 'Order Number',
 
-  'CONTRACT_NUMBER': 'Numero di Contratto',
+  'CONTRACT_NUMBER': 'Contract Number',
 
-  'PO_NUMBER': 'Riferimento Ordine Cliente',
+  'PO_NUMBER': 'PO number',
 
-  'WORK_COMMENTS': 'Commenti sul lavoro eseguito',
+  'WORK_COMMENTS': 'Work Comments',
 
-  'NEXT_VISIT': 'Prossimo intervento',
+  'NEXT_VISIT': 'Next Visit',
 
-  'NEXT_RECOMMENDED_SERVICE_1': 'Il prossimo intervento di service è consigliato a“',
+  'NEXT_RECOMMENDED_SERVICE_1': 'Next recommended service is a Visit ',
 
-  'NEXT_RECOMMENDED_SERVICE_2': 'Data di scadenza stimata',
+  'NEXT_RECOMMENDED_SERVICE_2': ' estimated due date',
 
-  'FOLLOWING_WORK_IS': 'Il seguente lavoro è consigliato. Verrete contattati dal nostro commerciale',
+  'FOLLOWING_WORK_IS': 'Following work is recommended, our service sales will contact you',
 
-  'ESTIMATED_WORK_HOUR': 'Ore stimate',
+  'ESTIMATED_WORK_HOUR': 'Estimated work hour',
 
-  'TIME_CONFIRMATION': 'Riepilogo conferme',
+  'TIME_CONFIRMATION': 'Time Confirmation',
 
-  'DATE': 'Data',
-  'SERVICE_ENGINEER': 'Nome del Tecnico',
+  'DATE': 'Date',
+  'SERVICE_ENGINEER': 'Service Engineer',
 
-  'ACTIVITY_TYPE': 'Tipo di attività svolta',
-  'HOUR_KM': 'Ore/Km',
+  'ACTIVITY_TYPE': 'Activity Type',
+  'HOUR_KM': 'Hour/km',
 
-  'MATERIAL_CONFIRMATION': 'Elenco materiali',
+  'MATERIAL_CONFIRMATION': 'Material Confirmation',
 
   'PART_NUMBER': 'Part Number',
 
-  'PART_DESCRIPTION': 'Descrizione materiale',
+  'PART_DESCRIPTION': 'Part Description',
 
-  'QUANTITY_UNIT': 'Quantità',
+  'QUANTITY_UNIT': 'Quantity unit',
 
-  'WORK_DONE': 'Lavoro effettuato',
+  'WORK_DONE': 'Work Done',
 
-  'OPERATIONS': 'Operazioni',
+  'OPERATIONS': 'Operations',
 
-  'COMMENTS': 'Commenti',
+  'COMMENTS': 'Comments',
 
-  'QUESTION': 'Domande',
+  'MEASUREMENT_POINTS': 'Measurement Points',
 
-  'MEASUREMENT_POINTS': 'Punti di misurazione',
+  'COUNTER': 'Counter',
 
-  'COUNTER': 'Contatore',
+  'READING_AFTER_SERVICE': 'Reading after service',
 
-  'READING_AFTER_SERVICE': 'Valore corrente',
+  'BEFORE_SERVICE': 'Before service',
 
-  'BEFORE_SERVICE': 'Valore pre-service',
+  'FROM_LAST_VISIT_ON': 'From last visit on',
 
-  'FROM_LAST_VISIT_ON': "Dall'ultimo intervento del giorno:",
+  'AUTHORISATION_TO_CARRY': 'AUTHORISATION TO CARRY OUT WORK WITH/WITHOUT AN ORDER NO.',
 
-  'AUTHORISATION_TO_CARRY': "Autorizzazione ad eseguire il lavoro con o senza un numero d'ordine",
+  'NOTES': 'Notes',
 
-  'NOTES': 'Note',
+  'CUSTOMER_WILL_AGREE': 'Customer will agree to supply Atlas Copco with a valid order number or payment for non-account holders for actual time spend, travelling and parts used during the breakdown intervention by next working day.',
 
-  'CUSTOMER_WILL_AGREE': "Il Cliente si impegna a fornire ad Atlas Copco, entro due giorni lavorativi dall'uscita del tecnico, un numero d'ordine valido per la manodopera, il viaggio e le parti utilizzate durante l'intervento di ricerca guasti",
+  'CUSTOMER_CONFIRMATION': 'Customer Confirmation',
 
-  'CUSTOMER_CONFIRMATION': 'Conferma Cliente',
+  'SERVICE_ENGINEER_CONFIRMATION': 'Service Engineer Confirmation',
 
-  'SERVICE_ENGINEER_CONFIRMATION': 'Conferma Tecnico',
+  'SIGNED_BY': 'Signed by',
 
-  'ENTER_YOUR_NAME': 'Inserisci il tuo nome',
+  'AT': 'at',
 
-  'SIGNED_BY': 'Firmato da',
+  'BEING_DULY_AUTHORISED': '(Being duly authorised to sign on behalf of the customer)',
 
-  'AT': 'il giorno',
+  'COMPANY_GROUP_NAME': 'Atlas Copco (Thailand) Limited',
 
-  'SAFETY_FIRST': 'Safety First',
+  'COMPANY_LEGAL_NAME': 'Post address:',
 
-  'TELEPHONE': 'Telefono',
+  'COMPANY_ADDRESS_1': '125 �Moo 9, Wellgrow Industrial Estate,',
 
-  'BEING_DULY_AUTHORISED': '(Debitamente autorizzato a firmare per conto del cliente)',
-  'COMPANY_GROUP_NAME': 'Atlas Copco Italia S.p.a. – Divisione Compressori',
-  'COMPANY_GROUP_NAME_2': 'Società del Gruppo Atlas Copco AB',
+  'COMPANY_ADDRESS_2': 'Bangna-Trad Road Km.36, Bangwua,Bangpakong , Chachoengsao �24130',
 
-  'COMPANY_LEGAL_NAME': 'Atlas Copco Italia S.p.A.',
+  'VISITORS_ADDRESS': 'Visitors address:',
 
-  'COMPANY_ADDRESS_1': 'Società a socio unico',
+  'VISITOR_ADDRESS_1': '125 �Moo 9, Wellgrow Industrial Estate,',
 
-  'COMPANY_ADDRESS_2': 'Sede legale e amm. Via G.Galilei n.40',
+  'VISITOR_ADDRESS_2': 'Bangna-Trad Road Km.36, Bangwua,Bangpakong , Chachoengsao �24130',
 
-  'COMPANY_ADDRESS_3': '20092 Cinisello Balsamo (MI),Italia',
+  'COMPANY_PHONE': 'Phone: +66(0)3856 2900',
 
-  'VISITORS_ADDRESS': 'Telefono +39 02 61799.1',
+  'COMPANY_FAX': 'Fax: +66(0)38562903',
 
-  'VISITOR_ADDRESS_1': 'Indirizzo PEC',
+  'COMPANY_URL': 'www.atlascopco.com',
 
-  'VISITOR_ADDRESS_2': 'atlascopcoitalia@legalmail.it',
+  'FOOTER_ADDITIONAL_INFO_1': '',
 
-  'VISITOR_ADDRESS_3': 'www.atlascopco.it',
+  'FOOTER_ADDITIONAL_INFO_2': '',
 
-  'FOOTER_CENTER_LINE1': 'DEUTSCHE BANK',
+  'FOOTER_ADDITIONAL_INFO_3': 'Company Reg. No: 0105536082816',
 
-  'FOOTER_CENTER_LINE2': 'Sportello 1 Milano',
+  'TELEPHONE': 'Tel',
 
-  'COMPANY_FAX': 'Swift Code DEUTITMMMIL',
-
-  'COMPANY_URL': 'IBAN IT09 T 03104 01600 000000823542',
-
-  'FOOTER_ADDITIONAL_INFO_1': 'Cap. Soc. € 5.000.000,00 int. vers.',
-
-  'FOOTER_ADDITIONAL_INFO_2': 'Reg.Imprese di Milano e C.F 00908740152',
-
-  'FOOTER_ADDITIONAL_INFO_3': 'P.IVA / VAT 00908740152',
+  'FAX': 'Fax',
 
   //Literals Commissioning Report
   'COMM_TEXT1': 'Commissioning procedure',
   'COMM_TEXT2': 'The commissioning of a compressor is of special significance. Correct commissioning is the first step in building up the equipment history. The equipment history is essential for proper follow-up. During commissioning the service engineer will record the initial service readings and other operating data of the equipment. All temperatures, pressures, voltage, amps, etc. need to be properly recorded, using the correct service instruments and gauges. The service data in the commissioning report will provide an important source of reference at a later stage. You will refer to them when handling e.g. when discussing any service problem. If the service readings have not recorded during commissioning, then comparison at a later stage may become considerably more difficult.',
-  'COMM_TEXT3': 'Commissioning check',
+  'COMM_TEXT3': 'Commisioning check',
   'COMM_TEXT4': 'Check',
   'COMM_TEXT5': 'Comments',
   'COMM_Q1_Q': '1. Installation carried out by',

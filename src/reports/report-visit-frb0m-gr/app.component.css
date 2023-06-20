@@ -53,9 +53,14 @@
   width: auto;
 }
 #header-title {
-    color: #0099CC;
+    color: #0E65A0;
     text-align: left;
 }
+
+#footer-text {
+  font-size: 10px!important;
+}
+
 #blue-line {
     color: #0099CC;
 }

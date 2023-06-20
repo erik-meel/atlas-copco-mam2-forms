@@ -1,6 +1,6 @@
 export var formInputVar = {
   //SETTINGS
-  'LANG': 'EN',
+  'LANG': 'HUN_HU',
   // HEADER
   //THIS IS A TEST PHRASE
   'SOLDTO_NAME': 'Glass Partners (PTY) LTD',
@@ -9,16 +9,19 @@ export var formInputVar = {
   'SOLDTO_REGION': 'CA',
   'SOLDTO_REGIONDESC': 'California',
   'CUST_NAME': 'Fonterra',
-  'CUST_ADDRESS_1': 'Remstang street',
+  'CUST_NAME1': 'BSW SURGICAL HOSPITAL AT SHERMAN',
+  'CUST_NAME2': 'SCOTT & WHITE HEALTH',
+  'CUST_ADDRESS_1': 'Remstang street 5',
   'CUST_ADDRESS_2': 'Stormill',
   'CUST_REGION': 'NV',
   'CUST_REGIONDESC': 'Nevada',
-  'CUST_ID': '123456789012',
+  'CUST_ID': '1000946506',
   'CUST_CONTACT': 'KOBUS',
   'CUST_PHONE': '888.888.88',
   'CUST_EMAIL': 'kobus@glasspartners.com',
-  'REPORT_DATE': '2022/01/25 10:05:10 AM',
+  'REPORT_DATE': '2021/08/25 10:05:10 AM',
   'PMACTTYPE': 'CH',
+  'PLANGROUP': 'ZWD',
   'ORDER_SHORT_TEXT': 'GA 90 Planned Visit-A',
   // BODY
   'HIDE_SECTION': {
@@ -48,6 +51,7 @@ export var formInputVar = {
   'EQUI_SERIAL_NUMBER': 'API486502',
   'EQUI_RUNNING_HOURS': '2',
   'EQUI_LOAD_HOURS': '2',
+  'EQUI_ACQDATE': '2018/09/01',
   'EQUI_ACC_VOLUME': '90', // 1000 m^3 for commisioning report
   'VISIT_DATE': '2022/01/25',
   'WORK_TYPE': 'CHX',
@@ -74,9 +78,10 @@ export var formInputVar = {
             'ORDER_NUMBER' : '40001111',
             'CONTRACT_NUMBER' : '700006348',
             'PO_NUMBER': 'Test End user test',
+            'ORDER_SHORT_TEXT': 'Order 40001111',
             'TIME_CONFIRMATION_ENTRIES': {
               '124': {
-                'DATE': '2020/03/25-05:00',
+                'DATE': '2022/03/25-05:00',
                 'SERVICE_ENG_NAME': 'Erik Meel',
                 'ACTIVITY_TYPE': 'Normal labor',
                 'EFFORT': '3.00 H',
@@ -94,22 +99,22 @@ export var formInputVar = {
                 'ACT_TYPE': 'ZAM008'
               },
               '123': {
-                'DATE': '2020/03/24',
+                'DATE': '2022/03/24',
                 'SERVICE_ENG_NAME': 'Erik Meel',
-                'ACTIVITY_TYPE': 'Mileage',
+                'ACTIVITY_TYPE': 'Refrigerant',
                 'EFFORT': '120.00 KM',
-                'ACT_WORK': '120.00',
+                'ACT_WORK': '12.00',
                 'UOM': 'Kilometer',
-                'ACT_TYPE': 'ZAM029'
+                'ACT_TYPE': 'ZAM016'
               },
               '126': {
-                'DATE': '2020/03/24',
+                'DATE': '2022/02/24',
                 'SERVICE_ENG_NAME': 'Erik Meel',
                 'ACTIVITY_TYPE': 'Additional Expenses',
                 'EFFORT': '120 EUR',
                 'ACT_WORK': '120',
                 'UOM': 'CLP',
-                'ACT_TYPE': 'ZAM015'
+                'ACT_TYPE': 'ZAM014'
             },
             '127': {
               'DATE': '2020/03/29',
@@ -118,12 +123,13 @@ export var formInputVar = {
               'EFFORT': '1',
               'ACT_WORK': '1',
               'UOM': 'UA',
-              'ACT_TYPE': 'ZAM046'
+              'ACT_TYPE': 'ZAM018'
           }
           },
             'EQUI_ID' : 'GA7-7.5 EUR 400 50 TM CE',
             'EQUI_SERIAL_NUMBER': 'API107466',
             'EQUI_RUNNING_HOURS' : '5011',
+            'EQUI_ACQDATE': '2017/03/01',
             'VISIT_DATE' : '2019-01-09',
             'EQUI_LOAD_HOURS' : '11',
             'NEXT_VISIT_DATE': '2019/01/11',
@@ -189,6 +195,7 @@ export var formInputVar = {
             'ORDER_NUMBER' : '40001422',
             'CONTRACT_NUMBER' : '43346348',
             'PO_NUMBER': 'Some PO Number',
+            'ORDER_SHORT_TEXT': 'Order 40001422',
             'TIME_CONFIRMATION_ENTRIES': {
               '124': {
                 'DATE': '2020/03/25-05:00',
@@ -239,6 +246,7 @@ export var formInputVar = {
             'EQUI_ID' : 'GA160 EUR 400 50 TM CE ',
             'EQUI_SERIAL_NUMBER': 'API133436',
             'EQUI_RUNNING_HOURS' : '5022',
+            'EQUI_ACQDATE': '2016/03/01',
             'VISIT_DATE' : '2019-01-10',
             'EQUI_LOAD_HOURS' : '22',
             'NEXT_VISIT_DATE': '2019/02/22',
@@ -281,7 +289,7 @@ export var formInputVar = {
                   'READ_AFTER': '5022',
                   'READ_UNIT': 'H',
                   'READ_BEFORE': '5020',
-                  'READ_LAST_VISIT': '2022',
+                  'READ_LAST_VISIT': '2022-04-20',
                   },
                 '1': {
                   'COUNTER': 'Accumulated volume',
@@ -354,6 +362,7 @@ export var formInputVar = {
              'EQUI_ID' : 'ZR250VSD',
              'EQUI_SERIAL_NUMBER': 'AIF133436',
              'EQUI_RUNNING_HOURS' : '5033',
+             'EQUI_ACQDATE': '2015/05/01',
              'VISIT_DATE' : '2019-01-11',
              'EQUI_LOAD_HOURS' : '33',
              'NEXT_VISIT_DATE': '2019/03/23',
@@ -396,7 +405,9 @@ export var formInputVar = {
                    'READ_AFTER': '5033',
                    'READ_UNIT': 'H',
                    'READ_BEFORE': '5030',
-                   'READ_LAST_VISIT': '2003',
+                   'READ_VALUE': '2003',
+                   'READ_LAST_DATE': '2022-03-15',
+                   'READ_LAST_VISIT': '2022-03-15   2003',
                    },
                  '1': {
                    'COUNTER': 'Accumulated volume',
@@ -518,7 +529,7 @@ export var formInputVar = {
     '124': {
       'DATE': '2016/03/25-05:00',
       'SERVICE_ENG_NAME': 'Leon Rautenbach',
-      'ACTIVITY_TYPE': 'Reistijd',
+      'ACTIVITY_TYPE': 'Labor',
       'EFFORT': '3.00 H',
       'ACT_WORK': '3',
       'UOM': 'Час',
@@ -549,7 +560,7 @@ export var formInputVar = {
       'EFFORT': '120 CLP',
       'ACT_WORK': '120',
       'UOM': 'CLP',
-      'ACT_TYPE': 'ZAM015'
+      'ACT_TYPE': 'ZAM020'
   },
   '127': {
     'DATE': '2020/03/24',
@@ -759,21 +770,23 @@ export var formInputVar = {
   // FOOTER
   'FOOTER_QUALITY_LOGO': '',
   // 1st row
-  'COMPANY_GROUP_NAME': 'Atlas Copco Group Center',
+  'COMPANY_GROUP_NAME': 'MultiAir France',
   // 2st row
-  'COMPANY_LEGAL_NAME': 'Atlas Copco AB',
-  'COMPANY_PHONE': '+48 (0)8 743 8000',
-  'FOOTER_ADDITIONAL_INFO_1': 'A Public Company (publ)',
+  'COMPANY_LEGAL_NAME': 'Services commerciaux et comptables',
+  'COMPANY_PHONE': '+33 (0) 1 34 32 95 00',
+  'FOOTER_ADDITIONAL_INFO_1': 'Coordonnées bancaires:',
   // 3rd row
-  'COMPANY_ADDRESS_1': 'SE-105 23 Stockholm',
-  'VISITOR_ADDRESS_1': '',
-  'COMPANY_FAX': '+46 (0)8 644 9045',
-  'FOOTER_ADDITIONAL_INFO_2': 'Reg. No: 558014-2720',
+  'COMPANY_ADDRESS_1': '2, rue Marie Sklodowska',
+  'VISITOR_ADDRESS_1': 'Siret: 388 163 099 00145',
+  'COMPANY_FAX': '+33 (0) 1 34 32 95 33',
+  'FOOTER_ADDITIONAL_INFO_2': 'BNP Paribas',
   // 4th row
-  'COMPANY_ADDRESS_2': 'Sweden',
-  'VISITOR_ADDRESS_2': 'Nacka',
-  'COMPANY_URL': 'www.atlascopco.com',
-  'FOOTER_ADDITIONAL_INFO_3': 'Reg. Office Nacka',
+  'COMPANY_ADDRESS_2': '95150 Taverny',
+  'VISITOR_ADDRESS_2': 'RCS COMPIEGNE: 388 163 099',
+  'VISITOR_ADDRESS_3': 'siege social : 165 rue Pierre Curie - ZA ',
+  'COMPANY_URL': 'www.acs95.fr',
+  'FOOTER_ADDITIONAL_INFO_3': 'IBAN:FR76 3000 4018 5600 0100 2341 211',
+  'FOOTER_ADDITIONAL_INFO_4': 'BIC:BNPAFRPPXXX',
   'PLANT' : 'plantID',
 
   'TIME_CONFIRMATION_REPORT': {

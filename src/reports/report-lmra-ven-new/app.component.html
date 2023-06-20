@@ -11,7 +11,7 @@
 
       <ho-cell ho-width="60%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('LMRA_REPORT')}}</div>
-         <p>date:{{ tag('REPORT_DATE') }}</p>
+         <p>date:{{ tag('REPORT_DATE') | date:'dd/MM/yyyy'}}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -50,7 +50,7 @@
             <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
             <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
             <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-            <ho-cell ho-width="30%">{{ tag('VISIT_DATE') }}</ho-cell>
+            <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date:'dd/MM/yyyy'}}</ho-cell>
           </ho-row>
           <ho-row>
             <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -88,7 +88,7 @@
               <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
               <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
               <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-              <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') }}</ho-cell>
+              <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date:'dd/MM/yyyy'}}</ho-cell>
             </ho-row>
             <ho-row>
               <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -170,27 +170,31 @@
   <!-- FOOTER -->
   <ho-footer>
     <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
       <ho-cell ho-width="100%">
         <ho-row ho-class="footer-title-section">
           <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_1')}}:</ho-cell>
-          <ho-cell ho-width="25%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
-        </ho-row>
-        <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_1')}}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%">{{ text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>

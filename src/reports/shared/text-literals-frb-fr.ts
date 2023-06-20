@@ -12,12 +12,13 @@ export var textLiterals = {
   'VISIT_DATE': "Date d'intervention",
   'ORDER_NUMBER': 'N° de rapport',
   'CONTRACT_NUMBER': 'N° de contrat',
+  'ORDER_DESCRIPTION': 'Description de la visite',
   'PO_NUMBER': 'N° de commande client',
   'WORK_COMMENTS': 'Commentaires',
   'NEXT_VISIT': 'Prochaine visite de maintenance',
-  'NEXT_RECOMMENDED_SERVICE_1': 'prochaine intervention de maintenance préconisé“',
+  'NEXT_RECOMMENDED_SERVICE_1': 'Prochaine intervention de maintenance préconisé',
   'NEXT_RECOMMENDED_SERVICE_2': 'prochaine intervention de maintenance préconisé“',
-  'FOLLOWING_WORK_IS': "nous préconisons l'intervention suivante : ",
+  'FOLLOWING_WORK_IS': "Nous préconisons l'intervention suivante : ",
   'ESTIMATED_WORK_HOUR': 'Heures estimées',
   'TIME_CONFIRMATION': 'Heures réalisées',
   'DATE': 'Date',
@@ -36,6 +37,7 @@ export var textLiterals = {
   'READING_AFTER_SERVICE': 'Après réparation',
   'BEFORE_SERVICE': 'Avant réparation',
   'FROM_LAST_VISIT_ON': 'suite à la précédente intervention',
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
   'AUTHORISATION_TO_CARRY': "Autorisation de réaliser l'intervention avec ou sans obtention d'un N° de commande client",
   'NOTES': 'Note',
   'CUSTOMER_WILL_AGREE': "Le Client s'engage à fournir à MultiAir France dans les deux jours ouvrés suivant le depart du technicien, un numéro de commande valide pour l'intervention effectuée",
@@ -46,8 +48,8 @@ export var textLiterals = {
   'BEING_DULY_AUTHORISED': '(Pouvoir à été donné pour signer au nom du client)',
   'ENTER_YOUR_NAME': 'Ecrivez votre nom',
 
-  'FAX': 'Fax',
-  'TELEPHONE': 'Tél.',
+  'FAX': '',
+  'TELEPHONE': '',
 
   'COMPANY_GROUP_NAME': 'MultiAir France',
 
@@ -57,7 +59,7 @@ export var textLiterals = {
 
   'COMPANY_ADDRESS_2': "95310 St Ouen L'Aumône",
 
-  'VISITORS_ADDRESS': '',
+  'VISITORS_ADDRESS': 'Forme juridique : SASU',
 
   'VISITOR_ADDRESS_1': '',
 

@@ -53,11 +53,16 @@
   width: auto;
 }
 #header-title {
-    color: #0099CC;
+    color: #e5322c;
     text-align: left;
 }
+
+#footer-text {
+  font-size: 10px!important;
+}
+
 #blue-line {
-    color: #0099CC;
+    color: #e5322c;
 }
 .address {
     line-height: 16px;

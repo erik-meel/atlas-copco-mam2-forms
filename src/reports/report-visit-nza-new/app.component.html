@@ -111,7 +111,7 @@
            <div class="spacer"></div>
 
            <!-- ACAP Score -->
-                      <ho-row ho-avoid-break *ngIf="INPUT.tag('CUST_ID').indexOf('1000946506') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946507') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946508') !== -1">
+                      <ho-row ho-avoid-break *ngIf="showAcap == 1">
                         <ho-cell ho-width="100%">
                           <ho-section-header><b>ACAP Condition Score</b></ho-section-header>
                           <ho-row>
@@ -264,7 +264,7 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
+ 
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -328,7 +328,7 @@
     <div class="spacer"><!--*ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"> --> </div>
 
     <!-- ACAP Score -->
-               <ho-row ho-avoid-break *ngIf="INPUT.tag('CUST_ID').indexOf('1000946506') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946507') !== -1 || INPUT.tag('CUST_ID').indexOf('1000946508') !== -1">
+               <ho-row ho-avoid-break *ngIf="showAcap == 1">
                  <ho-cell ho-width="100%">
                    <ho-section-header><b>ACAP Condition Score</b></ho-section-header>
                    <ho-row>
@@ -477,7 +477,7 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
+ 
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->

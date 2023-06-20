@@ -112,7 +112,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') }}<br/>
+                     {{ tag('NEXT_VISIT_DATE') | date: 'dd/MM/yyyy' }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -274,7 +274,7 @@
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') }}<br/>
+                  {{ entryOrd.tag('NEXT_VISIT_DATE')  | date: 'dd/MM/yyyy'}}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>

@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private INPUT: MelVariable = new MelVariable({});
 
   private customerSignatureName = '';
+  private custID = '';
   private customerSignatureDate = '';
   private techSignatureDate = '';
   private dateMask = '';
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private browserLocal = navigator.language;
   private dateOptions = {};
   private timeOptions = {};
+  private showAcap = 0;
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -33,6 +35,37 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
 
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
+          this.custID = this.INPUT.get('CUST_ID');
+          switch(this.custID) {
+            case '1000946506':
+            case '1000946507': 
+            case '1000946508':
+            case '1000945353':
+            case '1000945376':
+            case '1000945333':
+            case '1000945387':
+            case '1000945361':
+            case '1000945331':
+            case '1000945365':
+            case '1000946026':
+            case '1000945384':
+            case '1000945335':
+            case '1001460977':
+            case '1000945339':
+            case '1001083695':
+            case '1000945355':
+            case '1000945360':
+            case '1000945406':
+            case '1000945412':
+            case '1000945913':
+            case '1000945914':
+            case '1000945915':
+            case '1000946041':  
+              this.showAcap = 1;
+              break;
+            default: this.showAcap = 0;
+          }
+
           let that = this;
             Observable.timer(200).subscribe(
               () => {

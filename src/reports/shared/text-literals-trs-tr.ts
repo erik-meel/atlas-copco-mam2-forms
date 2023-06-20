@@ -51,7 +51,7 @@ export var textLiterals = {
   'ENTER_YOUR_NAME': 'Ismini gir',
   'PLEASE_ENTER_YOUR': 'Ismini bu alana gir',
   'SIGNED_BY': 'Imzalayan',
-  'AT': 'at',
+  'AT': 'imzalandı',
   'BEING_DULY_AUTHORISED': '',
 
   'SAFETY_FIRST': 'Önce Emniyet',

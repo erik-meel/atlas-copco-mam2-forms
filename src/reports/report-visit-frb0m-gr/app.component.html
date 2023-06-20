@@ -9,7 +9,7 @@
 
       <ho-cell ho-width="50%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
-         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: locale }}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ cDate(tag('REPORT_DATE')) }}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -58,7 +58,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -80,28 +80,28 @@
              <ho-cell ho-width="100%">
                <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
                <ho-row>
-                 <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: locale }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('EQUI_ID') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ cDate(tag('VISIT_DATE')) }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('ORDER_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('ORDER_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('PO_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="20%"><b>{{text('ORDER_DESCRIPTION')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%"><b>{{tag('ORDER_SHORT_TEXT')}}:</b></ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('ORDER_DESCRIPTION')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%"><b>{{tag('ORDER_SHORT_TEXT')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
                </ho-row>
              </ho-cell>
            </ho-row>
@@ -113,7 +113,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') | date: locale }}<br/>
+                     {{ cDate(tag('NEXT_VISIT_DATE')) }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -237,34 +237,33 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
       <ho-cell ho-width="100%">
         <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date: locale }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('VISIT_DATE') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="50%"></ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>
@@ -286,7 +285,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date: locale }} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -300,18 +299,18 @@
     </ho-row>
     <div class="spacer" *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"></div>
 
-        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0">
+        <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length == 999">
           <ho-cell ho-width="100%">
             <ho-section-header><b>{{text('NEXT_VISIT')}}</b></ho-section-header>
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') }}<br/>
+                  {{ cDate(entryOrd.tag('NEXT_VISIT_DATE')) }}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>
         </ho-row>
-        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length > 0"></div>
+        <div class="spacer" *ngIf="entryOrd.getVarArray('NEXT_VISIT_TYPE').length == 999"></div>
 
         <ho-row ho-avoid-break *ngIf="entryOrd.getVarArray('NEXT_VISIT_HEADLINE').length > 0">
           <ho-cell ho-width="100%">
@@ -426,7 +425,7 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
+
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
@@ -503,51 +502,33 @@
   <!-- FOOTER -->
   <ho-footer>
     <ho-row>
-      <ho-cell ho-width="144px">
-        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
-        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
-      </ho-cell>
       <ho-cell ho-width="100%">
         <ho-row ho-class="footer-title-section">
-          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+          <div>MultiAir France</div>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="20%" *ngIf="text('VISITORS_ADDRESS').length > 0">{{text('VISITORS_ADDRESS')}}:</ho-cell>
-          <ho-cell ho-width="20%" *ngIf="text('VISITORS_ADDRESS').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length > 0">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_PHONE').length == 0"></ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_1').length == 0"></ho-cell>
+          <ho-cell ho-width="24%"><div id="footer-text">Services commerciaux et comptables</div></ho-cell>
+          <ho-cell ho-width="23%"><div id="footer-text">+33 (0) 1 34 32 95 00</div></ho-cell>
+          <ho-cell ho-width="25%"><div id="footer-text">Forme juridique : SASU</div></ho-cell>
+          <ho-cell ho-width="28%"><div id="footer-text">Coordonnées bancaires :</div></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length > 0">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_1').length == 0"></ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_1').length > 0">{{ tag('VISITOR_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_1').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length > 0">{{text('FAX')}}: {{ tag('COMPANY_FAX') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_FAX').length == 0"></ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_2').length == 0"></ho-cell>
+          <ho-cell ho-width="24%"><div id="footer-text">2, rue Marie Sklodowska</div></ho-cell>
+          <ho-cell ho-width="23%"><div id="footer-text">+33 (0) 1 34 32 95 33</div></ho-cell>
+          <ho-cell ho-width="25%"><div id="footer-text">Siret: 388 163 099 00145</div></ho-cell>
+          <ho-cell ho-width="28%"><div id="footer-text">BNP Paribas</div></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length > 0">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_2').length == 0"></ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_2').length > 0">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_2').length == 0"></ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length > 0">{{ tag('COMPANY_URL') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_URL').length == 0"></ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_3').length == 0"></ho-cell>
+          <ho-cell ho-width="24%"><div id="footer-text">95150 Taverny</div></ho-cell>
+          <ho-cell ho-width="23%"><div id="footer-text">TVA sur les debits FR41388163099</div></ho-cell>
+          <ho-cell ho-width="25%"><div id="footer-text">RCS COMPIEGNE: 388 163 099</div></ho-cell>
+          <ho-cell ho-width="28%"><div id="footer-text">IBAN:FR76 3000 4018 5600 0100 2341 211</div></ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length > 0">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="25%" *ngIf="tag('COMPANY_ADDRESS_3').length == 0"></ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_3').length > 0">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="20%" *ngIf="tag('VISITOR_ADDRESS_3').length == 0"></ho-cell>
-          <ho-cell ho-width="25%"></ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length > 0">{{ tag('FOOTER_ADDITIONAL_INFO_4') }}</ho-cell>
-          <ho-cell ho-width="30%" *ngIf="tag('FOOTER_ADDITIONAL_INFO_4').length == 0"></ho-cell>
+          <ho-cell ho-width="27%"><div id="footer-text"><a href="https://compresseurs-mauguiere.com/">compresseurs-mauguiere.com/</a></div></ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%"><div id="footer-text">siege social : 165 rue Pierre Curie - ZA</div></ho-cell>
+          <ho-cell ho-width="28%"><div id="footer-text">BIC:BNPAFRPPXXX</div></ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>

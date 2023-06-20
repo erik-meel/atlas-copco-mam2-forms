@@ -85,4 +85,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   text(name: string): string{
     return textLiterals[this.language][name];
   }
+
+  cDate(indate: string): string {
+    var dt = new Date(indate);
+    return dt.toLocaleString('nl-NL',this.dateOptions);
+  }
 }

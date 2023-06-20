@@ -1,7 +1,7 @@
 /* Flying saucer does NOT support to have @page inside @media print */
 @page {
     size: A4; /* 210mm x 297mm */
-    margin: 55mm 14mm 25mm;
+    margin: 25mm 14mm 25mm;
 
     @top-center {
         content: flow(header); /* Prince */

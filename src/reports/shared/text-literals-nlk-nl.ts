@@ -26,6 +26,8 @@
 
   'CONTRACT_NUMBER': 'Contractnummer',
 
+  'ORDER_DESCRIPTION': 'Omschrijving',
+
   'PO_NUMBER': 'Klant PO nummer',
 
   'WORK_COMMENTS': 'Bevindingen',
@@ -72,6 +74,8 @@
 
   'FROM_LAST_VISIT_ON': 'Van laatste bezoek op',
 
+  'ENTER_YOUR_NAME': 'Geef uw naam in',
+
   'AUTHORISATION_TO_CARRY': 'TOESTEMMING OM WERKZAAMHEDEN UIT TE VOEREN ',
 
   'TELEPHONE': 'T ',
@@ -106,7 +110,7 @@
 
   'VISITOR_ADDRESS_2': '5349 AT',
 
-  'FOOTER_CENTER_LINE1': 'T +31 (0) 412 - 664 100',
+  'FOOTER_CENTER_LINE1': '+31 (0) 412 - 664 100',
 
   'COMPANY_FAX': 'service@alupgrassair.nl',
 

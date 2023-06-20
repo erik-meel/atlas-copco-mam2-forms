@@ -16,6 +16,8 @@
 
   'HOURS': 'uren',
 
+  'YEARS': 'jaar',
+
   'SERIAL_NUMBER': 'Serienummer',
 
   'LOAD_HOURS': 'Belaste uren',
@@ -27,6 +29,8 @@
   'CONTRACT_NUMBER': 'Contractnummer',
 
   'PO_NUMBER': 'Opdrachtnummer',
+
+  'EQUI_ACQDATE': 'Leeftijd',
 
   'WORK_COMMENTS': 'Werk commentaar',
 

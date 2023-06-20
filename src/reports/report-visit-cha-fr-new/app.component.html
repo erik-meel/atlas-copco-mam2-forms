@@ -33,6 +33,15 @@
   <!-- END: HEADER -->
   <!-- BODY -->
   <ho-body>
+    <ho-row>
+      <ho-cell>
+        <div class="ho-no-print signature-name-input">Langue/Sprache/Linguaggio:
+          <select name="Choisissez/Wählen/Scegli" [(ngModel)]='selLanguage' id="selLanguage" (change)="onLanguageSelect($event)">
+            <option *ngFor="let entry of selLanguages.Languages" [selected]="entry.lang === languageValue" value="{{entry.lang}}">{{entry.description}}</option>
+          </select>
+        </div>
+      </ho-cell>
+    </ho-row>
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">
         <ho-section-header><b>{{text('WORK_COMMENTS')}}</b></ho-section-header>
@@ -45,7 +54,7 @@
       </ho-cell>
     </ho-row>
     <div class="spacer"></div>
-    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0">
+    <ho-row ho-avoid-break *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0 && tag('PMACTTYPE') == 'CH'">
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -63,8 +72,10 @@
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
                   <td>{{ entry.tag('DATE')  | date: 'dd/MM/yyyy'   }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
-                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('ACTIVITY_TYPE') }}</td>
-                  <td *ngIf="(entry.tag('ACT_TYPE') != 'ZAM008' && entry.tag('ACT_TYPE') != 'ZAM029')">{{ entry.tag('EFFORT') }}</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM001')">Main d´oeuvre</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM020')">Frais de déplacement</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM001')">{{ entry.tag('ACT_WORK') }} heures</td>
+                  <td *ngIf="(entry.tag('ACT_TYPE') == 'ZAM020')">{{ entry.tag('ACT_WORK') }} lcu</td>
                   <!-- <td *ngIf="INPUT.tag('WORK_TYPE') != 'SVC' && INPUT.tag('WORK_TYPE') != 'INS' && INPUT.tag('WORK_TYPE') != 'WSC' && INPUT.tag('WORK_TYPE') != 'WSR' && INPUT.tag('WORK_TYPE') != '14' && INPUT.tag('WORK_TYPE') != '16' && INPUT.tag('WORK_TYPE') != '27C' && INPUT.tag('WORK_TYPE') != '27' ">{{ entry.tag('EFFORT') }}</td> -->
                  </tr>
                 </tbody>
@@ -85,23 +96,24 @@
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date: 'dd/MM/yyyy'  }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('VISIT_DATE') | date: 'dd/MM/yyyy'  }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('ORDER_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('ORDER_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
-                 <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
+                 <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+                 <ho-cell ho-width="25%">{{ tag('PO_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="50%"></ho-cell>
+                 <ho-cell ho-width="20%">{{text('ORDER_DESCRIPTION')}}</ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('ORDER_SHORT_TEXT')}}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
                </ho-row>
@@ -248,25 +260,26 @@
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE')  | date: 'dd/MM/yyyy'  }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('VISIT_DATE')  | date: 'dd/MM/yyyy'  }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('EQUI_SERIAL_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('ORDER_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('ORDER_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="20%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('RUNNING_HOURS')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ +entryOrd.tag('EQUI_RUNNING_HOURS') + ' ' + text('HOURS')}}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('PO_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="50%"></ho-cell>
-          <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('ORDER_DESCRIPTION')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ tag('ORDER_SHORT_TEXT') }}</ho-cell>
+          <ho-cell ho-width="25%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
+          <ho-cell ho-width="25%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>

@@ -3,7 +3,6 @@ import {Observable} from 'rxjs/Observable';
 import {FormService} from '../../forms';
 import {MelVariable} from '../../movilizer';
 import {textLiterals, currentLanguage} from "../shared/text-literals";
-declare let literalsSet: any;
 
 @Component({
   selector: 'my-form',
@@ -18,10 +17,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
-  private textLiteralsSet = textLiterals;
-  private browserLocal = navigator.language;
-  private dateOptions = {};
-  private timeOptions = {};
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -29,18 +24,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
-          this.dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-          this.timeOptions = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
           this.INPUT = formInput;
-          this.language = 'TRS_TR'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
-
+          this.language = 'GRC_EL';
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
-          let that = this;
-            Observable.timer(200).subscribe(
-              () => {
-                that.formService.saveHtmlToMel();
-              }
-            );
         });
       },
       (error: any) => {
@@ -50,16 +36,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-  //   let that = this;
-  //   Observable.timer(500).subscribe(
-  //     () => {
-  //       that.formService.saveHtmlToMel();
-  //     }
-  //   ); // In cordova it takes to much time to render the view so we have to wait for it
+    let that = this;
+    Observable.timer(500).subscribe(
+      () => {
+        that.formService.saveHtmlToMel();
+      }
+    ); // In cordova it takes to much time to render the view so we have to wait for it
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString('tr-TR', this.dateOptions);
+    this.customerSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
     this.formService.saveHtmlToMel();
   }
 
@@ -69,7 +55,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString('tr-TR', this.dateOptions);
+    this.techSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
     this.formService.saveHtmlToMel();
   }
 
@@ -84,10 +70,5 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   text(name: string): string{
     return textLiterals[this.language][name];
-  }
-
-  cDate(indate: string): string {
-    var dt = new Date(indate);
-    return dt.toLocaleString('tr-TR',this.dateOptions);
   }
 }

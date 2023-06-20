@@ -12,7 +12,7 @@
 
       <ho-cell ho-width="60%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
-         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date:'dd MMM yyyy':'+0200':'tr'}}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ cDate(tag('REPORT_DATE'))}}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -61,7 +61,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date:'dd MMM yyyy':'+0200':'tr'}} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -86,7 +86,7 @@
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date:'dd MMM yyyy':'+0200':'tr'}}</ho-cell>
+                 <ho-cell ho-width="30%">{{ cDate(tag('VISIT_DATE')) }}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -116,7 +116,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') | date:'dd MMM yyyy':'+0200':'tr'}}<br/>
+                     {{ cDate(tag('NEXT_VISIT_DATE')) }}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -250,7 +250,7 @@
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date:'dd MMM yyyy':'+0200':'tr'}}</ho-cell>
+          <ho-cell ho-width="30%">{{ cDate(entryOrd.tag('VISIT_DATE')) }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -290,7 +290,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') | date:'dd MMM yyyy':'+0200':'tr'}} </td>
+                  <td>{{ cDate(entry.tag('DATE')) }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -310,7 +310,7 @@
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') | date:'dd MMM yyyy':'+0200':'tr'}}<br/>
+                  {{ cDate(entryOrd.tag('NEXT_VISIT_DATE')) }}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>
@@ -419,7 +419,7 @@
                 <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
                 <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
                 <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') | date:'dd MMM yyyy':'+0200':'tr'}}</td>
+                <td class="text-align-right">{{ cDate(entry.tag('READ_LAST_VISIT')) }}</td>
                 <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
               </tr>
               </tbody>

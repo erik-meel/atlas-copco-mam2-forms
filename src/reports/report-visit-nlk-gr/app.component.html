@@ -28,7 +28,7 @@
           </ho-cell>
           <ho-cell ho-width="30%">
             <div>{{ tag('CUST_CONTACT') }}</div>
-            <div>{{ tag('REPORT_DATE') }}</div>
+            <div>{{ cDate(tag('REPORT_DATE')) }}</div>
           </ho-cell>
         </ho-row>
       </ho-cell>
@@ -528,19 +528,16 @@
           <ho-cell ho-width="100%">{{text('COMPANY_GROUP_NAME') }}</ho-cell>
         </ho-row>
         <ho-row class="footer-content-section">
-          <ho-cell ho-width="25%">{{text('COMPANY_LEGAL_NAME') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('VISITORS_ADDRESS')}}</ho-cell>
           <ho-cell ho-width="25%">{{text('TELEPHONE')}}{{ text('FOOTER_CENTER_LINE1') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
         </ho-row>
         <ho-row class="footer-content-section">
-          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_1') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_1') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('FAX')}}{{ text('COMPANY_FAX') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
         </ho-row>
         <ho-row class="footer-content-section">
-          <ho-cell ho-width="25%">{{text('COMPANY_ADDRESS_2') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('VISITOR_ADDRESS_2') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('COMPANY_URL') }}</ho-cell>
           <ho-cell ho-width="25%">{{text('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>

@@ -17,6 +17,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private languageValue = '';
+  private selLanguages = { 'Languages': [
+      {'lang':'CHA_DE', 'description': 'Deutsch'},
+      {'lang':'CHA_FR', 'description': 'Français'},
+      {'lang':'CHA_IT', 'description': 'Italiano'}
+    ]};
+  private selectedLangIndex = 0;
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -77,4 +84,18 @@ export class AppComponent implements OnInit, AfterViewInit {
   text(name: string): string{
     return textLiterals[this.language][name];
   }
+
+  onLanguageSelect(selection: any): void {
+    this.language = selection.target.value;
+    let langue = this.selLanguages['Languages'].find((langue:any)=>langue.lang==this.languageValue);
+    let selLanguage = <HTMLSelectElement>document.getElementById("selLanguage");
+    this.selectedLangIndex = selection.currentTarget.selectedIndex;
+
+    this.formService.saveHtmlToMel();
+  }
+
+  onSettingValue(val: any): void {
+    this.formService.saveHtmlToMel();
+  }
+
 }

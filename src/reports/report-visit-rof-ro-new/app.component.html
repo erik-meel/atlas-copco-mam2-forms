@@ -33,7 +33,7 @@
   <!-- END: HEADER -->
   <!-- BODY -->
   <ho-body>
-    <ho-row ho-avoid-break>
+    <ho-row>
       <ho-cell ho-width="100%">
         <ho-section-header><b>{{text('WORK_COMMENTS')}}</b></ho-section-header>
         <ho-row>
@@ -45,7 +45,7 @@
       </ho-cell>
     </ho-row>
     <div class="spacer"></div>
-    <ho-row ho-avoid-break> <!-- *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0" -->
+    <ho-row> <!-- *ngIf="INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0" -->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>
@@ -79,7 +79,7 @@
     <ho-row  *ngIf="!INPUT.getVarArray('ORD_GR_DATA').length > 0">
       <ho-row ho-bordered ho-class="header">
         <ho-cell ho-width="100%">
-            <ho-row ho-avoid-break>
+            <ho-row>
              <ho-cell ho-width="100%">
                <ho-section-header><b>{{text('EQUIPMENT')}}</b></ho-section-header>
                <ho-row>
@@ -272,7 +272,7 @@
     </ho-row>
 
 <!--Show confirmations for current equipment          -->
-    <ho-row ho-avoid-break> <!-- *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"> -->
+    <ho-row> <!-- *ngIf="entryOrd.getVarArray('TIME_CONFIRMATION_ENTRIES').length > 0"> -->
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('TIME_CONFIRMATION')}}</b></ho-section-header>
           <ho-row>

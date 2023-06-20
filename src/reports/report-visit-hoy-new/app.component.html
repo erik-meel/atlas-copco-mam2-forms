@@ -1,7 +1,7 @@
 
 <ho-form>
   <!-- HEADER -->
-  <ho-header>
+  <ho-header *ngIf="tag('PLANGROUP') != 'ZEB' && tag('PLANGROUP') != 'ZED' && tag('PLANGROUP') != 'ZS3' && tag('PLANGROUP') != 'ZWD'">
     <ho-row>
       <ho-cell ho-width="18%">
         <img id="logo" src="../shared/img/atlas-copco-blue.png" alt="">
@@ -27,7 +27,130 @@
          <br/>
       </ho-cell>
     </ho-row>
+  </ho-header>
+  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZS3'">  <!-- CAP -->
+    <ho-row>
+      <ho-cell ho-width="40%">
+        <img id="cap-logo" src="../shared/img/CAP.jpg" alt="">
+      </ho-cell>
 
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZEB'">  <!-- CAS -->
+    <ho-row>
+      <ho-cell ho-width="25%">
+        <img id="logo" src="../shared/img/CAS.png" alt="">
+      </ho-cell>
+      <ho-cell ho-width="15%">
+        <img id="logo" src="../shared\img\Atlas_Copco_service_symbol.jpg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>date:{{ tag('REPORT_DATE') }}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZED'">  <!-- NEC -->
+    <ho-row>
+      <ho-cell ho-width="50%">
+        <img id="mesa-logo" src="../shared/img/NorthEast_Compressor.jpg" alt="">
+      </ho-cell>
+
+      <ho-cell ho-width="50%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZWD'">  <!-- MESA -->
+    <ho-row>
+      <ho-cell ho-width="40%">
+        <img id="mesa-logo" src="../shared/img/MESA_Logo.png" alt="">
+      </ho-cell>
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
+  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'XZET'">  <!-- TAYLOR disabled -->
+    <ho-row>
+      <ho-cell ho-width="25%">
+        <img id="logo" src="../shared/img/Taylor.jpg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="15%">
+        <img id="logo" src="../shared\img\Atlas_Copco_service_symbol.jpg" alt="">
+      </ho-cell>
+
+      <ho-cell ho-width="60%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
   </ho-header>
   <div class="clear"></div>
   <!-- END: HEADER -->
@@ -474,7 +597,7 @@
   </ho-body>
   <!-- END: BODY -->
   <!-- FOOTER -->
-  <ho-footer>
+  <ho-footer  *ngIf="tag('PLANGROUP') != 'ZEB' && tag('PLANGROUP') != 'ZED' && tag('PLANGROUP') != 'ZS3' && tag('PLANGROUP') != 'ZWD'">
     <ho-row>
       <ho-cell ho-width="144px">
         <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
@@ -500,6 +623,165 @@
           <ho-cell ho-width="35%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
           <ho-cell ho-width="25%"></ho-cell>
           <ho-cell ho-width="25%">{{ text('TELEPHONE')}}: {{ tag('COMPANY_PHONE')}}</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZS3'">  <!-- CAP -->
+    <ho-row>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">7 Solar Circle</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">Tel: 770-487-9292</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">Newnan, GA 30265</ho-cell>
+          <ho-cell ho-width="25%"><a href="https://www.compressedairproducts.com" target="_blank">www.compressedairproducts.com</a></ho-cell>
+          <ho-cell ho-width="25%">Fax: 678-668-7309</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZEB'">  <!-- CAS -->
+    <ho-row>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">245 Forbes Ave</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">Tel: 800-745-0348</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">Salisbury, NC 28147</ho-cell>
+          <ho-cell ho-width="25%"><a href="www.compressedair-nc.com" target="_blank">www.compressedair-nc.com</a></ho-cell>
+          <ho-cell ho-width="25%">Fax: 704-637-7427</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZED'">  <!-- NEC -->
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">7340 Thompson Rd North</ho-cell>
+          <ho-cell ho-width="30%">Tel: (315) 458-4115</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+          <ho-cell ho-width="20%"><a href="www.atlascopco.com/en-us" target="_blank">www.atlascopco.com/en-us</a></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">Syracuse, NY 13212</ho-cell>
+          <ho-cell ho-width="30%">Fax:  (803) 817-7267</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="30%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="30%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZWD'">  <!-- MESA -->
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">7100 2<sup>nd</sup> Street NW</ho-cell>
+          <ho-cell ho-width="30%">Tel: (505) 345-0284 Albuquerque Office</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+          <ho-cell ho-width="20%"><a href="www.mesaequipment.com" target="_blank">www.mesaequipment.com</a></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">Albuquerque, NM 87107</ho-cell>
+          <ho-cell ho-width="30%">Fax:  (505) 345-9227</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="30%">Tel: (915) 594-1414 El Paso Office</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="30%">Fax: (915) 594-9911</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'XZET'"> <!-- TAYLOR disabled -->
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="15%"></ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="35%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
           <ho-cell ho-width="15%"></ho-cell>
         </ho-row>
       </ho-cell>

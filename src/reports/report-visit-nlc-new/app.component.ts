@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private equiAge = 0;
 
   constructor(private formService: FormService, private context: NgZone) {
   }
@@ -40,6 +41,15 @@ export class AppComponent implements OnInit, AfterViewInit {
         console.log(error);
         this.formService.writeErrors(error, false);
       });
+  }
+
+  calcAge(acqDate: string): number {
+    const aDate = new Date(acqDate);
+    const cDate = new Date();
+    const utc1 = Date.UTC(cDate.getFullYear(), cDate.getMonth(), cDate.getDate());
+    const utc2 = Date.UTC(aDate.getFullYear(), aDate.getMonth(), aDate.getDate());
+
+    return Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24 * 365));
   }
 
   ngAfterViewInit() {

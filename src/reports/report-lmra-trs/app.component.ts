@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private customerSignatureDate = '';
   private techSignatureDate = '';
   private dateMask = '';
+  private dateOptions = {};
   private language = currentLanguage;
 
   constructor(private formService: FormService, private context: NgZone) {
@@ -25,7 +26,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
           this.INPUT = formInput;
-          this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
+          this.dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+          this.language = 'TRS_TR'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
         });
       },
@@ -45,7 +47,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString('tr-TR', this.dateOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -55,7 +57,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language.slice(-2), this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString('tr-TR', this.dateOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -70,5 +72,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   text(name: string): string{
     return textLiterals[this.language][name];
+  }
+
+  cDate(indate: string): string {
+    var dt = new Date(indate);
+    return dt.toLocaleString('tr-TR',this.dateOptions);
   }
 }

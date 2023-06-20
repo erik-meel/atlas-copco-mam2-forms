@@ -44,6 +44,26 @@
   width: auto;
 }
 
+#cap-logo {
+  margin-left: -25px !important; /* Take container padding out -6 */
+  margin-bottom: 10px !important;
+  margin-top: -20px !important;
+  max-height: 150px;
+  min-height: 52px;
+  height: 150px;
+  width: auto;
+}
+
+#mesa-logo {
+  margin-left: -5px !important; /* Take container padding out -6 */
+  margin-bottom: 10px !important;
+  margin-top: 0px !important;
+  max-height: 150px;
+  /*min-height: 52px;*/
+  height: 100px;
+  width: auto;
+}
+
 #vianorm-logo {
   position: absolute;
   bottom: 72px;

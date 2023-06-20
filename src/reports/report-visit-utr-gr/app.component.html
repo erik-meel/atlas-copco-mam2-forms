@@ -208,19 +208,18 @@
                   <tr>
                     <th width="30%">{{text('COUNTER')}}</th>
                     <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
-                    <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
-                    <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+                    <th width="15%">{{text('BEFORE_SERVICE')}}</th>
+                    <th width="30%" colspan="3">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let entry of INPUT.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
+                  <tr *ngFor="let entry of entryOrd.getVarArray('MEASUREMENT_POINTS_ENTRIES')">
                     <td>{{ entry.tag('COUNTER') }}</td>
                     <td class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
                     <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
-                    <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
-                    <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                    <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
-                    <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_BEFORE') }} {{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_LAST_DATE') }}</td>
+                    <td>{{ entry.tag('READ_VALUE')}} {{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
                   </tr>
                   </tbody>
                 </table>
@@ -373,8 +372,8 @@
               <tr>
                 <th width="30%">{{text('COUNTER')}}</th>
                 <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
-                <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
-                <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+                <th width="15%">{{text('BEFORE_SERVICE')}}</th>
+                <th width="30%" colspan="3">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
               </tr>
               </thead>
               <tbody>
@@ -382,10 +381,9 @@
                 <td>{{ entry.tag('COUNTER') }}</td>
                 <td class="text-align-right">{{ entry.tag('READ_AFTER') }}</td>
                 <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
-                <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
-                <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
-                <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_BEFORE') }} {{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_LAST_DATE') }}</td>
+                <td>{{ entry.tag('READ_VALUE')}} {{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
               </tr>
               </tbody>
             </table>
@@ -488,7 +486,7 @@
         <ho-row>
           <ho-cell ho-width="25%">{{tag('COMPANY_ADDRESS_1') }}</ho-cell>
           <ho-cell ho-width="25%"></ho-cell>
-          <ho-cell ho-width="25%">{{tag('COMPANY_FAX') }}</ho-cell> 
+          <ho-cell ho-width="25%">{{tag('COMPANY_FAX') }}</ho-cell>
           <ho-cell ho-width="25%">{{tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
         </ho-row>
         <ho-row>

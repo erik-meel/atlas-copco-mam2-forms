@@ -100,7 +100,8 @@
                  <ho-cell ho-width="30%">{{ tag('PO_NUMBER') }}</ho-cell>
                </ho-row>
                <ho-row>
-                 <ho-cell ho-width="50%"></ho-cell>
+                 <ho-cell ho-width="20%"><b>{{text('EQUI_ACQDATE')}}:</b></ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('EQUI_ACQDATE')}}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('CONTRACT_NUMBER') }}</ho-cell>
                </ho-row>
@@ -263,7 +264,8 @@
           <ho-cell ho-width="30%">{{ entryOrd.tag('PO_NUMBER') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="50%"></ho-cell>
+          <ho-cell ho-width="20%"><b>{{text('EQUI_ACQDATE')}}:</b></ho-cell>
+          <ho-cell ho-width="30%">{{ calcAge(entryOrd.tag('EQUI_ACQDATE')) }} {{ text('YEARS')}}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('CONTRACT_NUMBER')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('CONTRACT_NUMBER') }}</ho-cell>
         </ho-row>

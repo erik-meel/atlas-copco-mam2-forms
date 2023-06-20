@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
+    this.customerSignatureDate = (new Date()).toLocaleString('fr-FR', this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.browserLocal, this.timeOptions);
+    this.techSignatureDate = (new Date()).toLocaleString('fr-FR', this.timeOptions);
     this.formService.saveHtmlToMel();
   }
 
@@ -84,5 +84,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   text(name: string): string{
     return textLiterals[this.language][name];
+  }
+
+  cDate(indate: string): string {
+    var dt = new Date(indate);
+    return dt.toLocaleString('fr-FR',this.dateOptions);
   }
 }

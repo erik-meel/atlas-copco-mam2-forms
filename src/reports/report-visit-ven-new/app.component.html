@@ -12,7 +12,7 @@
 
       <ho-cell ho-width="60%"  ho-text-align="left">
         <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
-         <p>date:{{ tag('REPORT_DATE') }}</p>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date:'dd/MM/yyyy'}}</p>
          <p class="address">
           <b>{{ tag('CUST_NAME') }} </b>
           <br/>
@@ -62,7 +62,7 @@
                 </thead>
                 <tbody>
                  <tr *ngFor="let entry of INPUT.getVarArray('TIME_CONFIRMATION_ENTRIES')">
-                  <td>{{ entry.tag('DATE') }} </td>
+                  <td>{{ entry.tag('DATE') | date:'dd/MM/yyyy' }} </td>
                   <td>{{ entry.tag('SERVICE_ENG_NAME') }}</td>
                   <td>{{ entry.tag('ACTIVITY_TYPE') }}</td>
                   <td>{{ entry.tag('EFFORT') }}</td>
@@ -89,7 +89,7 @@
                  <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
                  <ho-cell ho-width="30%">{{ tag('EQUI_ID') }}</ho-cell>
                  <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') }}</ho-cell>
+                 <ho-cell ho-width="30%">{{ tag('VISIT_DATE') | date:'dd/MM/yyyy'}}</ho-cell>
                </ho-row>
                <ho-row>
                  <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -117,7 +117,7 @@
                <ho-row>
                  <ho-cell ho-width="100%">
                    {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                     {{ tag('NEXT_VISIT_DATE') }}<br/>
+                     {{ tag('NEXT_VISIT_DATE') | date:'dd/MM/yyyy'}}<br/>
                  </ho-cell>
                </ho-row>
              </ho-cell>
@@ -217,7 +217,7 @@
                     <th width="30%">{{text('COUNTER')}}</th>
                     <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
                     <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
-                    <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+                    <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') | date:'dd/MM/yyyy'}}</span></th>
                   </tr>
                   </thead>
                   <tbody>
@@ -227,7 +227,7 @@
                     <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
                     <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
                     <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                    <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
+                    <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') | date:'dd/MM/yyyy'}}</td>
                     <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
                   </tr>
                   </tbody>
@@ -254,7 +254,7 @@
           <ho-cell ho-width="20%"><b>{{text('EQUIPMENT')}}:</b></ho-cell>
           <ho-cell ho-width="30%">{{ entryOrd.tag('EQUI_ID') }}</ho-cell>
           <ho-cell ho-width="20%"><b>{{text('VISIT_DATE')}}:</b></ho-cell>
-          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ entryOrd.tag('VISIT_DATE') | date:'dd/MM/yyyy'}}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="20%"><b>{{text('SERIAL_NUMBER')}}:</b></ho-cell>
@@ -281,7 +281,7 @@
             <ho-row>
               <ho-cell ho-width="100%">
                 {{ text('NEXT_RECOMMENDED_SERVICE_1') }}{{ entryOrd.tag('NEXT_VISIT_TYPE') }}{{ text('NEXT_RECOMMENDED_SERVICE_2') }}
-                  {{ entryOrd.tag('NEXT_VISIT_DATE') }}<br/>
+                  {{ entryOrd.tag('NEXT_VISIT_DATE') | date:'dd/MM/yyyy'}}<br/>
               </ho-cell>
             </ho-row>
           </ho-cell>
@@ -382,7 +382,7 @@
                 <th width="30%">{{text('COUNTER')}}</th>
                 <th width="25%" colspan="2">{{text('READING_AFTER_SERVICE')}}</th>
                 <th width="15%" colspan="2">{{text('BEFORE_SERVICE')}}</th>
-                <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') }}</span></th>
+                <th width="30%" colspan="2">{{text('FROM_LAST_VISIT_ON')}} <span class="measurement-last-visit">{{ tag('MEASUREMENT_POINTS_LAST_VISIT') | date:'dd/MM/yyyy'}}</span></th>
               </tr>
               </thead>
               <tbody>
@@ -392,7 +392,7 @@
                 <td>{{ entry.tag('READ_AFTER') ? entry.tag('READ_UNIT') : '' }}</td>
                 <td class="text-align-right">{{ entry.tag('READ_BEFORE') }}</td>
                 <td>{{ entry.tag('READ_BEFORE') ? entry.tag('READ_UNIT') : '' }}</td>
-                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') }}</td>
+                <td class="text-align-right">{{ entry.tag('READ_LAST_VISIT') | date:'dd/MM/yyyy'}}</td>
                 <td>{{ entry.tag('READ_LAST_VISIT') ? entry.tag('READ_UNIT') : '' }}</td>
               </tr>
               </tbody>
@@ -418,37 +418,10 @@
         </ho-cell>
       </ho-row>
 
-  <!-- Show/Hide LMRA if 'LMRA_ENABLED_IN_VISIT_REPORT' -->
-      <ho-row ho-avoid-break *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false'">
-        <ho-cell ho-width="100%">
-          <ho-section-header><b>{{text('SAFETY_FIRST')}}</b></ho-section-header>
-          <ho-row>
-            <ho-cell ho-width="100%">
-              <table class="table-ac">
-                <thead>
-                <tr>
-                  <th width="55%">{{text('QUESTION')}}</th>
-                  <th width="5%" class="text-align-center">{{text('CHECKED')}}</th>
-                  <th>{{text('COMMENTS')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let entry of INPUT.getVarArray('SAFETY_CHECK_LIST_ENTRIES')">
-                  <td>{{ entry.tag('DESC') }}</td>
-                  <td class="text-align-center">{{ entry.tag('DONE') }}</td>
-                  <td> - {{ entry.tag('COMMENT') }}</td>
-                </tr>
-                </tbody>
-              </table>
-            </ho-cell>
-          </ho-row>
-        </ho-cell>
-      </ho-row>
-      <div class="spacer" *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
- <!-- End LMRA -->
+  
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">
-        <ho-section-header><b>AUTHORIZATION TO CARRY OUT WORK WITH/WITHOUT AN ORDER NO.</b></ho-section-header>
+        <ho-section-header><b>{{ text('AUTHORISATION_TO_CARRY')}}</b></ho-section-header>
         <ho-row ho-bordered>
           <ho-cell ho-width="100%">
             <b>{{text('NOTES')}}</b>
@@ -489,22 +462,22 @@
           <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
         </ho-row>
         <ho-row>
-          <ho-cell ho-width="25%">{{ tag('COMPANY_LEGAL_NAME') }}</ho-cell>
-          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_1')}}</ho-cell>
-          <ho-cell ho-width="20%">{{text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
-        </ho-row>
-        <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_1') }}</ho-cell>
-          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_1')}}</ho-cell>
           <ho-cell ho-width="20%"></ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_2') }}</ho-cell>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_URL') }}</ho-cell>
         </ho-row>
         <ho-row>
           <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_2') }}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%">{{ text('TELEPHONE')}}: {{ tag('COMPANY_PHONE') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="25%">{{ tag('COMPANY_ADDRESS_3') }}</ho-cell>
           <ho-cell ho-width="30%">{{ tag('VISITOR_ADDRESS_3') }}</ho-cell>
-          <ho-cell ho-width="20%">{{ tag('COMPANY_URL') }}</ho-cell>
-          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_3') }}</ho-cell>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%">{{ tag('FOOTER_ADDITIONAL_INFO_1') }}</ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>
