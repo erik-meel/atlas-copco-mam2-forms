@@ -1,3 +1,4 @@
+node_modules
 .metadata
 .gitignore
 .idea
@@ -35,4 +36,3 @@ src/stylesold.css
 src/reports/shared/text-literals-cpr-sv0.ts
 package-lock.json
 node_modules/.bin
-node_modules
