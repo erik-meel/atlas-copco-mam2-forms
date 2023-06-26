@@ -34,3 +34,5 @@ src/reports/report-visit-global-new/text-literals-cpr-sv.ts
 src/stylesold.css
 src/reports/shared/text-literals-cpr-sv0.ts
 package-lock.json
+node_modules/.bin
+node_modules
