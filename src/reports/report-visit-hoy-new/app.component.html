@@ -1,7 +1,7 @@
 
 <ho-form>
   <!-- HEADER -->
-  <ho-header *ngIf="tag('PLANGROUP') != 'ZEB' && tag('PLANGROUP') != 'ZED' && tag('PLANGROUP') != 'ZS3' && tag('PLANGROUP') != 'ZWD'">
+  <ho-header *ngIf="logo == 'AC'">
     <ho-row>
       <ho-cell ho-width="18%">
         <img id="logo" src="../shared/img/atlas-copco-blue.png" alt="">
@@ -28,7 +28,7 @@
       </ho-cell>
     </ho-row>
   </ho-header>
-  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZS3'">  <!-- CAP -->
+  <ho-header *ngIf="logo == 'CAP'">  <!-- CAP -->
     <ho-row>
       <ho-cell ho-width="40%">
         <img id="cap-logo" src="../shared/img/CAP.jpg" alt="">
@@ -52,7 +52,7 @@
       </ho-cell>
     </ho-row>
   </ho-header>
-  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZEB'">  <!-- CAS -->
+  <ho-header *ngIf="logo == 'CAS'">  <!-- CAS -->
     <ho-row>
       <ho-cell ho-width="25%">
         <img id="logo" src="../shared/img/CAS.png" alt="">
@@ -78,7 +78,7 @@
       </ho-cell>
     </ho-row>
   </ho-header>
-  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZED'">  <!-- NEC -->
+  <ho-header *ngIf="logo == 'NEC'">  <!-- NEC -->
     <ho-row>
       <ho-cell ho-width="50%">
         <img id="mesa-logo" src="../shared/img/NorthEast_Compressor.jpg" alt="">
@@ -102,7 +102,7 @@
       </ho-cell>
     </ho-row>
   </ho-header>
-  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'ZWD'">  <!-- MESA -->
+  <ho-header *ngIf="logo == 'MESA'">  <!-- MESA -->
     <ho-row>
       <ho-cell ho-width="40%">
         <img id="mesa-logo" src="../shared/img/MESA_Logo.png" alt="">
@@ -125,7 +125,7 @@
       </ho-cell>
     </ho-row>
   </ho-header>
-  <ho-header *ngIf="INPUT.tag('PLANGROUP') == 'XZET'">  <!-- TAYLOR disabled -->
+  <ho-header *ngIf="logo == 'TAYLOR'">  <!-- TAYLOR  -->
     <ho-row>
       <ho-cell ho-width="25%">
         <img id="logo" src="../shared/img/Taylor.jpg" alt="">
@@ -597,7 +597,7 @@
   </ho-body>
   <!-- END: BODY -->
   <!-- FOOTER -->
-  <ho-footer  *ngIf="tag('PLANGROUP') != 'ZEB' && tag('PLANGROUP') != 'ZED' && tag('PLANGROUP') != 'ZS3' && tag('PLANGROUP') != 'ZWD'">
+  <ho-footer   *ngIf="logo == 'AC'">
     <ho-row>
       <ho-cell ho-width="144px">
         <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
@@ -628,7 +628,7 @@
       </ho-cell>
     </ho-row>
   </ho-footer>
-  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZS3'">  <!-- CAP -->
+  <ho-footer *ngIf="logo == 'CAP'">  <!-- CAP -->
     <ho-row>
       <ho-cell ho-width="100%">
         <ho-row ho-class="footer-title-section">
@@ -655,7 +655,7 @@
       </ho-cell>
     </ho-row>
   </ho-footer>
-  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZEB'">  <!-- CAS -->
+  <ho-footer *ngIf="logo == 'CAS'">  <!-- CAS -->
     <ho-row>
       <ho-cell ho-width="100%">
         <ho-row ho-class="footer-title-section">
@@ -682,7 +682,7 @@
       </ho-cell>
     </ho-row>
   </ho-footer>
-  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZED'">  <!-- NEC -->
+  <ho-footer *ngIf="logo == 'NEC'">  <!-- NEC -->
     <ho-row>
       <ho-cell ho-width="144px">
         <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
@@ -719,7 +719,7 @@
       </ho-cell>
     </ho-row>
   </ho-footer>
-  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'ZWD'">  <!-- MESA -->
+  <ho-footer *ngIf="logo == 'MESA'">  <!-- MESA -->
     <ho-row>
       <ho-cell ho-width="144px">
         <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
@@ -756,7 +756,7 @@
       </ho-cell>
     </ho-row>
   </ho-footer>
-  <ho-footer *ngIf="INPUT.tag('PLANGROUP') == 'XZET'"> <!-- TAYLOR disabled -->
+  <ho-footer *ngIf="logo == 'TAYLOR'"> <!-- TAYLOR disabled -->
     <ho-row>
       <ho-cell ho-width="144px">
         <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">

@@ -34,6 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.logo = 'AC';
           } 
           switch (this.PlanGroup) {
+            case 'ZEA':
             case 'ZEB':
               this.logo = 'CAS';
               break;
@@ -77,7 +78,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString('us-en', this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString('us-en');
     this.formService.saveHtmlToMel();
   }
 
@@ -87,7 +88,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString('us-en', this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString('us-en');
     this.formService.saveHtmlToMel();
   }
 
