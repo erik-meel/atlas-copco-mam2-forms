@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
           this.INPUT = formInput;
-          this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
+          this.language = 'TRF_TR'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
         });
       },
