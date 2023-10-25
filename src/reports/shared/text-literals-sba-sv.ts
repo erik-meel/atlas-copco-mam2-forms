@@ -90,6 +90,12 @@
 
   'AT': '',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
+
+  'SAFETY_FIRST': 'Säkerhet',
+
+  'QUESTION': 'Fråga',
+
   'TELEPHONE': 'Tel. Växel',
 
   'BEING_DULY_AUTHORISED': '(Har tillåtelse att signera åt kund)',

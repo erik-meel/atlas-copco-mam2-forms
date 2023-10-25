@@ -88,9 +88,13 @@ export var textLiterals = {
 
   'ENTER_YOUR_NAME': 'Indtast dit navn',
 
-  'AT': 'den:',
+  'AT': 'den',
 
-  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
+
+  'SAFETY_FIRST': 'Sikkerhed',
+
+  'QUESTION': 'Spørg',
 
   'AUTHORISATION_ENABLED_IN_VISIT_REPORT': 'false',
 

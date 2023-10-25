@@ -25,7 +25,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
           this.INPUT = formInput;
-        this.language = 'NFA_FI';
+        if(this.INPUT.get('PLANT')=='FI01') {
+          this.language = 'SBA_FI';  
+        } else {
+          this.language = 'NFA_FI';
+        }
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
           let that = this;
             Observable.timer(200).subscribe(
@@ -51,7 +55,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString('FI-fi');
     this.formService.saveHtmlToMel();
   }
 
@@ -61,7 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString('FI-fi');
     this.formService.saveHtmlToMel();
   }
 

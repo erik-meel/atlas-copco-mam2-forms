@@ -141,6 +141,14 @@
 
   'AT': 'den',
 
+  'ENTER_YOUR_NAME': 'Skriv navnet ditt',
+
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
+
+  'SAFETY_FIRST': 'Sikkerhet',
+
+  'QUESTION': 'Spørre',
+
   'BEING_DULY_AUTHORISED': '(Signert på vegne av kunde)',
 
   'COMPANY_GROUP_NAME': 'Atlas Copco Kompressorteknikk AS',

@@ -88,7 +88,11 @@ export var textLiterals = {
 
   'SIGNED_BY': 'Allekirjoittanut',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
+
   'AT': '',
+
+  'ENTER_YOUR_NAME': 'Kirjoita nimesi',
 
   'BEING_DULY_AUTHORISED': '',
 

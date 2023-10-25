@@ -92,6 +92,12 @@ export var textLiterals = {
 
   'AT': 'at',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
+
+  'SAFETY_FIRST': 'Safety',
+
+  'QUESTION': 'Question',
+
   'BEING_DULY_AUTHORISED': '(Being duly authorised to sign on behalf of the customer)',
 
   'COMPANY_GROUP_NAME': 'Atlas Copco Ltd',

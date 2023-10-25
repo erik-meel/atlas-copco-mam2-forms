@@ -238,7 +238,6 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -396,7 +395,6 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
@@ -412,7 +410,7 @@
       </ho-row>
 
   <!-- Show/Hide LMRA if 'LMRA_ENABLED_IN_VISIT_REPORT' -->
-      <!--ho-row ho-avoid-break *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false'">
+      <ho-row ho-avoid-break *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false'">
         <ho-cell ho-width="100%">
           <ho-section-header><b>{{text('SAFETY_FIRST')}}</b></ho-section-header>
           <ho-row>
@@ -437,7 +435,7 @@
           </ho-row>
         </ho-cell>
       </ho-row>
-      <div class="spacer" *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
+      <div class="spacer" *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
  <!-- End LMRA -->
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">

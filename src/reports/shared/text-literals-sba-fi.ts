@@ -80,6 +80,10 @@ export var textLiterals = {
 
   'NOTES': 'Huom',
 
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
+
+  'SAFETY_FIRST': 'Turvallisuus',
+
   'CUSTOMER_WILL_AGREE': 'Tilaaja sitoutuu toimittamaan Atlas Copcolle voimassa olevan ostotilausnumeron tai muun laskutusviitteen.',
 
   'CUSTOMER_CONFIRMATION': 'Asiakkaan allekirjoitus',
@@ -89,6 +93,8 @@ export var textLiterals = {
   'SIGNED_BY': 'Allekirjoittanut',
 
   'AT': '',
+
+  'ENTER_YOUR_NAME': 'Enter your name',
 
   'BEING_DULY_AUTHORISED': '',
 
@@ -109,8 +115,6 @@ export var textLiterals = {
   'FOOTER_CENTER_LINE1': 'kompressori.fi@fi.atlascopco.com',
 
   'CHECKED': 'Tarkistus',
-
-  'SAFETY_FIRST': 'Safety First',
 
   'COMPANY_FAX': 'Puh. +358 (0)20 7189 200',
 

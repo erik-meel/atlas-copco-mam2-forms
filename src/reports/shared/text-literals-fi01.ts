@@ -84,7 +84,11 @@ export var textLiterals = {
 
   'SIGNED_BY': 'Allekirjoittanut',
 
+  'ENTER_YOUR_NAME': 'Kirjoita nimesi',
+
   'AT': '',
+
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'true',
 
   'BEING_DULY_AUTHORISED': '',
 
@@ -96,13 +100,13 @@ export var textLiterals = {
 
   'COMPANY_ADDRESS_2': '01380 Vantaa',
 
-  'VISITORS_ADDRESS': 'Käyntiosoite',
+  'VISITORS_ADDRESS': '',
 
   'VISITOR_ADDRESS_1': '',
 
-  'VISITOR_ADDRESS_2': '01380 Vantaa',
+  'VISITOR_ADDRESS_2': '',
 
-  'FOOTER_CENTER_LINE1': 'Puh: +358 (0)207 189 299',
+  'FOOTER_CENTER_LINE1': '',
 
   'COMPANY_FAX': '',
 
