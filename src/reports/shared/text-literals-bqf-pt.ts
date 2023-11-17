@@ -86,9 +86,11 @@
 
     'SIGNED_BY': 'Assinado por',
 
+    'ENTER_YOUR_NAME': 'Insira seu nome',
+
     'AT': 'em',
 
-    'BEING_DULY_AUTHORISED': '(Está devidamente autorizado a assinar em nome do cliente)',
+    'BEING_DULY_AUTHORISED': '(Está devidamente autorizado a assinar emnome do cliente)',
 
     'COMPANY_GROUP_NAME': 'Atlas Copco Brasil - PTS',
 
