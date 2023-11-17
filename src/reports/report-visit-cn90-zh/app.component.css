@@ -35,6 +35,17 @@
   font-size: 10px;
 }
 
+.text-area {
+  width: 100%;
+  background-color:aliceblue;
+  resize:block;
+  overflow: auto;
+  font-size: 1em;
+  height: 650px;
+  border: 0px;
+  page-break-inside:avoid;
+}
+
 #vca-logo {
   position: absolute;
   bottom: 144px;

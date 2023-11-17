@@ -235,7 +235,7 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
+
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -389,7 +389,7 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
+ 
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
@@ -432,6 +432,75 @@
       </ho-row>
       <div class="spacer" *ngIf="INPUT.tag('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
  <!-- End LMRA -->
+  <ho-row ho-bordered ho-avoid-break>
+    <ho-cell ho-width="100%">
+      <ho-section-header>
+        <div class="ho-no-print">{{text('PRODUCT_TYPE')}}:
+          <select name="Select Product Family" [(ngModel)]='selRANGE' id="selRange" (change)="onRangeSelect($event)">
+            <option *ngFor="let entry of productFamilies.Ranges;" [selected]="entry.name == 'AQ'" value="{{entry.name}}">{{entry.description}}</option>
+          </select>
+        </div>
+      </ho-section-header>
+    </ho-cell>
+  </ho-row>
+  <ho-row ho-avoid-break>
+    <ho-cell ho-width="100%" >
+      <textarea *ngIf="rangeValue=='ADBDCDXD'" name='AB' class="text-area" >
+        {{ text('ADBDCDXD')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='AQ'" name='AQ' class="text-area" >
+        {{ text('AQ')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='FFXFD'" name='FFXFD' class="text-area" >
+        {{ text('FFXFD')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='IATGGA'" name='IATGGA' class="text-area" >
+        {{ text('IATGGA')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='L'" name='L' class="text-area" >
+        {{ text('L')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='LCNAIRCUBE'" name='LCNAIRCUBE' class="text-area" >
+        {{ text('LCNAIRCUBE')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='MDND'" name='MDND' class="text-area" >
+        {{ text('MDND')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='MEDICAL'" name='MEDICAL' class="text-area" >
+        {{ text('MEDICAL')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='NGP'" name='NGP' class="text-area" >
+        {{ text('NGP')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='OFAGGA'" name='OFAGGA' class="text-area" >
+        {{ text('OFAGGA')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='PET'" name='PET' class="text-area" >
+        {{ text('PET')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='SF'" name='SF' class="text-area" >
+        {{ text('SF')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZB'" name='ZB' class="text-area" >
+        {{ text('ZB')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZEZA'" name='ZEZA' class="text-area" >
+        {{ text('ZEZA')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZH'" name='ZH' class="text-area" >
+        {{ text('ZH')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZM'" name='ZM' class="text-area" >
+        {{ text('ZM')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZRZT'" name='ZRZT' class="text-area" >
+        {{ text('ZRZT')}}
+      </textarea>
+      <textarea *ngIf="rangeValue=='ZS'" name='ZS' class="text-area" >
+        {{ text('ZS')}}
+      </textarea>
+    </ho-cell>
+  </ho-row>
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">
         <ho-section-header><b>AUTHORIZATION TO CARRY OUT WORK WITH/WITHOUT AN ORDER NO.</b></ho-section-header>

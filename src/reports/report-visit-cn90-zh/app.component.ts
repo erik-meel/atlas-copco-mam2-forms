@@ -17,11 +17,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private productFamilies = {};
+  private rangeValue = '';
+  private rangeHeight = '';
+  private selectedRangeIndex = 0;
 
   constructor(private formService: FormService, private context: NgZone) {
   }
 
   ngOnInit() {
+    
+    this.loadProductFamilies();
+    this.selectedRangeIndex = 1;
+    this.formService.saveHtmlToMel();
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
           this.INPUT = formInput;
@@ -51,7 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.customerSignatureDate = (new Date()).toLocaleString('zh_CN');
     this.formService.saveHtmlToMel();
   }
 
@@ -61,7 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString(this.language, this.formService.dateTimeFormat);
+    this.techSignatureDate = (new Date()).toLocaleString('zh_CN');
     this.formService.saveHtmlToMel();
   }
 
@@ -77,4 +85,45 @@ export class AppComponent implements OnInit, AfterViewInit {
   text(name: string): string{
     return textLiterals[this.language][name];
   }
+
+  loadProductFamilies(): void {
+    this.productFamilies = {
+      'Ranges': [    
+  {'name': 'ADBDCDXD', 'description': 'AD BD CD XD', 'size': '40em' },
+  {'name': 'AQ', 'description': 'AQ' },
+  {'name': 'FFXFD', 'description': 'F FX FD' },
+  {'name': 'IATGGA', 'description': 'IAT G GA' },
+  {'name': 'L', 'description': 'LF LF+ LFR' },
+  {'name': 'LCNAIRCUBE', 'description': 'LCN Aircube' },
+  {'name': 'MDND', 'description': 'MDND' },
+  {'name': 'MEDICAL', 'description': 'Medical' },
+  {'name': 'NGP', 'description': 'NGP' },
+  {'name': 'OFAGGA', 'description': 'OFA G GA' },
+  {'name': 'PET', 'description': 'PET' },
+  {'name': 'SF', 'description': 'SF' },
+  {'name': 'ZB', 'description': 'ZB' },
+  {'name': 'ZEZA', 'description': 'ZE ZA' },
+  {'name': 'ZH', 'description': 'ZH' },
+  {'name': 'ZM', 'description': 'ZM' },
+  {'name': 'ZRZT', 'description': 'ZR ZT' },
+  {'name': 'ZS', 'description': 'ZS' }
+    ]}
+  }
+
+  onRangeSelect(selection: any): void {
+    this.rangeValue = selection.target.value;
+    let range = this.productFamilies['Ranges'].find((range:any)=>range.name==this.rangeValue);
+    this.rangeHeight = range.size;
+    let rangeTextArea = document.getElementsByName(this.rangeValue);
+    //let selRange = <HTMLSelectElement>document.getElementById("selRange");
+    this.selectedRangeIndex = selection.currentTarget.selectedIndex;
+
+    this.formService.saveHtmlToMel();
+
+  }
+
+  onSettingValue(val: any): void {
+    this.formService.saveHtmlToMel();
+  }
+
 }
