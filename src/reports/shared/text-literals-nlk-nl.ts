@@ -96,7 +96,7 @@
 
   'BEING_DULY_AUTHORISED': '(Gemachtigd om te tekenen in naam van de klant)',
 
-  'COMPANY_GROUP_NAME': 'ALUP GrassAir Compressoren B.V. - Méér dan perslucht alleen !',
+  'COMPANY_GROUP_NAME': 'ALUP Kompressoren B.V. - Méér dan perslucht alleen !',
 
   'COMPANY_LEGAL_NAME': '',
 
