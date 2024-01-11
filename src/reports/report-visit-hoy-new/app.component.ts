@@ -34,10 +34,6 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.logo = 'AC';
           } 
           switch (this.PlanGroup) {
-            case 'ZEA':
-            case 'ZEB':
-              this.logo = 'CAS';
-              break;
             case 'ZS3':
               this.logo = 'CAP';
               break;
