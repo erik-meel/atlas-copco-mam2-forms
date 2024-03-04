@@ -64,6 +64,17 @@
   width: auto;
 }
 
+#pa-logo {
+  margin-left: -25px !important; /* Take container padding out -6 */
+  margin-bottom: 10px !important;
+  margin-top: -20px !important;
+  max-height: 150px;
+  min-height: 52px;
+  height: 150px;
+  width: auto;
+}
+
+
 #vianorm-logo {
   position: absolute;
   bottom: 72px;

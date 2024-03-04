@@ -43,6 +43,9 @@ export class AppComponent implements OnInit, AfterViewInit {
             case 'ZWD':
               this.logo = 'MESA';
               break;
+            case 'ZWF':
+              this.logo = 'PA';
+              break;
             case 'ZET':
               this.logo = 'TAYLOR';
               break;  

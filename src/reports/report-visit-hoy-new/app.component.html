@@ -125,6 +125,29 @@
       </ho-cell>
     </ho-row>
   </ho-header>
+  <ho-header *ngIf="logo == 'PA'">  <!-- Pacific Air-->
+    <ho-row>
+      <ho-cell ho-width="50%">
+        <img id="pa-logo" src="../shared/img/PALogo.jpg" alt="">
+      </ho-cell>
+      <ho-cell ho-width="50%"  ho-text-align="left">
+        <div id="header-title" style="text-align:left">{{text('VISIT_REPORT')}}</div>
+         <p>{{ text('REPORT_DATE')}}: {{ tag('REPORT_DATE') | date: 'MMM dd, yyyy'}}</p>
+         <p class="address">
+          <b>{{ tag('CUST_NAME') }} </b>
+          <br/>
+          {{ tag('CUST_ADDRESS_1') }}
+          <br/>
+          {{ tag('CUST_ADDRESS_2') }} {{ tag('CUST_ADDRESS_3') }} {{ tag('CUST_REGION')}}
+          <br/>
+          {{text('CONTACT')}}: {{ tag('CUST_CONTACT') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_EMAIL') }} <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ tag('REP_PHONE') }}
+          <br/>
+         </p>
+         <div ho-page-number ho-text-align="right"></div>
+         <br/>
+      </ho-cell>
+    </ho-row>
+  </ho-header>
   <ho-header *ngIf="logo == 'TAYLOR'">  <!-- TAYLOR  -->
     <ho-row>
       <ho-cell ho-width="25%">
@@ -750,6 +773,55 @@
           <ho-cell ho-width="30%">Fax: (915) 594-9911</ho-cell>
           <ho-cell ho-width="25%"></ho-cell>
           <ho-cell ho-width="10%"></ho-cell>
+        </ho-row>
+      </ho-cell>
+    </ho-row>
+  </ho-footer>
+  <ho-footer *ngIf="logo == 'PA'">  <!-- Pacific Air -->
+    <ho-row>
+      <ho-cell ho-width="144px">
+        <!--<img id="quality-logo" [attr.src]="tag('FOOTER_QUALITY_LOGO')" alt="">
+        <img id="quality-logo" src="../shared/lloyds-register-logo.svg" alt="">-->
+      </ho-cell>
+      <ho-cell ho-width="100%">
+        <ho-row ho-class="footer-title-section">
+          <ho-cell ho-width="100%">{{ tag('COMPANY_GROUP_NAME') }}</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%">3009 172<sup>nd</sup> Pl</ho-cell>
+          <ho-cell ho-width="25%">Tel: 503-674-2744</ho-cell>
+          <ho-cell ho-width="25%">Federal Tax ID: 04-2700546</ho-cell>
+          <ho-cell ho-width="30%">ACH Payments: Nordea Bank Finland PLC</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%">Portland, OR 97230</ho-cell>
+          <ho-cell ho-width="25%"><a href="www.pacificaircompressors.com" target="_blank">www.pacificaircompressors.com</a></ho-cell>
+          <ho-cell ho-width="25%">Remit to:</ho-cell>
+          <ho-cell ho-width="30%">1211 Avenue of the Americas, 23rd Floor</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">Atlas Copco Compressors LLC</ho-cell>
+          <ho-cell ho-width="30%">New York, NY 10036</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">DEPT CH 19511</ho-cell>
+          <ho-cell ho-width="30%">ABA # 026010786</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%">Palentine, IL 60055-9511</ho-cell>
+          <ho-cell ho-width="30%">Account # 7145273001</ho-cell>
+        </ho-row>
+        <ho-row>
+          <ho-cell ho-width="20%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="25%"></ho-cell>
+          <ho-cell ho-width="30%">SWIFT # NDEAUS3N</ho-cell>
         </ho-row>
       </ho-cell>
     </ho-row>
