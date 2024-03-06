@@ -161,6 +161,8 @@
 
   'COMPANY_FAX': 'mail: servis.skd@atlascopco.com',
 
+  'TELEPHONE': 'Hotline',
+
   'COMPANY_URL': 'www.atlascopco.sk',
 
   'FOOTER_ADDITIONAL_INFO_1': '',

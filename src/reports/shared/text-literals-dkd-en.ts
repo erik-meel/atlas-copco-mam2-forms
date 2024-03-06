@@ -168,7 +168,7 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': '',
 
-  'TELEPHONE': 'Trunklines',
+  'TELEPHONE': 'Hotline',
 
   'SAFETY_FIRST': 'Safety First',
 

@@ -158,7 +158,7 @@ export var textLiterals = {
 
   'VISITORS_ADDRESS': '',
 
-  'TELEPHONE': 'Tel.',
+  'TELEPHONE': 'Hotline',
 
   'FAX': 'Fax',
 
