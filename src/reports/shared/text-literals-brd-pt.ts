@@ -86,6 +86,8 @@
 
   'SIGNED_BY': 'Assinado por',
 
+  'BLOCKING_BY': 'por',
+
   'ENTER_YOUR_NAME': 'Insira seu nome',
 
   'AT': 'em',
@@ -119,15 +121,19 @@
   'FOOTER_ADDITIONAL_INFO_3': '',
 
   'TELEPHONE': 'Telf',
-
   'FAX': 'Fax',
-
   'SAFETY_FIRST': 'Safety First',
-
   'QUESTION': 'Questões',
-
-
   'CHECKED': 'Verificada',
+  'BLOCKING_HEADER': 'LOTO',
+  'BLOCKING': 'Bloqueio realizado',
+  'NOTBLOCKING': 'Bloqueio não realizado',
+  'UNBLOCKING': 'Desbloqueio realizado',
+  'NOTUNBLOCKING': 'Desbloqueio não realizado',
+  'ELECTRIC_MEASUREMENT_BY': 'Medições elétricas realizadas pelo cliente (nome do responsável)',
+  'VOLTAGE': 'Tensão',
+  'CURRENT': 'Corrente',
+  'ENTER_LOTO': 'Preencher Informação de LOTO',
 
   //Literals Commissioning Report
   'COMM_TEXT1': 'Procedimento de Entrega Técnica',

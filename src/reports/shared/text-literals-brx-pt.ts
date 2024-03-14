@@ -84,6 +84,10 @@
 
   'SIGNED_BY': 'Assinado por',
 
+  'BLOCKING_BY': 'por',
+
+  'ENTER_YOUR_NAME': 'Insira seu nome',
+
   'AT': 'em',
 
   'BEING_DULY_AUTHORISED': '(Está devidamente autorizado a assinar em nome do cliente)',
@@ -117,13 +121,18 @@
   'TELEPHONE': 'Telf',
 
   'FAX': 'Fax',
-
   'SAFETY_FIRST': 'Safety First',
-
   'QUESTION': 'Questões',
-
-
   'CHECKED': 'Verificada',
+  'BLOCKING_HEADER': 'LOTO',
+  'BLOCKING': 'Bloqueio realizado',
+  'NOTBLOCKING': 'Bloqueio não realizado',
+  'UNBLOCKING': 'Desbloqueio realizado',
+  'NOTUNBLOCKING': 'Desbloqueio não realizado',
+  'ELECTRIC_MEASUREMENT_BY': 'Medições elétricas realizadas pelo cliente (nome do responsável)',
+  'VOLTAGE': 'Tensão',
+  'CURRENT': 'Corrente',
+  'ENTER_LOTO': 'Preencher Informação de LOTO',
 
   //Literals Commissioning Report
   'COMM_TEXT1': 'Commissioning procedure',

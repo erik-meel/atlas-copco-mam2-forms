@@ -1,4 +1,3 @@
-
 <ho-form>
   <!-- HEADER -->
   <ho-header>
@@ -246,7 +245,7 @@
 
 <!-- Global REPORT -->
 <ho-row *ngFor="let entryOrd of INPUT.getVarArray('ORD_GR_DATA')">
- <HR id="blue-line">
+
   <ho-row ho-bordered ho-class="header">
     <ho-cell ho-width="100%">
     <ho-row ho-avoid-break >
@@ -408,7 +407,6 @@
     </ho-row>
     </ho-cell>
     </ho-row>
- <HR id="blue-line">
 </ho-row>
 <div class="spacer" *ngIf="INPUT.getVarArray('ORD_GR_DATA').length > 0"></div>
   <!-- End global report -->
@@ -451,11 +449,64 @@
   </ho-row>
   <div class="spacer" *ngIf="text('LMRA_ENABLED_IN_VISIT_REPORT') != 'false' "></div>
  <!-- End LMRA -->
+ <ho-row ho-avoid-break>
+  <ho-cell ho-width="100%">
+    <ho-section-header><b>{{ text('BLOCKING_HEADER')}}</b></ho-section-header> 
+    <form id="BlockingForm" name="BlockingForm">
+    <ho-row ho-bordered>
+      <ho-cell ho-width="80%">
+          <table class="table-ac">
+            <tr>
+              <td>
+                <input class="ho-no-print" type="checkbox" id="Blocking" name="Blocking" title="Block" [(ngModel)]='Blocking' (change)="ChangeBlocking($event)">
+              </td>
+              <td>
+                <label *ngIf="blockTimeHr==''" for="Blocking">{{ text('NOTBLOCKING') }}</label>
+                <div *ngIf="blockTimeHr!=''" for="Blocking">
+                  {{ text('BLOCKING') }} {{ text('AT') }}
+                  <input type="text" size="2" id="blockTimeHr" style="width: 18px;" value={{blockTimeHr}} maxlength="2">:<input type="text" size="2" id="blockTimeMin" style="width: 18px;" value={{blockTimeMin}} maxlength="2">
+                   {{ text('BLOCKING_BY') }} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }}</div>
+              </td>
+            </tr>
+          </table>
+      </ho-cell>
+    </ho-row>
+    <ho-row ho-bordered>
+      <ho-cell ho-width="80%">
+        <table class="table-ac">
+          <tr>
+            <td>
+              <input class="ho-no-print" type="checkbox" id="UnBlocking" name="UnBlocking" title="UnBlock" [(ngModel)]='UnBlocking' (change)="ChangeUnBlocking($event)">
+            </td>
+            <td>
+              <label *ngIf="unblockTimeHr==''" for="UnBlocking">{{ text('NOTUNBLOCKING') }}</label>
+              <div *ngIf="unblockTimeHr!=''">
+                {{ text('UNBLOCKING') }} {{ text('AT') }}
+                <input type="text" size="2" id="unblockTimeHr" style="width: 18px;" value={{unblockTimeHr}} maxlength="2">:<input type="text" size="2" id="unblockTimeMin" style="width: 18px;" value={{unblockTimeMin}} maxlength="2">
+                {{ text('BLOCKING_BY') }} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }}
+              </div>
+            </td>
+          </tr>
+        </table>
+      </ho-cell>
+    </ho-row>
+    <div class="spacer"></div>
+    <ho-row ho-bordered>
+      <ho-cell ho-width="80%">
+          <div>{{ text('ELECTRIC_MEASUREMENT_BY') }}: {{ customerSignatureName }}</div>
+          <label for="Voltage">{{ text('VOLTAGE') }}: </label><input id="Voltage" title="Voltage" size="5" maxlength="7" (change)="ChangeVoltage($event)"><br/>
+          <label for="Current">{{ text('CURRENT') }}: </label><input id="Current" title="Current" size="5" maxlength="7" (change)="ChangeCurrent($event)">
+      </ho-cell>
+    </ho-row>
+    </form>
+  </ho-cell>
+</ho-row>
     <ho-row ho-avoid-break>
       <ho-cell ho-width="100%">
 <!--
         <ho-section-header><b>AUTHORIZATION TO CARRY OUT WORK WITH/WITHOUT AN ORDER NO.</b></ho-section-header>
 -->
+        <div id="BlockingNotEntered" *ngIf="blockingInfoEntered==false">{{ text('ENTER_LOTO') }}</div>
         <ho-row ho-bordered>
           <!--
           <ho-cell ho-width="100%">
@@ -473,13 +524,13 @@
           <ho-cell ho-width="50%">
             <ho-signature width="220px" height="90px" (onEnd)="onCustomerSignatureEnd()" (onClear)="onCustomerSignatureClear()"></ho-signature>
             <div class="ho-no-print signature-name-input"><label for="customer-signature-name">{{text('ENTER_YOUR_NAME')}}:</label><input id="customer-signature-name" type="text" placeholder="{{text('PLEASE_ENTER_YOUR')}}" [(ngModel)]="customerSignatureName"></div>
-            <div class="signature-comment">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
+            <div class="signature-comment" *ngIf="customerSignatureDate!=''">{{text('SIGNED_BY')}} {{ customerSignatureName }} {{text(' AT')}} {{ customerSignatureDate }}
             </div>
             <div class="signature-comment">(Being duly authorize to sign on behalf of the customer)</div>
           </ho-cell>
           <ho-cell ho-width="50%">
             <ho-signature width="220px" height="90px" (onEnd)="onTechSignatureEnd()" (onClear)="onTechSignatureClear()"></ho-signature>
-            <div class="signature-comment">{{text('SIGNED_BY')}} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
+            <div class="signature-comment" *ngIf="techSignatureDate!=''">{{text('SIGNED_BY')}} {{ INPUT.getVar('SERV_ENG_CONFIRMATION').tag('SIGN_NAME') }} {{text('AT')}} {{ techSignatureDate }}</div>
           </ho-cell>
         </ho-row>
       </ho-cell>

@@ -56,8 +56,29 @@
     color: #EC1C2C;
     text-align: left;
 }
+#BlockingForm {
+  font-weight: bold;
+  font-size:12px;
+}
+#BlockingNotEntered {
+  color: red;
+  font-size: 38px;
+}
+
+#blockTimeHr, #blockTimeMin, #unblockTimeHr, #unblockTimeMin {
+  border-color: blue;
+  border-style: none;
+  text-align: center;
+}
+
+#Voltage, #Current {
+  color: blue;
+  border: 0px;
+  border-bottom: 1px solid #000000;
+}
+
 #blue-line {
-    color: #EC1C2C;
+  color: #EC1C2C;
 }
 .address {
     line-height: 16px;
