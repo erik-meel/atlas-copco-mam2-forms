@@ -27,6 +27,16 @@ export var textLiterals = {
   'DATE': 'Datum',
   'SERVICE_ENGINEER': 'Service engineer',
   'ACTIVITY_TYPE': 'Type activiteit',
+
+  'LANGUAGE': 'Kies taal',
+  'ZAM001°': 'Buitenuren',
+  'ZAM001°0014': '24-uurs dienst',
+  'ZAM003°': 'Werkplaats',
+  'ZAM005°': 'Labor Offshore',
+  'ZAM008°': 'Reistijd',
+  'ZAM010°': 'Veiligheidsprocedure',
+  'ZAM029°': 'Kilometer',
+
   'HOUR_KM': 'Aantal',
   'MATERIAL_CONFIRMATION': 'Verbruikte materialen',
   'PART_NUMBER': 'Artikel nr.',

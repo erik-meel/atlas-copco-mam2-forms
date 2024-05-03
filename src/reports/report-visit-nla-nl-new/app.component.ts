@@ -17,17 +17,26 @@ export class AppComponent implements OnInit, AfterViewInit {
   private techSignatureDate = '';
   private dateMask = '';
   private language = currentLanguage;
+  private dateLocale = '';
+  private dateOptions = {};
 
   constructor(private formService: FormService, private context: NgZone) {
   }
 
   ngOnInit() {
     this.formService.getInput().subscribe((formInput: MelVariable) => {
+        this.dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
         this.context.run(() => {
           this.INPUT = formInput;
           this.language = this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
           if(this.language != 'NLA_NL'&&this.language != 'NLA_EN') {
             this.language = 'NLA_NL';
+          
+          }
+          if(this.language =='NLA_NL') {
+            this.dateLocale = 'nl-NL';
+          } else {
+            this.dateLocale = 'en-US';
           }
           this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
           let that = this;
@@ -54,7 +63,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString('nl-NL');
+    this.customerSignatureDate = (new Date()).toLocaleString(this.dateLocale);
     this.formService.saveHtmlToMel();
   }
 
@@ -64,7 +73,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString('nl-NL');
+    this.techSignatureDate = (new Date()).toLocaleString(this.dateLocale);
     this.formService.saveHtmlToMel();
   }
 
@@ -79,5 +88,23 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   text(name: string): string{
     return textLiterals[this.language][name];
+  }
+
+  cDate(indate: string): string {
+    var dt = new Date(indate);
+    return dt.toLocaleString(this.dateLocale,this.dateOptions);
+  }
+
+  onLanguageSelect(selection: any): void {
+    
+    let checkVal = selection.target.value;
+    this.language = checkVal;
+    if(this.language =='NLA_NL') {
+      this.dateLocale = 'nl-NL';
+    } else {
+      this.dateLocale = 'en-US';
+    }
+
+    this.formService.saveHtmlToMel();
   }
 }
