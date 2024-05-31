@@ -1,6 +1,7 @@
 export var textLiterals = {
 
  'VISIT_REPORT': "Rapport d'intervention",
+ 'LMRA_REPORT': 'Rapport de sécurité',
 
   'CUSTOMER_DETAILS': 'Client',
 
@@ -30,6 +31,8 @@ export var textLiterals = {
 
   'NEXT_VISIT': 'Prochain visit',
 
+  'NEXT_RECOMMENDED_REPAIR': 'Prochain entretien recommandé',
+
   'NEXT_RECOMMENDED_SERVICE_1': 'Le prochain type de maintenance “',
 
   'NEXT_RECOMMENDED_SERVICE_2': '” devrait avoir lieu le',
@@ -46,7 +49,11 @@ export var textLiterals = {
 
   'ACTIVITY_TYPE': "Type d'activité",
 
-  'HOUR_KM': 'Heures client',
+  'HOUR_KM': 'Heures/Km/Dépenses',
+  'HOUR': 'Heures',
+  'KM': 'Km',
+  'LCU': 'Eur',
+  'KGT': 'Kg',
 
   'MATERIAL_CONFIRMATION': 'Pièces utilisées',
 
@@ -102,7 +109,7 @@ export var textLiterals = {
 
   'VISITOR_ADDRESS_2': 'Tel : (00)352/31 61 68',
 
-  'FOOTER_CENTER_LINE1': 'bga.info@be.atlascopco.com',
+  'FOOTER_CENTER_LINE1': '',
 
   'COMPANY_FAX': 'fax Bel :(02) 689 05 14',
 
@@ -114,7 +121,21 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': 'www.atlascopco.be',
 
-  'LANGUAGE': 'FR',
+  'LANGUAGE': 'Choisissez votre langue',
+
+  'ZAM001°': 'Heures de travail',
+  'ZAM001°0001': 'Heures supplémentaires',
+  'ZAM001°0003': 'Heures jour férié',
+  'ZAM001°0004': 'Heures week-end',
+  'ZAM003°': 'Travail dans l\'atelier',
+  'ZAM004°': 'Heures spécialiste',
+  'ZAM006°': 'Heures de préparation',
+  'ZAM007°': 'Heures de préparation spécialiste',
+  'ZAM008°': 'Temps de trajet',
+  'ZAM009°': 'Temps de trajet specialiste',
+  'ZAM015°': 'Expenses additionelles',
+  'ZAM017°': 'Visite de client',
+  'ZAM029°': 'Kilomètres',
 
   //Commission report
   'COMMISSION_REPORT': 'Procédure de Mise en service',

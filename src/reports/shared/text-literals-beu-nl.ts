@@ -1,6 +1,7 @@
 export var textLiterals = {
 
  'VISIT_REPORT': 'Interventierapport',
+ 'LMRA_REPORT': 'Veiligheidsrapport',
 
   'CUSTOMER_DETAILS': 'Klant',
 
@@ -30,6 +31,8 @@ export var textLiterals = {
 
   'NEXT_VISIT': 'Volgend bezoek',
 
+  'NEXT_RECOMMENDED_REPAIR': 'Volgend aanbevolen onderhoud',
+
   'NEXT_RECOMMENDED_SERVICE_1': 'Volgend onderhoud type “',
 
   'NEXT_RECOMMENDED_SERVICE_2': '” te voorzien vermoedelijk op',
@@ -43,8 +46,12 @@ export var textLiterals = {
   'DATE': 'Datum',
   'SERVICE_ENGINEER': 'Service Technieker',
 
-  'ACTIVITY_TYPE': 'type activiteit',
-  'HOUR': 'Werkuren',
+  'ACTIVITY_TYPE': 'Type activiteit',
+  'HOUR_KM': 'Uren/km/Uitgaven',
+  'HOUR': 'Uur',
+  'KM': 'Km',
+  'LCU': 'Eur',
+  'KGT': 'Kg',
 
   'MATERIAL_CONFIRMATION': 'Verbruikte materialen',
 
@@ -100,7 +107,7 @@ export var textLiterals = {
 
   'VISITOR_ADDRESS_2': 'Tel : (00)352/31 61 68',
 
-  'FOOTER_CENTER_LINE1': 'bga.info@be.atlascopco.com',
+  'FOOTER_CENTER_LINE1': '',
 
   'COMPANY_FAX': 'fax Bel :(02) 689 05 14',
 
@@ -112,5 +119,19 @@ export var textLiterals = {
 
   'FOOTER_ADDITIONAL_INFO_3': 'www.atlascopco.be',
 
-  'LANGUAGE': 'NL'
+  'LANGUAGE': 'Kiew uw taal',
+
+  'ZAM001°': 'Werkuren',
+  'ZAM001°0001': 'Overuren normaal - productive',
+  'ZAM001°0003': 'Overuren feestdag',
+  'ZAM001°0004': 'Overuren weekend',
+  'ZAM003°': 'Werkuren in atelier',
+  'ZAM004°': 'Werkuren specialist',
+  'ZAM006°': 'Voorbereiding werk',
+  'ZAM007°': 'Voorbereiding werk specialist',
+  'ZAM008°': 'Reisuren',
+  'ZAM009°': 'Reisuren specialist',
+  'ZAM015°': 'Extra uitgaven',
+  'ZAM017°': 'Klanten bezoek',
+  'ZAM029°': 'Afstand',
 };
