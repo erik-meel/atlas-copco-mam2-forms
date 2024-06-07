@@ -2,6 +2,8 @@ export var textLiterals = {
 
   'LANGUAGE': 'ES',
 
+  'BRAND': 'Seleccionar marca',
+
   'VISIT_REPORT': 'Informe de Visita',
 
   'CUSTOMER_DETAILS': 'Detalles Cliente',
@@ -77,6 +79,8 @@ export var textLiterals = {
   'FROM_LAST_VISIT_ON': 'Desde la ultima intervención',
 
   'AUTHORISATION_TO_CARRY': 'Autorización para realizar trabajos con o sin número de pedido',
+
+  'LMRA_ENABLED_IN_VISIT_REPORT': 'false',
 
   'NOTES': 'Notas',
 

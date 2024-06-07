@@ -35,12 +35,12 @@
   font-size: 10px;
 }
 
-#vca-logo {
+#ALUP-logo {
   position: absolute;
-  bottom: 144px;
+  /* bottom: 144px; */
   left: 0;
   float: left;
-  height: 52px;
+  height: 80px;
   width: auto;
 }
 
@@ -53,7 +53,7 @@
   width: auto;
 }
 #header-title {
-    color: #013E77;
+    color: #1B5D9A;
     text-align: left;
 }
 #blue-line {
