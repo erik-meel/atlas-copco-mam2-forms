@@ -60,6 +60,8 @@ export var textLiterals = {
 
    'COMMENTS': '备注',
 
+   'LANGUAGE': 'Select language',
+
    'MEASUREMENT_POINTS': '运行数据',
 
    'COUNTER': '统计',
@@ -81,6 +83,8 @@ export var textLiterals = {
    'SERVICE_ENGINEER_CONFIRMATION': '服务工程师确认',
 
    'SIGNED_BY': '签字',
+
+   'ENTER_YOUR_NAME': 'Enter your name',
 
    'AT': '在',
 

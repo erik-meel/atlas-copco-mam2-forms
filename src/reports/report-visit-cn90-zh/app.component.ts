@@ -19,7 +19,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   private language = currentLanguage;
   private productFamilies = {};
   private rangeValue = '';
-  private rangeHeight = '';
+  private dateLocale = '';
+  private dateOptions = {};
   private selectedRangeIndex = 0;
 
   constructor(private formService: FormService, private context: NgZone) {
@@ -30,11 +31,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.loadProductFamilies();
     this.selectedRangeIndex = 1;
     this.formService.saveHtmlToMel();
+    this.dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+    this.language = 'CQK_ZH'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
+    this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
+    this.dateLocale = 'zh-CN';
+
     this.formService.getInput().subscribe((formInput: MelVariable) => {
         this.context.run(() => {
           this.INPUT = formInput;
-          this.language = 'CQK_ZH'; //this.INPUT.get('LANG') ? this.INPUT.get('LANG') : currentLanguage;
-          this.customerSignatureName = this.INPUT.get('CUST_CONTACT');
+          
           let that = this;
             Observable.timer(200).subscribe(
               () => {
@@ -59,7 +64,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onCustomerSignatureEnd(): void {
-    this.customerSignatureDate = (new Date()).toLocaleString('zh_CN');
+    this.customerSignatureDate = (new Date()).toLocaleString('zh-CN');
     this.formService.saveHtmlToMel();
   }
 
@@ -69,7 +74,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onTechSignatureEnd(): void {
-    this.techSignatureDate = (new Date()).toLocaleString('zh_CN');
+    this.techSignatureDate = (new Date()).toLocaleString('zh-CN');
     this.formService.saveHtmlToMel();
   }
 
@@ -113,7 +118,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   onRangeSelect(selection: any): void {
     this.rangeValue = selection.target.value;
     let range = this.productFamilies['Ranges'].find((range:any)=>range.name==this.rangeValue);
-    this.rangeHeight = range.size;
+    //this.rangeHeight = range.size;
     let rangeTextArea = document.getElementsByName(this.rangeValue);
     //let selRange = <HTMLSelectElement>document.getElementById("selRange");
     this.selectedRangeIndex = selection.currentTarget.selectedIndex;
@@ -123,6 +128,24 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onSettingValue(val: any): void {
+    this.formService.saveHtmlToMel();
+  }
+
+  cDate(indate: string): string {
+    var dt = new Date(indate);
+    return dt.toLocaleString(this.dateLocale,this.dateOptions);
+  }
+
+  onLanguageSelect(selection: any): void {
+    
+    let checkVal = selection.target.value;
+    this.language = checkVal;
+    if(this.language =='CQK_ZH') {
+      this.dateLocale = 'zh-CN';
+    } else {
+      this.dateLocale = 'en-US';
+    }
+
     this.formService.saveHtmlToMel();
   }
 
